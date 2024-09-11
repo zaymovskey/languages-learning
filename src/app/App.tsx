@@ -1,5 +1,13 @@
+import AppRouter from '@/app/providers/AppRouter/ui/AppRouter.tsx';
+
 function App() {
-  return <div>Test</div>;
+  return (
+    <>
+      <main className="content-page">
+        <AppRouter />
+      </main>
+    </>
+  );
 }
 
 export default App;
