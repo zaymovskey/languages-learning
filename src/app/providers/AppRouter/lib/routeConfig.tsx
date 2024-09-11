@@ -1,4 +1,4 @@
-import TopicDetailsPage from '@/pages/TopicDetailsPage/ui/TopicDetailsPage.tsx';
+import { TopicDetailsPage } from '@/pages/TopicDetailsPage';
 import { TopicsListPage } from '@/pages/TopicsListPage';
 import { type RouteProps } from 'react-router-dom';
 

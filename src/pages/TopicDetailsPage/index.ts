@@ -1,3 +1,3 @@
-import { TopicsDetailsPage } from './ui/TopicDetailsPage.lazy.tsx';
+import { TopicDetailsPage } from './ui/TopicDetailsPage.lazy.tsx';
 
-export { TopicsDetailsPage };
+export { TopicDetailsPage };
