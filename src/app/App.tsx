@@ -1,3 +1,4 @@
+import './styles/index.scss';
 import AppRouter from '@/app/providers/AppRouter/ui/AppRouter.tsx';
 
 function App() {
