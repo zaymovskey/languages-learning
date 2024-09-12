@@ -1,0 +1,18 @@
+.topicListItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.imageBlock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #9930cf;
+}
+
+.titleBlock {
+  color: inherit !important;
+}
