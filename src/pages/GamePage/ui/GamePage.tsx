@@ -1,3 +1,4 @@
+import cls from './GamePage.module.scss';
 import { TOPICS } from '@/DB.tsx';
 import {
   useAppDispatch,
@@ -10,6 +11,7 @@ import {
 } from '@/entities/Game/Question/types/TypeQuestionTypes.ts';
 import { currentTopicActions } from '@/entities/Game/model/slices/currentTopicSlice.ts';
 import { Statistics } from '@/entities/Game/ui/Statistics/Statistics.tsx';
+import { classNames } from '@/shared/lib/utils/classNames/classNames.ts';
 import { FC } from 'react';
 import { useParams } from 'react-router-dom';
 
@@ -28,6 +30,7 @@ const GamePage: FC = () => {
   const currentQuestionType = useAppSelector(
     (state) => state.currentTopic.currentQuestionType
   );
+  const isBlocked = useAppSelector((state) => state.currentTopic.isBlocked);
 
   if (currentQuestionType === null) {
     const randomIndex = Math.floor(Math.random() * QUESTION_TYPES.length);
@@ -41,7 +44,7 @@ const GamePage: FC = () => {
     QUESTION_TYPES_COMPONENTS[currentQuestionType || 'Choice'];
 
   return (
-    <div>
+    <div className={classNames('', { [cls.blocked]: isBlocked }, [])}>
       <div className="paddings-content">
         <QuestionComponent toNextQuestion={toNextQuestion} />
         <Statistics />

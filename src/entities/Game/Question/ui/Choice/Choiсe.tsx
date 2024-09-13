@@ -72,6 +72,8 @@ export const Choice: FC<IChoiceProps> = ({ toNextQuestion }) => {
   };
 
   const handleSelectAnswer = (word: IWord) => {
+    dispatch(currentTopicActions.setIsBlocked(true));
+
     setSelectedAnswer(word);
 
     const action =
@@ -83,6 +85,7 @@ export const Choice: FC<IChoiceProps> = ({ toNextQuestion }) => {
 
     setTimeout(() => {
       toNextQuestion(refreshQuestion);
+      dispatch(currentTopicActions.setIsBlocked(false));
     }, 2000);
   };
 

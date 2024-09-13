@@ -13,6 +13,7 @@ const initialState: ICurrentTopicScheme = {
     right: 0,
   },
   currentQuestionType: null,
+  isBlocked: false,
 };
 
 export const currentTopicSlice = createSlice({
@@ -33,6 +34,9 @@ export const currentTopicSlice = createSlice({
     },
     increaseWrongAnswers(state) {
       state.answers.wrong += 1;
+    },
+    setIsBlocked(state, action: PayloadAction<boolean>) {
+      state.isBlocked = action.payload;
     },
   },
 });

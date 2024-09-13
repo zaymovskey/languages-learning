@@ -7,4 +7,5 @@ export interface ICurrentTopicScheme extends ITopic {
     right: number;
   };
   currentQuestionType: TypeQuestionTypes | null;
+  isBlocked: boolean;
 }
