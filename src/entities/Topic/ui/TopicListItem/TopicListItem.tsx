@@ -1,25 +1,24 @@
 import cls from './TopicListItem.module.scss';
+import { ITopicListItem } from '@/DB.tsx';
 import { Typography } from 'antd';
-import { ComponentType, type FC, SVGProps } from 'react';
-
-export interface ITopicListItem {
-  title: string;
-  Icon: ComponentType<SVGProps<SVGSVGElement>>;
-}
+import { type FC } from 'react';
+import { Link } from 'react-router-dom';
 
 interface ITopicListItemProps extends ITopicListItem {
   className?: string;
 }
 
-export const TopicListItem: FC<ITopicListItemProps> = ({ title, Icon }) => {
+export const TopicListItem: FC<ITopicListItemProps> = (
+  { slug, title, Icon }
+) => {
   return (
-    <div className={cls.topicListItem}>
+    <Link to={`/topic/${slug}/`} className={cls.topicListItem}>
       <div className={cls.imageBlock}>
         <Icon color={'inherit'} width={30} height={30} />
       </div>
       <Typography.Title level={4} className={cls.titleBlock}>
         {title}
       </Typography.Title>
-    </div>
+    </Link>
   );
 };

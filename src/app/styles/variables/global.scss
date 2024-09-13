@@ -12,10 +12,16 @@
   // Fonts size
   --font-size-m: 18px;
   --font-line-height-m: 18px;
-  --font-xxs: var(--font-size-m) / var(--font-line-height-m) var(--font-family-main);
+  --font-m: var(--font-size-m) / var(--font-line-height-m) var(--font-family-main);
+
+  --font-size-l: 22px;
+  --font-line-height-l: 22px;
+  --font-l: var(--font-size-m) / var(--font-line-height-m) var(--font-family-main);
 
   // Colors
   --color-white: #FFF;
 
   --color-background: #530b78;
+  --color-accent-secondary: #be46fb;
+  --color-accent-third: #b2fd3c
 }

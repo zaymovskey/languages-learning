@@ -10,9 +10,10 @@
   align-items: center;
   padding: 10px;
   border-radius: 10px;
-  background-color: #9930cf;
+  background-color: var(--color-accent-secondary);
 }
 
 .titleBlock {
   color: inherit !important;
+  margin: 0 !important;
 }

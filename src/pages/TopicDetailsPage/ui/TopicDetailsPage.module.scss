@@ -1,0 +1,14 @@
+.imageBlock {
+  display: flex;
+  justify-content: center;
+  background-color: var(--color-accent-secondary);
+  padding: 20px;
+}
+
+.title {
+  color: white !important;
+}
+
+.wordList {
+  margin-top: 20px;
+}

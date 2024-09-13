@@ -1,0 +1,23 @@
+.wordListItem {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid color-mix(in oklab, var(--color-background) 80%, white);
+}
+
+.wordInfo  {
+  display: flex;
+  flex-direction: column;
+
+
+  & > span {
+    color: white !important;
+    font-weight: 700;
+  }
+}
+
+.hebrew {
+  font-size: 25px;
+  letter-spacing: 5px;
+}
