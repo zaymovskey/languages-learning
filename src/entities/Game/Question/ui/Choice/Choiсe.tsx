@@ -1,26 +1,45 @@
 import cls from './Choice.module.scss';
 import { IWord } from '@/DB.tsx';
 import { useAppSelector } from '@/app/providers/StoreProvider/lib/hooks.ts';
+import { IQuestionComponentProps } from '@/entities/Game/Question/types/TypeQuestionTypes.ts';
 import { classNames } from '@/shared/lib/utils/classNames/classNames.ts';
 import { getRandomNumberFromInterval } from '@/shared/lib/utils/getRandomNumberFromInterval/getRandomNumberFromInterval.ts';
 import { getRandomUniqueElements } from '@/shared/lib/utils/getRandomUniqueElements/getRandomUniqueElements.ts';
 import { Typography } from 'antd';
-import { useMemo, useState } from 'react';
+import { FC, useMemo, useState } from 'react';
 
-export const Choice = () => {
+interface IChoiceProps extends IQuestionComponentProps {
+  className?: string;
+}
+
+export const Choice: FC<IChoiceProps> = ({ toNextQuestion }) => {
   const wordsCount = useMemo(() => getRandomNumberFromInterval(2, 6), []);
   const topicWords = useAppSelector((state) => state.currentTopic.words);
 
-  const currentQuestionWords = getRandomUniqueElements(topicWords, wordsCount);
-
-  const rightAnswer = getRandomUniqueElements(currentQuestionWords, 1)[0];
-
-  const [selectedAnswer, setSelectedAnswer] = useState<IWord | undefined>(
-    undefined
+  const [currentQuestionWords, setCurrentQuestionWords] = useState(
+    getRandomUniqueElements(topicWords, wordsCount)
   );
+
+  const [rightAnswer, setRightAnswer] = useState(
+    getRandomUniqueElements(currentQuestionWords, 1)[0]
+  );
+
+  const [selectedAnswer, setSelectedAnswer] = useState<IWord | null>(null);
+
+  const refreshQuestion = () => {
+    const newRandomUniqueElements = getRandomUniqueElements(
+      topicWords,
+      wordsCount
+    );
+    setCurrentQuestionWords(newRandomUniqueElements);
+    setRightAnswer(getRandomUniqueElements(newRandomUniqueElements, 1)[0]);
+    setSelectedAnswer(null);
+  };
 
   const handleSelectAnswer = (word: IWord) => {
     setSelectedAnswer(word);
+
+    toNextQuestion(refreshQuestion);
   };
 
   return (

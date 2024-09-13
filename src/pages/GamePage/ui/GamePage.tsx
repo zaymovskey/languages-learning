@@ -42,7 +42,7 @@ const GamePage: FC = () => {
   return (
     <div>
       <div className="paddings-content">
-        <QuestionComponent />
+        <QuestionComponent toNextQuestion={toNextQuestion} />
       </div>
     </div>
   );

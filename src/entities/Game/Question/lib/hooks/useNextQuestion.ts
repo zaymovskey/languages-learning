@@ -4,16 +4,10 @@ import {
 } from '@/app/providers/StoreProvider/lib/hooks.ts';
 import { QUESTION_TYPES } from '@/entities/Game/Question/types/TypeQuestionTypes.ts';
 import { currentTopicActions } from '@/entities/Game/model/slices/currentTopicSlice.ts';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 
 export const useNextQuestion = () => {
   const dispatch = useAppDispatch();
-
-  const [, setRefreshCount] = useState(1);
-
-  const refreshQuestion = () => {
-    setRefreshCount((prev) => prev + 1);
-  };
 
   const currentQuestionType = useAppSelector(
     (state) => state.currentTopic.currentQuestionType
@@ -25,15 +19,18 @@ export const useNextQuestion = () => {
     currentQuestionTypeRef.current = currentQuestionType;
   }, [currentQuestionType]);
 
-  return useCallback(() => {
-    const randomIndex = Math.floor(Math.random() * QUESTION_TYPES.length);
-    if (QUESTION_TYPES[randomIndex] === currentQuestionTypeRef.current) {
-      refreshQuestion();
-      return;
-    }
+  return useCallback(
+    (refreshQuestion?: () => void) => {
+      const randomIndex = Math.floor(Math.random() * QUESTION_TYPES.length);
+      if (QUESTION_TYPES[randomIndex] === currentQuestionTypeRef.current) {
+        refreshQuestion?.();
+        return;
+      }
 
-    dispatch(
-      currentTopicActions.setCurrentQuestionType(QUESTION_TYPES[randomIndex])
-    );
-  }, [currentQuestionType]);
+      dispatch(
+        currentTopicActions.setCurrentQuestionType(QUESTION_TYPES[randomIndex])
+      );
+    },
+    [currentQuestionType]
+  );
 };
