@@ -10,14 +10,10 @@ import { useMemo, useState } from 'react';
 export const Choice = () => {
   const wordsCount = useMemo(() => getRandomNumberFromInterval(2, 6), []);
   const topicWords = useAppSelector((state) => state.currentTopic.words);
-  const currentQuestionWords = useMemo(
-    () => getRandomUniqueElements(topicWords, wordsCount),
-    []
-  );
-  const rightAnswer = useMemo(
-    () => getRandomUniqueElements(currentQuestionWords, 1)[0],
-    []
-  );
+
+  const currentQuestionWords = getRandomUniqueElements(topicWords, wordsCount);
+
+  const rightAnswer = getRandomUniqueElements(currentQuestionWords, 1)[0];
 
   const [selectedAnswer, setSelectedAnswer] = useState<IWord | undefined>(
     undefined
@@ -30,8 +26,9 @@ export const Choice = () => {
   return (
     <div>
       <div className={cls.variants}>
-        {currentQuestionWords.map((word) => (
+        {currentQuestionWords.map((word, index) => (
           <button
+            key={index}
             onClick={() => handleSelectAnswer(word)}
             className={classNames(
               cls.variantsItem,

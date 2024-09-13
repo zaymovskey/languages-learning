@@ -3,6 +3,7 @@ import {
   useAppDispatch,
   useAppSelector,
 } from '@/app/providers/StoreProvider/lib/hooks.ts';
+import { useNextQuestion } from '@/entities/Game/Question/lib/hooks/useNextQuestion.ts';
 import {
   QUESTION_TYPES,
   QUESTION_TYPES_COMPONENTS,
@@ -21,17 +22,22 @@ const GamePage: FC = () => {
     return <div>Тема не найдена</div>;
   }
 
-  const questionType = useAppSelector(
+  const toNextQuestion = useNextQuestion();
+
+  const currentQuestionType = useAppSelector(
     (state) => state.currentTopic.currentQuestionType
   );
 
-  if (questionType === null) {
+  if (currentQuestionType === null) {
     const randomIndex = Math.floor(Math.random() * QUESTION_TYPES.length);
-    dispatch(currentTopicActions.setQuestionType(QUESTION_TYPES[randomIndex]));
+    dispatch(
+      currentTopicActions.setCurrentQuestionType(QUESTION_TYPES[randomIndex])
+    );
     dispatch(currentTopicActions.setWords(currentTopic.words));
   }
 
-  const QuestionComponent = QUESTION_TYPES_COMPONENTS[questionType || 'Choice'];
+  const QuestionComponent =
+    QUESTION_TYPES_COMPONENTS[currentQuestionType || 'Choice'];
 
   return (
     <div>

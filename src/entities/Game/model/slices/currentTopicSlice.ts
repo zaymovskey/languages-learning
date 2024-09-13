@@ -19,7 +19,10 @@ export const currentTopicSlice = createSlice({
   name: 'currentTopic',
   initialState,
   reducers: {
-    setQuestionType(state, action: PayloadAction<TypeQuestionTypes | null>) {
+    setCurrentQuestionType(
+      state,
+      action: PayloadAction<TypeQuestionTypes | null>
+    ) {
       state.currentQuestionType = action.payload;
     },
     setWords(state, action: PayloadAction<IWord[]>) {

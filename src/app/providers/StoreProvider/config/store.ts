@@ -5,6 +5,8 @@ export function createReduxStore() {
   return configureStore({
     reducer: rootReducer,
     devTools: true,
+    middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware({ serializableCheck: false }),
   });
 }
 
