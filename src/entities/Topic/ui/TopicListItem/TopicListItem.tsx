@@ -1,6 +1,5 @@
 import cls from './TopicListItem.module.scss';
 import { ITopic } from '@/DB.tsx';
-import { Typography } from 'antd';
 import { type FC } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -16,9 +15,7 @@ export const TopicListItem: FC<ITopicListItemProps> = (
       <div className={cls.imageBlock}>
         <Icon color={'inherit'} width={30} height={30} />
       </div>
-      <Typography.Title level={4} className={cls.titleBlock}>
-        {title}
-      </Typography.Title>
+      <h4 className={cls.titleBlock}>{title}</h4>
     </Link>
   );
 };

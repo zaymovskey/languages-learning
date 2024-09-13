@@ -6,7 +6,9 @@
 }
 
 .title {
-  color: white !important;
+  font-size: var(--font-size-xl);
+  margin-bottom: 10px;
+  font-weight: bold;
 }
 
 .wordList {

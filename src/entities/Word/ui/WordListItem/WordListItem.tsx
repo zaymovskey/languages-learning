@@ -14,8 +14,8 @@ export const WordListItem: FC<IWordsListItemProps> = (
     <div className={cls.wordListItem}>
       <Icon color={'inherit'} width={40} height={40} />
       <div className={cls.wordInfo}>
-        <Typography.Text className={cls.hebrew}>{hebrew}</Typography.Text>
-        <Typography.Text>{russian}</Typography.Text>
+        <span className={cls.hebrew}>{hebrew}</span>
+        <span>{russian}</span>
       </div>
     </div>
   );

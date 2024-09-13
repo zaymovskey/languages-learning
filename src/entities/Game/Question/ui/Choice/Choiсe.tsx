@@ -5,7 +5,6 @@ import { IQuestionComponentProps } from '@/entities/Game/Question/types/TypeQues
 import { classNames } from '@/shared/lib/utils/classNames/classNames.ts';
 import { getRandomNumberFromInterval } from '@/shared/lib/utils/getRandomNumberFromInterval/getRandomNumberFromInterval.ts';
 import { getRandomUniqueElements } from '@/shared/lib/utils/getRandomUniqueElements/getRandomUniqueElements.ts';
-import { Typography } from 'antd';
 import { FC, useEffect, useState } from 'react';
 
 interface IChoiceProps extends IQuestionComponentProps {
@@ -98,9 +97,9 @@ export const Choice: FC<IChoiceProps> = ({ toNextQuestion }) => {
             {isShowIcons && (
               <word.Icon color={'inherit'} width={40} height={40} />
             )}
-            <Typography.Text className={cls.variantText}>
+            <span className={cls.variantText}>
               {isVariantsLanguageIsHebrew ? word.hebrew : word.russian}
-            </Typography.Text>
+            </span>
           </button>
         ))}
       </div>
