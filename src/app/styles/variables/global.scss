@@ -26,6 +26,7 @@
   --color-white: #FFF;
 
   --color-background: #530b78;
+  --color-background-darken: color-mix(in oklab, var(--color-background) 90%, black);
   --color-accent-secondary: #be46fb;
-  --color-accent-third: #b2fd3c
+  --color-accent-third: #b2fd3c;
 }
