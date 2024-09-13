@@ -2,7 +2,7 @@
 @import 'variables/global';
 
 body {
-  font-family: var(--font-family-main), cursive;
+  font-family: var(--font-family-main), cursive !important;
   font-weight: var(--font-weight-regular);
   font-size: var(--font-size-m);
   color: var(--color-white);

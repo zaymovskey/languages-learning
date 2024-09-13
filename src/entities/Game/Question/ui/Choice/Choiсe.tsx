@@ -69,10 +69,9 @@ export const Choice: FC<IChoiceProps> = ({ toNextQuestion }) => {
   const handleSelectAnswer = (word: IWord) => {
     setSelectedAnswer(word);
 
-    toNextQuestion(refreshQuestion);
-    // setTimeout(() => {
-    //   toNextQuestion(refreshQuestion);
-    // }, 3000);
+    setTimeout(() => {
+      toNextQuestion(refreshQuestion);
+    }, 2000);
   };
 
   return (
