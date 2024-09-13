@@ -1,0 +1,34 @@
+.statistics {
+  display: flex;
+  padding: 0 20px;
+  justify-content: end;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  box-shadow: rgb(0 0 0 / 24%) 0 3px 8px;
+  width: 100%;
+  left: 0;
+  height: 40px;
+  gap: 10px;
+
+  &Item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+}
+
+.circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+
+}
+
+.wrong {
+  background-color: var(--color-wrong);
+}
+
+.right {
+  background-color: var(--color-right);
+}

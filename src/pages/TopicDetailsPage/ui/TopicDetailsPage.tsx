@@ -24,6 +24,7 @@ const TopicDetailsPage = () => {
                 padding: '15px 30px',
                 fontWeight: 700,
                 borderRadius: 50,
+                cursor: 'pointer',
               }}
             >
               Учить

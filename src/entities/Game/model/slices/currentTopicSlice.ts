@@ -28,6 +28,12 @@ export const currentTopicSlice = createSlice({
     setWords(state, action: PayloadAction<IWord[]>) {
       state.words = action.payload;
     },
+    increaseRightAnswers(state) {
+      state.answers.right += 1;
+    },
+    increaseWrongAnswers(state) {
+      state.answers.wrong += 1;
+    },
   },
 });
 

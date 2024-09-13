@@ -1,7 +1,11 @@
 import cls from './Choice.module.scss';
 import { IWord } from '@/DB.tsx';
-import { useAppSelector } from '@/app/providers/StoreProvider/lib/hooks.ts';
+import {
+  useAppDispatch,
+  useAppSelector,
+} from '@/app/providers/StoreProvider/lib/hooks.ts';
 import { IQuestionComponentProps } from '@/entities/Game/Question/types/TypeQuestionTypes.ts';
+import { currentTopicActions } from '@/entities/Game/model/slices/currentTopicSlice.ts';
 import { classNames } from '@/shared/lib/utils/classNames/classNames.ts';
 import { getRandomNumberFromInterval } from '@/shared/lib/utils/getRandomNumberFromInterval/getRandomNumberFromInterval.ts';
 import { getRandomUniqueElements } from '@/shared/lib/utils/getRandomUniqueElements/getRandomUniqueElements.ts';
@@ -12,6 +16,8 @@ interface IChoiceProps extends IQuestionComponentProps {
 }
 
 export const Choice: FC<IChoiceProps> = ({ toNextQuestion }) => {
+  const dispatch = useAppDispatch();
+
   const [wordsCount, setWordsCount] = useState(
     getRandomNumberFromInterval(2, 6)
   );
@@ -67,6 +73,13 @@ export const Choice: FC<IChoiceProps> = ({ toNextQuestion }) => {
 
   const handleSelectAnswer = (word: IWord) => {
     setSelectedAnswer(word);
+
+    const action =
+      word.russian === rightAnswer.russian
+        ? currentTopicActions.increaseRightAnswers
+        : currentTopicActions.increaseWrongAnswers;
+
+    dispatch(action());
 
     setTimeout(() => {
       toNextQuestion(refreshQuestion);

@@ -9,6 +9,7 @@ import {
   QUESTION_TYPES_COMPONENTS,
 } from '@/entities/Game/Question/types/TypeQuestionTypes.ts';
 import { currentTopicActions } from '@/entities/Game/model/slices/currentTopicSlice.ts';
+import { Statistics } from '@/entities/Game/ui/Statistics/Statistics.tsx';
 import { FC } from 'react';
 import { useParams } from 'react-router-dom';
 
@@ -43,6 +44,7 @@ const GamePage: FC = () => {
     <div>
       <div className="paddings-content">
         <QuestionComponent toNextQuestion={toNextQuestion} />
+        <Statistics />
       </div>
     </div>
   );
