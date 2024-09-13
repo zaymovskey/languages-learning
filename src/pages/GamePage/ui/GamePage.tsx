@@ -33,7 +33,13 @@ const GamePage: FC = () => {
 
   const QuestionComponent = QUESTION_TYPES_COMPONENTS[questionType || 'Choice'];
 
-  return <div>{<QuestionComponent />}</div>;
+  return (
+    <div>
+      <div className="paddings-content">
+        <QuestionComponent />
+      </div>
+    </div>
+  );
 };
 
 export default GamePage;

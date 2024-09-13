@@ -1,0 +1,24 @@
+.variants {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 50px;
+
+  &Item  {
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & > * {
+      color: inherit !important;
+    }
+  }
+}
+
+.questionWord {
+  margin-top: 30px;
+  font-size: var(--font-size-xl);
+  text-align: center;
+}

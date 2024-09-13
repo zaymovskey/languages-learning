@@ -16,7 +16,11 @@
 
   --font-size-l: 22px;
   --font-line-height-l: 22px;
-  --font-l: var(--font-size-m) / var(--font-line-height-m) var(--font-family-main);
+  --font-l: var(--font-size-l) / var(--font-line-height-l) var(--font-family-main);
+
+  --font-size-xl: 26px;
+  --font-line-height-xl: 26px;
+  --font-xl: var(--font-size-xl) / var(--font-line-height-xl) var(--font-family-main);
 
   // Colors
   --color-white: #FFF;
