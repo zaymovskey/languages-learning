@@ -99,7 +99,7 @@ export const Choice: FC<IChoiceProps> = ({ toNextQuestion }) => {
             {isShowIcons && (
               <word.Icon color={'inherit'} width={40} height={40} />
             )}
-            <Typography.Text>
+            <Typography.Text className={cls.variantText}>
               {isVariantsLanguageIsHebrew ? word.hebrew : word.russian}
             </Typography.Text>
           </button>
