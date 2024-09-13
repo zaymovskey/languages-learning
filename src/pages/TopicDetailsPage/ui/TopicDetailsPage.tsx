@@ -3,7 +3,7 @@ import { TOPICS } from '@/DB.tsx';
 import { WordList } from '@/entities/Word/ui/WordList/WordList.tsx';
 import { Typography } from 'antd';
 import { Button } from 'antd';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const TopicDetailsPage = () => {
   const { slug } = useParams();
@@ -19,19 +19,21 @@ const TopicDetailsPage = () => {
           {currentTopic.title}
         </Typography.Title>
         <div style={{ textAlign: 'center' }}>
-          <Button
-            type="primary"
-            style={{
-              backgroundColor: 'var(--color-accent-third)',
-              color: 'var(--color-background)',
-              textTransform: 'uppercase',
-              padding: '25px 30px',
-              fontWeight: 700,
-              borderRadius: 50,
-            }}
-          >
-            Учить
-          </Button>
+          <Link to={'game'}>
+            <Button
+              type="primary"
+              style={{
+                backgroundColor: 'var(--color-accent-third)',
+                color: 'var(--color-background)',
+                textTransform: 'uppercase',
+                padding: '25px 30px',
+                fontWeight: 700,
+                borderRadius: 50,
+              }}
+            >
+              Учить
+            </Button>
+          </Link>
         </div>
         <WordList words={currentTopic.words} className={cls.wordList} />
       </div>
