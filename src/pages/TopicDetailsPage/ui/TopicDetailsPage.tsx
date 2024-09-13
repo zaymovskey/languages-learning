@@ -1,22 +1,13 @@
 import cls from './TopicDetailsPage.module.scss';
 import { TOPICS } from '@/DB.tsx';
-import { useAppDispatch } from '@/app/providers/StoreProvider/lib/hooks.ts';
-import { QUESTION_TYPES } from '@/entities/Game/Question/types/TypeQuestionTypes.ts';
-import { currentTopicActions } from '@/entities/Game/model/slices/currentTopicSlice.ts';
 import { WordList } from '@/entities/Word/ui/WordList/WordList.tsx';
 import { Typography } from 'antd';
 import { Button } from 'antd';
 import { Link, useParams } from 'react-router-dom';
 
 const TopicDetailsPage = () => {
-  const dispatch = useAppDispatch();
   const { slug } = useParams();
   const currentTopic = TOPICS.find((topic) => topic.slug === slug)!;
-
-  const onClickLearn = () => {
-    const randomIndex = Math.floor(Math.random() * QUESTION_TYPES.length);
-    dispatch(currentTopicActions.setQuestionType(QUESTION_TYPES[randomIndex]));
-  };
 
   return (
     <div>
@@ -30,7 +21,6 @@ const TopicDetailsPage = () => {
         <div style={{ textAlign: 'center' }}>
           <Link to={'game'}>
             <Button
-              onClick={onClickLearn}
               type="primary"
               style={{
                 backgroundColor: 'var(--color-accent-third)',

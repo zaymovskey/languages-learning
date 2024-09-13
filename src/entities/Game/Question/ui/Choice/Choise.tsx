@@ -1,3 +1,3 @@
 export const Choice = () => {
-  return <div>Выбор</div>;
+  return <div>Выборfdsaf</div>;
 };

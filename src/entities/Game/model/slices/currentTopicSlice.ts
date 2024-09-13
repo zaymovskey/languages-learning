@@ -1,6 +1,7 @@
 import { type ICurrentTopicScheme } from '../types/ICurrentTopicScheme';
+import { IWord } from '@/DB.tsx';
 import { TypeQuestionTypes } from '@/entities/Game/Question/types/TypeQuestionTypes.ts';
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 const initialState: ICurrentTopicScheme = {
   title: '',
@@ -18,8 +19,11 @@ export const currentTopicSlice = createSlice({
   name: 'currentTopic',
   initialState,
   reducers: {
-    setQuestionType(state, action: { payload: TypeQuestionTypes | null }) {
+    setQuestionType(state, action: PayloadAction<TypeQuestionTypes | null>) {
       state.currentQuestionType = action.payload;
+    },
+    setWords(state, action: PayloadAction<IWord[]>) {
+      state.words = action.payload;
     },
   },
 });
