@@ -1,10 +1,10 @@
 import cls from './TopicListItem.module.scss';
-import { ITopicListItem } from '@/DB.tsx';
+import { ITopic } from '@/DB.tsx';
 import { Typography } from 'antd';
 import { type FC } from 'react';
 import { Link } from 'react-router-dom';
 
-interface ITopicListItemProps extends ITopicListItem {
+interface ITopicListItemProps extends ITopic {
   className?: string;
 }
 

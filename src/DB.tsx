@@ -16,7 +16,7 @@ import {
 } from '@/shared/assets/icons.tsx';
 import { ComponentType, SVGProps } from 'react';
 
-export interface ITopicListItem {
+export interface ITopic {
   title: string;
   Icon: ComponentType<SVGProps<SVGSVGElement>>;
   slug: string;
@@ -30,7 +30,7 @@ export interface IWord {
   hebrew: string;
 }
 
-export const TOPICS: ITopicListItem[] = [
+export const TOPICS: ITopic[] = [
   {
     title: 'Основные глаголы',
     Icon: WorkoutRunIcon,

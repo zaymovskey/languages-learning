@@ -1,20 +1,18 @@
 import cls from './TopicsList.module.scss';
-import {
-  ITopicListItem,
-  TopicListItem,
-} from '@/entities/Topic/ui/TopicListItem/TopicListItem.tsx';
+import { ITopic } from '@/DB.tsx';
+import { TopicListItem } from '@/entities/Topic/ui/TopicListItem/TopicListItem.tsx';
 import { type FC } from 'react';
 
 interface ITopicsListProps {
-  topics: ITopicListItem[];
+  topics: ITopic[];
   className?: string;
 }
 
 export const TopicsList: FC<ITopicsListProps> = ({ topics }) => {
   return (
     <div className={cls.topicsList}>
-      {topics.map((topic) => (
-        <TopicListItem {...topic} />
+      {topics.map((topic, index) => (
+        <TopicListItem key={index} {...topic} />
       ))}
     </div>
   );
