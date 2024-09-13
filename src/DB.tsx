@@ -27,7 +27,7 @@ export interface IWord {
   Icon: ComponentType<SVGProps<SVGSVGElement>>;
   russian: string;
   transcription: string;
-  hebrew: string;
+  hebrew: { withAnnouncement: string; withoutAnnouncement: string };
 }
 
 export const TOPICS: ITopic[] = [
@@ -36,76 +36,86 @@ export const TOPICS: ITopic[] = [
     Icon: WorkoutRunIcon,
     slug: 'osnovnie-glagoli',
     words: [
-      { Icon: CityIcon, hebrew: 'גָר', russian: 'жить', transcription: 'гар' },
+      {
+        Icon: CityIcon,
+        hebrew: { withAnnouncement: 'גָר', withoutAnnouncement: 'גר' },
+        russian: 'жить',
+        transcription: 'гар',
+      },
       {
         Icon: StudentIcon,
-        hebrew: 'לִימֵד',
+        hebrew: { withAnnouncement: 'לִימֵד', withoutAnnouncement: 'לומד' },
         russian: 'учить',
         transcription: 'лёмед',
       },
       {
         Icon: WorkIcon,
-        hebrew: 'עָבַד',
+        hebrew: { withAnnouncement: 'עָבַד', withoutAnnouncement: 'עובד' },
         russian: 'работать',
         transcription: 'овед',
       },
       {
         Icon: TalkIcon,
-        hebrew: 'מְדַבֵּר',
+        hebrew: { withAnnouncement: 'מְדַבֵּר', withoutAnnouncement: 'מדבר' },
         russian: 'говорить',
         transcription: 'медобер',
       },
       {
         Icon: UnderstandIcon,
-        hebrew: 'מֵבִין',
+        hebrew: { withAnnouncement: 'מֵבִין', withoutAnnouncement: 'מבין' },
+
         russian: 'понимать',
         transcription: 'мевим',
       },
       {
         Icon: KnowledgeIcon,
-        hebrew: 'יוָדַע',
+        hebrew: { withAnnouncement: 'יוָדַע', withoutAnnouncement: 'יודע' },
         russian: 'знать',
         transcription: 'йодеа',
       },
       {
         Icon: WriteIcon,
-        hebrew: 'כָּתַב',
+        hebrew: { withAnnouncement: 'כָּתַב', withoutAnnouncement: 'כותב' },
+
         russian: 'писать',
         transcription: 'котев',
       },
       {
         Icon: BookIcon,
-        hebrew: 'קָרָא',
+        hebrew: { withAnnouncement: 'קָרָא', withoutAnnouncement: 'קורא' },
+
         russian: 'читать',
         transcription: 'коре',
       },
       {
         Icon: QuestionIcon,
-        hebrew: 'שוֹאֵל',
+        hebrew: { withAnnouncement: 'שוֹאֵל', withoutAnnouncement: 'שואל' },
+
         russian: 'спрашивать',
         transcription: 'шоэль',
       },
       {
         Icon: AnswerIcon,
-        hebrew: 'עָנָה',
+        hebrew: { withAnnouncement: 'עוֹנֶה', withoutAnnouncement: 'עונה' },
         russian: 'отвечать',
         transcription: 'оне',
       },
       {
         Icon: ArrowDownIcon,
-        hebrew: 'בָּא',
+        hebrew: { withAnnouncement: 'בָּא', withoutAnnouncement: 'בא' },
         russian: 'приходить',
         transcription: 'ба',
       },
       {
         Icon: Talk2Icon,
-        hebrew: 'אָמַר',
+        hebrew: { withAnnouncement: 'אָמַר', withoutAnnouncement: 'אמר' },
+
         russian: 'сказать',
         transcription: 'омер',
       },
       {
         Icon: HealthIcon,
-        hebrew: 'הַרגִיש',
+        hebrew: { withAnnouncement: 'הַרגִיש', withoutAnnouncement: 'מרגיש' },
         russian: 'чувствовать',
         transcription: 'маргиш',
       },

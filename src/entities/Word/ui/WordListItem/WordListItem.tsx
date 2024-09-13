@@ -1,6 +1,5 @@
 import cls from './WordListItem.module.scss';
 import { IWord } from '@/DB.tsx';
-import { Typography } from 'antd';
 import { type FC } from 'react';
 
 interface IWordsListItemProps extends IWord {
@@ -14,7 +13,7 @@ export const WordListItem: FC<IWordsListItemProps> = (
     <div className={cls.wordListItem}>
       <Icon color={'inherit'} width={40} height={40} />
       <div className={cls.wordInfo}>
-        <span className={cls.hebrew}>{hebrew}</span>
+        <span className={cls.hebrew}>{hebrew.withAnnouncement}</span>
         <span>{russian}</span>
       </div>
     </div>

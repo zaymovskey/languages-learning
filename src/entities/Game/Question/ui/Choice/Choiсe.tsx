@@ -111,13 +111,17 @@ export const Choice: FC<IChoiceProps> = ({ toNextQuestion }) => {
               <word.Icon color={'inherit'} width={40} height={40} />
             )}
             <span className={cls.variantText}>
-              {isVariantsLanguageIsHebrew ? word.hebrew : word.russian}
+              {isVariantsLanguageIsHebrew
+                ? word.hebrew.withoutAnnouncement
+                : word.russian}
             </span>
           </button>
         ))}
       </div>
       <div className={cls.questionWord}>
-        {isAnswerLanguageIsHebrew ? rightAnswer.hebrew : rightAnswer.russian}
+        {isAnswerLanguageIsHebrew
+          ? rightAnswer.hebrew.withoutAnnouncement
+          : rightAnswer.russian}
       </div>
     </div>
   );
