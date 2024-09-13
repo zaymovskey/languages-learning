@@ -14,8 +14,8 @@ export const Choice = () => {
     () => getRandomUniqueElements(topicWords, wordsCount),
     []
   );
-  const questionWord = useMemo(
-    () => getRandomUniqueElements(currentQuestionWords, 1),
+  const rightAnswer = useMemo(
+    () => getRandomUniqueElements(currentQuestionWords, 1)[0],
     []
   );
 
@@ -35,7 +35,15 @@ export const Choice = () => {
             onClick={() => handleSelectAnswer(word)}
             className={classNames(
               cls.variantsItem,
-              { [cls.selected]: selectedAnswer?.russian === word.russian },
+              {
+                [cls.selected]: selectedAnswer?.russian === word.russian,
+                [cls.isWrong]:
+                  selectedAnswer?.russian === word.russian &&
+                  selectedAnswer?.russian !== rightAnswer.russian,
+                [cls.isRight]:
+                  selectedAnswer?.russian === word.russian &&
+                  selectedAnswer?.russian === rightAnswer.russian,
+              },
               []
             )}
           >
@@ -44,7 +52,7 @@ export const Choice = () => {
           </button>
         ))}
       </div>
-      <div className={cls.questionWord}>{questionWord[0].russian}</div>
+      <div className={cls.questionWord}>{rightAnswer.russian}</div>
     </div>
   );
 };

@@ -20,6 +20,14 @@
       background-color: var(--color-background-darken);
       border-radius: 20px;
     }
+
+    &.isWrong {
+      background-color: var(--color-wrong);
+    }
+
+    &.isRight {
+      background-color: var(--color-right);
+    }
   }
 }
 
