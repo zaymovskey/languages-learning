@@ -63,7 +63,6 @@ export const TOPICS: ITopic[] = [
       {
         Icon: UnderstandIcon,
         hebrew: { withAnnouncement: 'מֵבִין', withoutAnnouncement: 'מבין' },
-
         russian: 'понимать',
         transcription: 'мевим',
       },
@@ -76,21 +75,18 @@ export const TOPICS: ITopic[] = [
       {
         Icon: WriteIcon,
         hebrew: { withAnnouncement: 'כָּתַב', withoutAnnouncement: 'כותב' },
-
         russian: 'писать',
         transcription: 'котев',
       },
       {
         Icon: BookIcon,
         hebrew: { withAnnouncement: 'קָרָא', withoutAnnouncement: 'קורא' },
-
         russian: 'читать',
         transcription: 'коре',
       },
       {
         Icon: QuestionIcon,
         hebrew: { withAnnouncement: 'שוֹאֵל', withoutAnnouncement: 'שואל' },
-
         russian: 'спрашивать',
         transcription: 'шоэль',
       },
@@ -108,8 +104,7 @@ export const TOPICS: ITopic[] = [
       },
       {
         Icon: Talk2Icon,
-        hebrew: { withAnnouncement: 'אָמַר', withoutAnnouncement: 'אמר' },
-
+        hebrew: { withAnnouncement: 'אָמַר', withoutAnnouncement: 'אומר' },
         russian: 'сказать',
         transcription: 'омер',
       },
