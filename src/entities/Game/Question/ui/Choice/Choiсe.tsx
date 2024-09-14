@@ -83,9 +83,13 @@ export const Choice: FC<IChoiceProps> = ({ toNextQuestion }) => {
 
     dispatch(action());
 
-    // setTimeout(() => {
-    //   void word.sound?.play();
-    // }, 1000);
+    const utterance = new SpeechSynthesisUtterance(
+      word.hebrew.withoutAnnouncement
+    );
+    utterance.lang = 'he-IL';
+    setTimeout(() => {
+      window.speechSynthesis.speak(utterance);
+    }, 1000);
 
     setTimeout(() => {
       toNextQuestion(refreshQuestion);
