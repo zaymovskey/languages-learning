@@ -1,3 +1,4 @@
+import sound from '@/shared/assets/audio/жить.m4a';
 import {
   AnswerIcon,
   ArrowDownIcon,
@@ -28,6 +29,7 @@ export interface IWord {
   russian: string;
   transcription: string;
   hebrew: { withAnnouncement: string; withoutAnnouncement: string };
+  sound?: HTMLAudioElement;
 }
 
 export const TOPICS: ITopic[] = [
@@ -41,6 +43,7 @@ export const TOPICS: ITopic[] = [
         hebrew: { withAnnouncement: 'גָר', withoutAnnouncement: 'גר' },
         russian: 'жить',
         transcription: 'гар',
+        sound: new Audio(sound),
       },
       {
         Icon: StudentIcon,

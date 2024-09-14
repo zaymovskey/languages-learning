@@ -83,6 +83,10 @@ export const Choice: FC<IChoiceProps> = ({ toNextQuestion }) => {
 
     dispatch(action());
 
+    // setTimeout(() => {
+    //   void word.sound?.play();
+    // }, 1000);
+
     setTimeout(() => {
       toNextQuestion(refreshQuestion);
       dispatch(currentTopicActions.setIsBlocked(false));
