@@ -4,6 +4,7 @@ import {
   BubbleChatAddIcon,
   BubbleChatIcon,
   BubbleChatSecureIcon,
+  Calendar03Icon,
   City02Icon,
   HealthIcon,
   Knowledge01Icon,
@@ -115,5 +116,11 @@ export const TOPICS: ITopic[] = [
         transcription: 'margish',
       },
     ],
+  },
+  {
+    title: 'Дни недели',
+    Icon: Calendar03Icon,
+    slug: 'dni-nedeli',
+    words: [],
   },
 ];
