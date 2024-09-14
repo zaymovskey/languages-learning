@@ -8,3 +8,14 @@
   display: flex;
   align-items: center;
 }
+
+.backButton {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.backArrow {
+  transform: scale(-1, 1);
+}

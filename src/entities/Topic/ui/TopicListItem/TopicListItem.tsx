@@ -11,7 +11,7 @@ export const TopicListItem: FC<ITopicListItemProps> = (
   { slug, title, Icon }
 ) => {
   return (
-    <Link to={`/topic/${slug}/`} className={cls.topicListItem}>
+    <Link to={`/topic/${slug}`} className={cls.topicListItem}>
       <div className={cls.imageBlock}>
         <Icon color={'inherit'} width={30} height={30} />
       </div>

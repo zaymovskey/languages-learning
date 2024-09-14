@@ -10,7 +10,7 @@ export enum EnumAppRoutes {
 }
 
 export const RoutePath: Record<EnumAppRoutes, string> = {
-  [EnumAppRoutes.TOPICS_LIST]: '/',
+  [EnumAppRoutes.TOPICS_LIST]: '/topic',
   [EnumAppRoutes.TOPIC_DETAILS]: '/topic/:slug',
   [EnumAppRoutes.GAME]: '/topic/:slug/game',
 };
