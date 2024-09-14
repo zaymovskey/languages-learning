@@ -9,6 +9,7 @@ import { currentTopicActions } from '@/entities/Game/model/slices/currentTopicSl
 import { classNames } from '@/shared/lib/utils/classNames/classNames.ts';
 import { getRandomNumberFromInterval } from '@/shared/lib/utils/getRandomNumberFromInterval/getRandomNumberFromInterval.ts';
 import { getRandomUniqueElements } from '@/shared/lib/utils/getRandomUniqueElements/getRandomUniqueElements.ts';
+import { playWord } from '@/shared/lib/utils/playWord/playWord.ts';
 import { FC, useEffect, useState } from 'react';
 
 interface IChoiceProps extends IQuestionComponentProps {
@@ -23,6 +24,7 @@ export const Choice: FC<IChoiceProps> = ({ toNextQuestion }) => {
   );
 
   const topicWords = useAppSelector((state) => state.currentTopic.words);
+
   const [currentQuestionWords, setCurrentQuestionWords] = useState(
     getRandomUniqueElements(topicWords, wordsCount)
   );
@@ -85,14 +87,9 @@ export const Choice: FC<IChoiceProps> = ({ toNextQuestion }) => {
 
     dispatch(action());
 
-    const utterance = new SpeechSynthesisUtterance(
-      rightAnswer.hebrew.withoutAnnouncement
-    );
-    utterance.lang = 'he-IL';
-
     setTimeout(() => {
       setIsRightAnswerHighlight(true);
-      window.speechSynthesis.speak(utterance);
+      playWord(rightAnswer.hebrew.withoutAnnouncement);
 
       setTimeout(() => {
         setTimeout(() => {

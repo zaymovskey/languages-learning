@@ -1,6 +1,7 @@
 import cls from './TopicDetailsPage.module.scss';
 import { TOPICS } from '@/DB.tsx';
 import { WordList } from '@/entities/Word/ui/WordList/WordList.tsx';
+import { Button } from '@/shared/ui/Button/Button.tsx';
 import { Link, useParams } from 'react-router-dom';
 
 const TopicDetailsPage = () => {
@@ -14,23 +15,9 @@ const TopicDetailsPage = () => {
       </div>
       <div className="paddings-content">
         <h2 className={cls.title}>{currentTopic.title}</h2>
-        <div style={{ textAlign: 'center' }}>
-          <Link to={'game'}>
-            <button
-              style={{
-                backgroundColor: 'var(--color-accent-third)',
-                color: 'var(--color-background)',
-                textTransform: 'uppercase',
-                padding: '15px 30px',
-                fontWeight: 700,
-                borderRadius: 50,
-                cursor: 'pointer',
-              }}
-            >
-              Учить
-            </button>
-          </Link>
-        </div>
+        <Link to={'game'} style={{ display: 'flex', justifyContent: 'center' }}>
+          <Button>Учить</Button>
+        </Link>
         <WordList words={currentTopic.words} className={cls.wordList} />
       </div>
     </div>

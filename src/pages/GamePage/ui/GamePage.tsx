@@ -41,7 +41,7 @@ const GamePage: FC = () => {
   }
 
   const QuestionComponent =
-    QUESTION_TYPES_COMPONENTS[currentQuestionType || 'Choice'];
+    QUESTION_TYPES_COMPONENTS[currentQuestionType || 'Input'];
 
   return (
     <div className={classNames('', { [cls.blocked]: isBlocked }, [])}>

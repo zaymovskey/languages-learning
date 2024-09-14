@@ -1,0 +1,28 @@
+.questionWord {
+  text-align: center;
+  font-size: var(--font-size-xl);
+
+  &.highlight {
+    color: var(--color-right);
+  }
+}
+
+.inputBlock {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-direction: column;
+}
+
+.checkButton {
+  width: fit-content;
+}
+
+.input {
+  border-radius: 20px;
+  border: 2px solid var(--color-accent-third);
+  padding: 10px;
+  background-color: var(--color-background-darken);
+}
