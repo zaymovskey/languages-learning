@@ -10,11 +10,15 @@ import { getRandomUniqueElements } from '@/shared/lib/utils/getRandomUniqueEleme
 import { playWord } from '@/shared/lib/utils/playWord/playWord.ts';
 import { Button, EnumButtonTheme } from '@/shared/ui/Button/Button.tsx';
 import { EnumInputTheme, Input } from '@/shared/ui/Input/Input.tsx';
+import { HeadphonesIcon } from 'hugeicons-react';
 import { type FC, useEffect, useState } from 'react';
 
 interface IInputProps extends IQuestionComponentProps {
   className?: string;
 }
+
+const questionTypes = ['hebrew', 'transcription', 'sound'] as const;
+type TypeQuestionTypes = (typeof questionTypes)[number];
 
 export const InputQuestion: FC<IInputProps> = (
   { className, toNextQuestion }
@@ -32,17 +36,22 @@ export const InputQuestion: FC<IInputProps> = (
   const [isAnswerWrong, setIsAnswerWrong] = useState<boolean>(false);
   const [isAnswerGiven, setIsAnswerGiven] = useState<boolean>(false);
 
-  const [isRightAnswerIsTranscription, setIsRightAnswerIsTranscription] =
-    useState<boolean>();
+  const [questionWordType, setQuestionWordType] = useState<TypeQuestionTypes>(
+    getRandomUniqueElements<TypeQuestionTypes>([...questionTypes], 1)[0]
+  );
 
   useEffect(() => {
-    setIsRightAnswerIsTranscription(Math.random() < 0.5);
+    setQuestionWordType(
+      getRandomUniqueElements<TypeQuestionTypes>([...questionTypes], 1)[0]
+    );
   }, []);
 
   const refreshQuestion = () => {
     setIsAnswerWrong(false);
     setIsAnswerGiven(false);
-    setIsRightAnswerIsTranscription(Math.random() < 0.5);
+    setQuestionWordType(
+      getRandomUniqueElements<TypeQuestionTypes>([...questionTypes], 1)[0]
+    );
 
     setRightAnswer(getRandomUniqueElements(topicWords, 1)[0]);
 
@@ -73,6 +82,24 @@ export const InputQuestion: FC<IInputProps> = (
     }, 1000);
   };
 
+  const handlePlayQuestionWord = () => {
+    playWord(rightAnswer.hebrew.withoutAnnouncement);
+  };
+
+  const getQuestionWord = () => {
+    if (questionWordType === 'hebrew') {
+      return rightAnswer.hebrew.withoutAnnouncement;
+    } else if (questionWordType === 'transcription') {
+      return rightAnswer.transcription;
+    } else if (questionWordType === 'sound') {
+      return (
+        <Button onClick={handlePlayQuestionWord}>
+          <HeadphonesIcon />
+        </Button>
+      );
+    }
+  };
+
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const getButtonNInputTheme = (themeEnum: any) => {
     return isAnswerGiven
@@ -92,11 +119,7 @@ export const InputQuestion: FC<IInputProps> = (
         {isAnswerGiven ? (
           rightAnswer.hebrew.withoutAnnouncement
         ) : (
-          <>
-            {isRightAnswerIsTranscription
-              ? rightAnswer.russian
-              : rightAnswer.transcription}
-          </>
+          <>{getQuestionWord()}</>
         )}
       </div>
 

@@ -1,5 +1,6 @@
 .questionWord {
-  text-align: center;
+  display: flex;
+  justify-content: center;
   font-size: var(--font-size-xl);
 
   &.highlight {

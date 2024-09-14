@@ -1,5 +1,5 @@
 import { Choice } from '@/entities/Game/Question/ui/Choice/Choiсe.tsx';
-import { InputQuestion } from '@/entities/Game/Question/ui/Input/InputQuestion.tsx';
+import { InputQuestion } from '@/entities/Game/Question/ui/InputQuestion/InputQuestion.tsx';
 import { FC } from 'react';
 
 export const QUESTION_TYPES = ['Input', 'Choice'] as const;
