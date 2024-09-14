@@ -11,9 +11,7 @@ const AppRouter: FC = () => {
         <Route
           key={path}
           path={path}
-          element={
-            <Suspense fallback={<PageLoader />}>{<PageLoader />}</Suspense>
-          }
+          element={<Suspense fallback={<PageLoader />}>{element}</Suspense>}
         />
       ))}
     </Routes>
