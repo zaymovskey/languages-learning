@@ -1,4 +1,5 @@
 import {
+  ArrangeByNumbers19Icon,
   ArrowDown05Icon,
   AudioBook04Icon,
   BubbleChatAddIcon,
@@ -120,6 +121,12 @@ export const TOPICS: ITopic[] = [
   {
     title: 'Дни недели',
     Icon: Calendar03Icon,
+    slug: 'dni-nedeli',
+    words: [],
+  },
+  {
+    title: 'Цифры и числа',
+    Icon: ArrangeByNumbers19Icon,
     slug: 'dni-nedeli',
     words: [],
   },
