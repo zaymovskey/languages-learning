@@ -3,6 +3,7 @@ import {
   AudioBook04Icon,
   BubbleChatAddIcon,
   BubbleChatIcon,
+  BubbleChatSecureIcon,
   City02Icon,
   HealthIcon,
   Knowledge01Icon,
@@ -90,7 +91,7 @@ export const TOPICS: ITopic[] = [
         transcription: 'shoel',
       },
       {
-        Icon: BubbleChatAddIcon,
+        Icon: BubbleChatSecureIcon,
         hebrew: { withAnnouncement: 'עוֹנֶה', withoutAnnouncement: 'עונה' },
         russian: 'отвечать',
         transcription: 'one',
