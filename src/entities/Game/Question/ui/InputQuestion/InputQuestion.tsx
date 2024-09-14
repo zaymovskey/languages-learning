@@ -17,7 +17,7 @@ interface IInputProps extends IQuestionComponentProps {
   className?: string;
 }
 
-const questionTypes = ['hebrew', 'transcription', 'sound'] as const;
+const questionTypes = ['russian', 'transcription', 'sound'] as const;
 type TypeQuestionTypes = (typeof questionTypes)[number];
 
 export const InputQuestion: FC<IInputProps> = (
@@ -87,8 +87,8 @@ export const InputQuestion: FC<IInputProps> = (
   };
 
   const getQuestionWord = () => {
-    if (questionWordType === 'hebrew') {
-      return rightAnswer.hebrew.withoutAnnouncement;
+    if (questionWordType === 'russian') {
+      return rightAnswer.russian;
     } else if (questionWordType === 'transcription') {
       return rightAnswer.transcription;
     } else if (questionWordType === 'sound') {
