@@ -9,12 +9,20 @@
   text-align: left;
   font-weight: 700;
   border-radius: 50px;
+  color: var(--color-background);
 }
 
 .primary {
   background-color: var(--color-accent-third);
-  color: var(--color-background-darken);
   transition-duration: var(--transition-duration);
+}
+
+.wrong {
+  background-color: var(--color-wrong);
+}
+
+.right {
+  background-color: var(--color-right);
 }
 
 .size-m {

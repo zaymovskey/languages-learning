@@ -4,6 +4,8 @@ import { type ButtonHTMLAttributes, type FC } from 'react';
 
 export enum EnumButtonTheme {
   PRIMARY = 'primary',
+  WRONG = 'wrong',
+  RIGHT = 'right',
 }
 
 export enum EnumButtonSize {
