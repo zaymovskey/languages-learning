@@ -89,18 +89,19 @@ export const Choice: FC<IChoiceProps> = ({ toNextQuestion }) => {
       rightAnswer.hebrew.withoutAnnouncement
     );
     utterance.lang = 'he-IL';
+
     setTimeout(() => {
       setIsRightAnswerHighlight(true);
       window.speechSynthesis.speak(utterance);
-    }, 1000);
 
-    setTimeout(() => {
-      dispatch(currentTopicActions.setIsBlocked(false));
       setTimeout(() => {
-        setIsRightAnswerHighlight(false);
-        toNextQuestion(refreshQuestion);
+        setTimeout(() => {
+          setIsRightAnswerHighlight(false);
+          toNextQuestion(refreshQuestion);
+          dispatch(currentTopicActions.setIsBlocked(false));
+        }, 1000);
       }, 1000);
-    }, 2000);
+    }, 1000);
   };
 
   const isWrongSelectedAnswer = (word: IWord) => {
