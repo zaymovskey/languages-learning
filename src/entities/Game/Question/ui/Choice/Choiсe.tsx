@@ -21,8 +21,8 @@ export const Choice: FC<IChoiceProps> = ({ toNextQuestion }) => {
   const [wordsCount, setWordsCount] = useState(
     getRandomNumberFromInterval(2, 6)
   );
-  const topicWords = useAppSelector((state) => state.currentTopic.words);
 
+  const topicWords = useAppSelector((state) => state.currentTopic.words);
   const [currentQuestionWords, setCurrentQuestionWords] = useState(
     getRandomUniqueElements(topicWords, wordsCount)
   );
@@ -40,6 +40,8 @@ export const Choice: FC<IChoiceProps> = ({ toNextQuestion }) => {
   useEffect(() => {
     setLanguageOfAnswersNQuestions();
   }, []);
+
+  const [isRightAnswerHighlight, setIsRightAnswerHighlight] = useState(false);
 
   const [selectedAnswer, setSelectedAnswer] = useState<IWord | null>(null);
 
@@ -84,17 +86,35 @@ export const Choice: FC<IChoiceProps> = ({ toNextQuestion }) => {
     dispatch(action());
 
     const utterance = new SpeechSynthesisUtterance(
-      word.hebrew.withoutAnnouncement
+      rightAnswer.hebrew.withoutAnnouncement
     );
     utterance.lang = 'he-IL';
     setTimeout(() => {
+      setIsRightAnswerHighlight(true);
       window.speechSynthesis.speak(utterance);
     }, 1000);
 
     setTimeout(() => {
-      toNextQuestion(refreshQuestion);
       dispatch(currentTopicActions.setIsBlocked(false));
+      setTimeout(() => {
+        setIsRightAnswerHighlight(false);
+        toNextQuestion(refreshQuestion);
+      }, 1000);
     }, 2000);
+  };
+
+  const isWrongSelectedAnswer = (word: IWord) => {
+    return (
+      selectedAnswer?.russian === word.russian &&
+      selectedAnswer?.russian !== rightAnswer.russian
+    );
+  };
+
+  const isRightSelectedAnswer = (word: IWord) => {
+    return (
+      selectedAnswer?.russian === word.russian &&
+      selectedAnswer?.russian === rightAnswer.russian
+    );
   };
 
   return (
@@ -107,13 +127,11 @@ export const Choice: FC<IChoiceProps> = ({ toNextQuestion }) => {
             className={classNames(
               cls.variantsItem,
               {
-                [cls.selected]: selectedAnswer?.russian === word.russian,
-                [cls.isWrong]:
-                  selectedAnswer?.russian === word.russian &&
-                  selectedAnswer?.russian !== rightAnswer.russian,
+                [cls.isWrong]: isWrongSelectedAnswer(word),
                 [cls.isRight]:
-                  selectedAnswer?.russian === word.russian &&
-                  selectedAnswer?.russian === rightAnswer.russian,
+                  isRightSelectedAnswer(word) ||
+                  (word.russian === rightAnswer.russian &&
+                    isRightAnswerHighlight),
               },
               []
             )}

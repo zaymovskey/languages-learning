@@ -16,10 +16,7 @@
       color: inherit;
     }
 
-    &.selected {
-      background-color: var(--color-background-darken);
-      border-radius: 20px;
-    }
+    border-radius: 20px;
 
     &.isWrong {
       background-color: var(--color-wrong);
