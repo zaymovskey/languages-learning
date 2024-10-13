@@ -1,7 +1,7 @@
 export const playWord = (
   word: string,
   onend?:
-    | ((this: SpeechSynthesisUtterance, ev: SpeechSynthesisEvent) => void)
+    | ((this: SpeechSynthesisUtterance, ev: SpeechSynthesisEvent) => never)
     | null
 ) => {
   const utterance = new SpeechSynthesisUtterance(word);
