@@ -1,0 +1,3 @@
+import { headerReducer, headerSlice, type IHeaderScheme } from './model/headerSlice.ts';
+
+export { headerReducer, headerSlice, IHeaderScheme };

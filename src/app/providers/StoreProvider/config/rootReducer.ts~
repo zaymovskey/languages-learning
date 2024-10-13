@@ -1,7 +1,0 @@
-import { IStateScheme } from './IStateScheme.ts';
-import type { ReducersMapObject } from '@reduxjs/toolkit';
-import { currentTopicReducer } from '@/entities/Game';
-
-export const rootReducer: ReducersMapObject<IStateScheme> = {
-  currentTopic: currentTopicReducer,
-};

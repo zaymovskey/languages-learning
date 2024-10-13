@@ -1,8 +1,8 @@
 import cls from './TopicDetailsPage.module.scss';
 import { TOPICS } from '@/DB.tsx';
 import { WordList } from '@/entities/Word';
-import { Button } from '@/shared/ui';
-import { Link, useParams } from 'react-router-dom';
+import { Button, LinkWithSetPrevUrl } from '@/shared/ui';
+import { useParams } from 'react-router-dom';
 
 const TopicDetailsPage = () => {
   const { slug } = useParams();
@@ -15,9 +15,12 @@ const TopicDetailsPage = () => {
       </div>
       <div className="paddings-content">
         <h2 className={cls.title}>{currentTopic.title}</h2>
-        <Link to={'game'} style={{ display: 'flex', justifyContent: 'center' }}>
+        <LinkWithSetPrevUrl
+          to={'game'}
+          style={{ display: 'flex', justifyContent: 'center' }}
+        >
           <Button>Учить</Button>
-        </Link>
+        </LinkWithSetPrevUrl>
         <WordList words={currentTopic.words} className={cls.wordList} />
       </div>
     </div>
