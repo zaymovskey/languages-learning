@@ -1,28 +1,22 @@
-import cls from './InputQuestion.module.scss';
-import {
-  useAppDispatch,
-  useAppSelector,
-} from '@/app/providers/StoreProvider/lib/hooks.ts';
-import { IQuestionComponentProps } from '@/entities/Game/Question/types/TypeQuestionTypes.ts';
-import { currentTopicActions } from '@/entities/Game/model/slices/currentTopicSlice.ts';
-import { classNames } from '@/shared/lib/utils/classNames/classNames.ts';
-import { getRandomUniqueElements } from '@/shared/lib/utils/getRandomUniqueElements/getRandomUniqueElements.ts';
+import cls from './Typing.module.scss';
+import { useAppDispatch, useAppSelector } from '@/app';
+import { currentTopicActions } from '@/entities/Game';
+import { IQuestionComponentProps } from '@/entities/Question';
+import { classNames, getRandomUniqueElements } from '@/shared/lib';
 import { playWord } from '@/shared/lib/utils/playWord/playWord.ts';
 import { Button, EnumButtonTheme } from '@/shared/ui/Button/Button.tsx';
 import { EnumInputTheme, Input } from '@/shared/ui/Input/Input.tsx';
 import { HeadphonesIcon } from 'hugeicons-react';
 import { type FC, useEffect, useState } from 'react';
 
-interface IInputProps extends IQuestionComponentProps {
+interface ITypingProps extends IQuestionComponentProps {
   className?: string;
 }
 
 const questionTypes = ['russian', 'transcription', 'sound'] as const;
 type TypeQuestionTypes = (typeof questionTypes)[number];
 
-export const InputQuestion: FC<IInputProps> = (
-  { className, toNextQuestion }
-) => {
+export const Typing: FC<ITypingProps> = ({ className, toNextQuestion }) => {
   const dispatch = useAppDispatch();
 
   const topicWords = useAppSelector((state) => state.currentTopic.words);

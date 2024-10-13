@@ -3,6 +3,7 @@ import { PageLoader } from '@/shared/ui';
 import { type FC, Suspense } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
+
 const AppRouter: FC = () => {
   return (
     <Routes>

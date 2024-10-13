@@ -1,0 +1,5 @@
+import { PageLoader } from './PageLoader/PageLoader.tsx';
+import { Button } from './Button/Button.tsx';
+import { Input } from './Input/Input.tsx';
+
+export { Button, Input, PageLoader };

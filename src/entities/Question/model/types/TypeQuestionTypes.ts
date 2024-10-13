@@ -1,5 +1,5 @@
-import { Choice } from '@/entities/Game/Question/ui/Choice/Choiсe.tsx';
-import { InputQuestion } from '@/entities/Game/Question/ui/InputQuestion/InputQuestion.tsx';
+import { Choice } from '@/entities/Question/ui/Choice/Choiсe.tsx';
+import { Typing } from '@/entities/Question/ui/Typing/Typing.tsx';
 import { FC } from 'react';
 
 export const QUESTION_TYPES = ['Input', 'Choice'] as const;
@@ -15,5 +15,5 @@ export const QUESTION_TYPES_COMPONENTS: Record<
   FC<IQuestionComponentProps>
 > = {
   Choice: Choice,
-  Input: InputQuestion,
+  Input: Typing,
 };

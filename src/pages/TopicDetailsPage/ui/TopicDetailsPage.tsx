@@ -1,7 +1,7 @@
 import cls from './TopicDetailsPage.module.scss';
 import { TOPICS } from '@/DB.tsx';
-import { WordList } from '@/entities/Word/ui/WordList/WordList.tsx';
-import { Button } from '@/shared/ui/Button/Button.tsx';
+import { WordList } from '@/entities/Word';
+import { Button } from '@/shared/ui';
 import { Link, useParams } from 'react-router-dom';
 
 const TopicDetailsPage = () => {

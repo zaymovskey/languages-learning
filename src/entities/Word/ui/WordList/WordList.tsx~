@@ -1,8 +1,8 @@
-import { WordListItem } from '../WordListItem/WordListItem.tsx';
 import cls from './WordList.module.scss';
 import { IWord } from '@/DB.tsx';
-import { classNames } from '@/shared/lib';
+import { WordListItem } from '../WordListItem/WordListItem.tsx';
 import { type FC } from 'react';
+import { classNames } from '@/shared/lib';
 
 interface IWordListProps {
   words: IWord[];

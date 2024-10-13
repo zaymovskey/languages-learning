@@ -1,5 +1,5 @@
 import { ITopic } from '@/DB';
-import { TypeQuestionTypes } from '@/entities/Game/Question/types/TypeQuestionTypes';
+import { TypeQuestionTypes } from '@/entities/Question';
 
 export interface ICurrentTopicScheme extends ITopic {
   answers: {

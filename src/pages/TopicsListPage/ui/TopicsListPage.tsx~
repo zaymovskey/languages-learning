@@ -1,5 +1,5 @@
 import { TOPICS } from '@/DB.tsx';
-import { TopicsList } from '@/entities/Topic';
+import { TopicsList } from '@/entities/Topic/ui/TopicsList/TopicsList.tsx';
 
 const TopicsListPage = () => {
   return (

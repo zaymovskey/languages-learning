@@ -1,15 +1,14 @@
 import cls from './Choice.module.scss';
 import { IWord } from '@/DB.tsx';
+import { useAppDispatch, useAppSelector } from '@/app';
+import { currentTopicActions } from '@/entities/Game';
+import { IQuestionComponentProps } from '@/entities/Question';
 import {
-  useAppDispatch,
-  useAppSelector,
-} from '@/app/providers/StoreProvider/lib/hooks.ts';
-import { IQuestionComponentProps } from '@/entities/Game/Question/types/TypeQuestionTypes.ts';
-import { currentTopicActions } from '@/entities/Game/model/slices/currentTopicSlice.ts';
-import { classNames } from '@/shared/lib/utils/classNames/classNames.ts';
-import { getRandomNumberFromInterval } from '@/shared/lib/utils/getRandomNumberFromInterval/getRandomNumberFromInterval.ts';
-import { getRandomUniqueElements } from '@/shared/lib/utils/getRandomUniqueElements/getRandomUniqueElements.ts';
-import { playWord } from '@/shared/lib/utils/playWord/playWord.ts';
+  classNames,
+  getRandomNumberFromInterval,
+  getRandomUniqueElements,
+  playWord,
+} from '@/shared/lib';
 import { FC, useEffect, useState } from 'react';
 
 interface IChoiceProps extends IQuestionComponentProps {

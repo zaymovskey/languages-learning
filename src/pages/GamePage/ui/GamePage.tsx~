@@ -7,9 +7,9 @@ import {
   QUESTION_TYPES_COMPONENTS,
   useNextQuestion,
 } from '@/entities/Question';
-import { classNames } from '@/shared/lib';
 import { FC } from 'react';
 import { useParams } from 'react-router-dom';
+import { classNames } from '@/shared/lib';
 
 const GamePage: FC = () => {
   const dispatch = useAppDispatch();

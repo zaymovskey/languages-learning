@@ -1,7 +1,8 @@
 import { type ICurrentTopicScheme } from '../types/ICurrentTopicScheme';
 import { IWord } from '@/DB.tsx';
-import { TypeQuestionTypes } from '@/entities/Question';
+
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { TypeQuestionTypes } from '@/entities/Question';
 
 const initialState: ICurrentTopicScheme = {
   title: '',

@@ -1,8 +1,8 @@
 import cls from './Header.module.scss';
-import { classNames } from '@/shared/lib';
 import { ArrowRight02Icon } from 'hugeicons-react';
 import { type FC } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom'; 
+import { classNames } from '@/shared/lib';
 
 interface IHeaderProps {
   className?: string;

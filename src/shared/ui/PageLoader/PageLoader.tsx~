@@ -1,6 +1,6 @@
 import { classNames } from '../..//lib/utils/classNames/classNames.ts';
-import { Loader } from '../Loader/Loader.tsx';
 import cls from './PageLoader.module.scss';
+import { Loader } from '../Loader/Loader.tsx';
 import { type FC } from 'react';
 
 interface IPageLoaderProps {

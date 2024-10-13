@@ -1,5 +1,5 @@
+import { classNames } from '../../lib/utils/classNames/classNames.ts';
 import cls from './Loader.module.scss';
-import { classNames } from '@/shared/lib/utils/classNames/classNames.ts';
 import { type FC } from 'react';
 
 interface ILoaderProps {

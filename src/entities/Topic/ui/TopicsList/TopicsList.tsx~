@@ -1,6 +1,6 @@
-import { TopicListItem } from '../TopicListItem/TopicListItem.tsx';
 import cls from './TopicsList.module.scss';
 import { ITopic } from '@/DB.tsx';
+import { TopicListItem } from '../TopicListItem/TopicListItem.tsx';
 import { type FC } from 'react';
 
 interface ITopicsListProps {

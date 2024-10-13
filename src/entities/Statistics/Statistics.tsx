@@ -1,6 +1,6 @@
 import cls from './Statistics.module.scss';
-import { useAppSelector } from '@/app/providers/StoreProvider/lib/hooks.ts';
-import { classNames } from '@/shared/lib/utils/classNames/classNames.ts';
+import { useAppSelector } from '@/app';
+import { classNames } from '@/shared/lib';
 import { type FC } from 'react';
 
 interface IStatisticsProps {
