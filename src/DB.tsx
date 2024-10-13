@@ -34,7 +34,7 @@ export interface IWord {
 
 export const TOPICS: ITopic[] = [
   {
-    title: 'Основные глаголы',
+    title: 'Основные глаголы (Н.В)',
     Icon: WorkoutRunIcon,
     slug: 'osnovnie-glagoli',
     words: [
