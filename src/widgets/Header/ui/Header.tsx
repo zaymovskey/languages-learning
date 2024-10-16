@@ -14,12 +14,10 @@ export const Header: FC<IHeaderProps> = ({ className }) => {
 
   return (
     <div className={classNames(cls.header, {}, [className])}>
-      <LinkWithAnimation
-        to={prevUrl || '/'}
-        className={cls.backButton}
-        slideDirection={'right'}
-      >
-        <ArrowRight02Icon className={cls.backArrow} />
+      <LinkWithAnimation to={prevUrl || '/'} slideDirection={'right'}>
+        <button className={cls.backButton}>
+          <ArrowRight02Icon className={cls.backArrow} />
+        </button>
       </LinkWithAnimation>
     </div>
   );
