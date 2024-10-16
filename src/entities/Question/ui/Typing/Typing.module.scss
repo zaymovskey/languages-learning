@@ -1,7 +1,9 @@
 .questionWord {
   display: flex;
   justify-content: center;
+  align-items: center;
   font-size: var(--font-size-xl);
+  min-height: 60px;
 
   &.highlight {
     color: var(--color-right);
