@@ -13,10 +13,7 @@ export const TopicListItem: FC<ITopicListItemProps> = (
   { slug, title, Icon }
 ) => {
   return (
-    <LinkWithAnimation
-      to={`${RoutePath[EnumAppRoutes.TOPICS_LIST]}/${slug}`}
-      className={cls.topicLink}
-    >
+    <LinkWithAnimation to={`${RoutePath[EnumAppRoutes.TOPICS_LIST]}/${slug}`} className={cls.topicLink}>
       <button className={cls.topicListItem}>
         <div className={cls.imageBlock}>
           <Icon color={'inherit'} width={30} height={30} />
