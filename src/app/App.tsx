@@ -14,10 +14,6 @@ function App() {
     dispatch(globalActions.setUrl(removeLastSegment(location.pathname)));
   }, [location]);
 
-  useEffect(() => {
-    dispatch(globalActions.setPageAnimationDirection(null));
-  }, []);
-
   return (
     <>
       <Header />

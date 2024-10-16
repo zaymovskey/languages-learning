@@ -7,7 +7,7 @@ export interface IGlobalScheme {
 
 const initialState: IGlobalScheme = {
   url: '/',
-  slideDirection: 'left',
+  slideDirection: null,
 };
 
 export const globalSlice = createSlice({
