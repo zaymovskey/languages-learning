@@ -1,9 +1,9 @@
 import cls from './Header.module.scss';
-import { useAppSelector } from '@/app';
+import { useAppSelector } from '@/app'; 
 import { classNames } from '@/shared/lib';
+import { LinkWithAnimation } from '@/shared/ui';
 import { ArrowRight02Icon } from 'hugeicons-react';
 import { type FC } from 'react';
-import { Link } from 'react-router-dom';
 
 interface IHeaderProps {
   className?: string;
@@ -14,9 +14,13 @@ export const Header: FC<IHeaderProps> = ({ className }) => {
 
   return (
     <div className={classNames(cls.header, {}, [className])}>
-      <Link to={prevUrl} className={cls.backButton}>
+      <LinkWithAnimation
+        to={prevUrl || '/'}
+        className={cls.backButton}
+        slideDirection={'right'}
+      >
         <ArrowRight02Icon className={cls.backArrow} />
-      </Link>
+      </LinkWithAnimation>
     </div>
   );
 };

@@ -2,6 +2,7 @@ import {
   type IPrevUrlScheme,
   prevUrlReducer,
   prevUrlSlice,
+  prevUrlActions,
 } from './model/prevUrlSlice.ts';
 import { classNames } from './utils/classNames/classNames.ts';
 import { getRandomNumberFromInterval } from './utils/getRandomNumberFromInterval/getRandomNumberFromInterval.ts';
@@ -18,4 +19,5 @@ export {
   prevUrlSlice,
   IPrevUrlScheme,
   removeLastSegment,
+  prevUrlActions,
 };

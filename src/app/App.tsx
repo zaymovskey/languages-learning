@@ -1,8 +1,7 @@
 import AppRouter from './providers/AppRouter/ui/AppRouter.tsx';
 import './styles/index.scss';
 import { useAppDispatch } from '@/app/providers/StoreProvider/lib/hooks.ts';
-import { removeLastSegment } from '@/shared/lib';
-import { prevUrlActions } from '@/shared/lib/model/prevUrlSlice.ts';
+import { prevUrlActions, removeLastSegment } from '@/shared/lib';
 import { Header } from '@/widgets';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
