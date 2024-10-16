@@ -1,7 +1,7 @@
 import AppRouter from './providers/AppRouter/ui/AppRouter.tsx';
 import './styles/index.scss';
 import { useAppDispatch } from '@/app/providers/StoreProvider/lib/hooks.ts';
-import { prevUrlActions, removeLastSegment } from '@/shared/lib';
+import { globalActions, removeLastSegment } from '@/shared/lib';
 import { Header } from '@/widgets';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
@@ -11,7 +11,7 @@ function App() {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(prevUrlActions.setUrl(removeLastSegment(location.pathname)));
+    dispatch(globalActions.setUrl(removeLastSegment(location.pathname)));
   }, [location]);
 
   return (

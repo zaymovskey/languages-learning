@@ -5,9 +5,7 @@ import { FC, ReactNode } from 'react';
 export const AnimatePageWrapper: FC<{ children: ReactNode }> = (
   { children }
 ) => {
-  const slideDirection = useAppSelector(
-    (state) => state.prevUrl.slideDirection
-  );
+  const slideDirection = useAppSelector((state) => state.global.slideDirection);
 
   return (
     <motion.div

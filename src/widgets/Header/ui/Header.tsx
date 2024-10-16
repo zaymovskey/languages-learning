@@ -10,7 +10,7 @@ interface IHeaderProps {
 }
 
 export const Header: FC<IHeaderProps> = ({ className }) => {
-  const prevUrl = useAppSelector((state) => state.prevUrl.url);
+  const prevUrl = useAppSelector((state) => state.global.url);
 
   return (
     <div className={classNames(cls.header, {}, [className])}>

@@ -1,17 +1,17 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-export interface IPrevUrlScheme {
+export interface IGlobalScheme {
   url: string;
   slideDirection: 'left' | 'right';
 }
 
-const initialState: IPrevUrlScheme = {
+const initialState: IGlobalScheme = {
   url: '/',
   slideDirection: 'left',
 };
 
-export const prevUrlSlice = createSlice({
-  name: 'prevUrl',
+export const globalSlice = createSlice({
+  name: 'global',
   initialState,
   reducers: {
     setUrl(state, action: PayloadAction<string>) {
@@ -23,5 +23,5 @@ export const prevUrlSlice = createSlice({
   },
 });
 
-export const { actions: prevUrlActions } = prevUrlSlice;
-export const { reducer: prevUrlReducer } = prevUrlSlice;
+export const { actions: globalActions } = globalSlice;
+export const { reducer: globalReducer } = globalSlice;

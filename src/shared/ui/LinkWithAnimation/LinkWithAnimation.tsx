@@ -1,5 +1,5 @@
 import { useAppDispatch } from '@/app';
-import { prevUrlActions } from '@/shared/lib';
+import { globalActions } from '@/shared/lib';
 import { FC } from 'react';
 import { Link, LinkProps } from 'react-router-dom';
 
@@ -16,7 +16,7 @@ export const LinkWithAnimation: FC<ILinkWithAnimationProps> = (
     <Link
       {...defaultProps}
       onClick={() => {
-        dispatch(prevUrlActions.setTest(slideDirection));
+        dispatch(globalActions.setTest(slideDirection));
       }}
     ></Link>
   );

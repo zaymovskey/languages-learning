@@ -1,9 +1,9 @@
 import {
-  type IPrevUrlScheme,
-  prevUrlReducer,
-  prevUrlSlice,
-  prevUrlActions,
-} from './model/prevUrlSlice.ts';
+  type IGlobalScheme,
+  globalReducer,
+  globalSlice,
+  globalActions,
+} from './model/globalSlice.ts';
 import { classNames } from './utils/classNames/classNames.ts';
 import { getRandomNumberFromInterval } from './utils/getRandomNumberFromInterval/getRandomNumberFromInterval.ts';
 import { getRandomUniqueElements } from './utils/getRandomUniqueElements/getRandomUniqueElements.ts';
@@ -15,9 +15,9 @@ export {
   playWord,
   getRandomNumberFromInterval,
   getRandomUniqueElements,
-  prevUrlReducer,
-  prevUrlSlice,
-  IPrevUrlScheme,
+  globalReducer,
+  globalSlice,
+  IGlobalScheme,
   removeLastSegment,
-  prevUrlActions,
+  globalActions,
 };

@@ -6,13 +6,13 @@ export const AnimatePageWrapper: FC<{ children: ReactNode }> = (
   { children }
 ) => {
   const slideDirection = useAppSelector(
-    (state) => state.prevUrl.slideDirection
+    (state) => state.global.slideDirection
   );
 
   return (
     <motion.div
       animate={{ x: 0 }}
-      initial={{ x: slideDirection ? '100%' : '-100%' }}
+      initial={{ x: slideDirection === 'left' ? '100%' : '-100%' }}
       transition={{
         ease: 'linear',
         x: { duration: 0.3 },

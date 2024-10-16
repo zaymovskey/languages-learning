@@ -1,7 +1,7 @@
 import { ICurrentTopicScheme } from '@/entities/Game';
-import { IPrevUrlScheme } from '@/shared/lib';
+import { IGlobalScheme } from '@/shared/lib';
 
 export interface IStateScheme {
   currentTopic: ICurrentTopicScheme;
-  prevUrl: IPrevUrlScheme;
+  global: IGlobalScheme;
 }
