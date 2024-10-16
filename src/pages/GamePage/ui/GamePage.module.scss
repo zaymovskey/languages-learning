@@ -1,3 +1,11 @@
 .blocked {
   pointer-events: none;
 }
+
+.questionWrapper {
+  transition: 0.3s;
+}
+
+.fade {
+  opacity: 0;
+}

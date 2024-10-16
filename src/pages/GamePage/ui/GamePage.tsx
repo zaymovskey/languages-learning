@@ -22,6 +22,8 @@ const GamePage: FC = () => {
     return <div>Тема не найдена</div>;
   }
 
+  const isFadeQuestion = useAppSelector((state) => state.currentTopic.isFade);
+
   const toNextQuestion = useNextQuestion();
 
   const currentQuestionType = useAppSelector(
@@ -44,7 +46,15 @@ const GamePage: FC = () => {
     <AnimatePageWrapper>
       <div className={classNames('', { [cls.blocked]: isBlocked }, [])}>
         <div className="paddings-content">
-          <QuestionComponent toNextQuestion={toNextQuestion} />
+          <div
+            className={classNames(
+              cls.questionWrapper,
+              { [cls.fade]: isFadeQuestion },
+              []
+            )}
+          >
+            <QuestionComponent toNextQuestion={toNextQuestion} />
+          </div>
           <Statistics />
         </div>
       </div>

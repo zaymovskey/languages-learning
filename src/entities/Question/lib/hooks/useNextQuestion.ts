@@ -16,17 +16,34 @@ export const useNextQuestion = () => {
     currentQuestionTypeRef.current = currentQuestionType;
   }, [currentQuestionType]);
 
+  const changeQuestionWithFadeAnimation = (callback: () => void) => {
+    setTimeout(() => {
+      callback();
+      setTimeout(() => {
+        dispatch(currentTopicActions.setIsFade(false));
+      }, 200);
+    }, 500);
+  };
+
   return useCallback(
     (refreshQuestion?: () => void) => {
+      dispatch(currentTopicActions.setIsFade(true));
       const randomIndex = Math.floor(Math.random() * QUESTION_TYPES.length);
+
       if (QUESTION_TYPES[randomIndex] === currentQuestionTypeRef.current) {
-        refreshQuestion?.();
+        changeQuestionWithFadeAnimation(() => {
+          refreshQuestion?.();
+        });
         return;
       }
 
-      dispatch(
-        currentTopicActions.setCurrentQuestionType(QUESTION_TYPES[randomIndex])
-      );
+      changeQuestionWithFadeAnimation(() => {
+        dispatch(
+          currentTopicActions.setCurrentQuestionType(
+            QUESTION_TYPES[randomIndex]
+          )
+        );
+      });
     },
     [currentQuestionType]
   );

@@ -9,7 +9,6 @@ import {
 } from '@/entities/Question';
 import { classNames } from '@/shared/lib';
 import { AnimatePageWrapper } from '@/shared/ui';
-import { motion } from 'framer-motion';
 import { FC } from 'react';
 import { useParams } from 'react-router-dom';
 
@@ -22,6 +21,8 @@ const GamePage: FC = () => {
   if (!currentTopic) {
     return <div>Тема не найдена</div>;
   }
+
+  const isFadeQuestion = useAppSelector((state) => state.currentTopic.isFade);
 
   const toNextQuestion = useNextQuestion();
 
@@ -45,7 +46,9 @@ const GamePage: FC = () => {
     <AnimatePageWrapper>
       <div className={classNames('', { [cls.blocked]: isBlocked }, [])}>
         <div className="paddings-content">
-          <QuestionComponent toNextQuestion={toNextQuestion} />
+          <div className={classNames(cls.questionWrapper, { [cls.fade]: isFadeQuestion }, [])}>
+            <QuestionComponent toNextQuestion={toNextQuestion} />
+          </div>
           <Statistics />
         </div>
       </div>
