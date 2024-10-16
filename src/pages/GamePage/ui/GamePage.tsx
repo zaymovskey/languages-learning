@@ -8,6 +8,7 @@ import {
   useNextQuestion,
 } from '@/entities/Question';
 import { classNames } from '@/shared/lib';
+import { AnimatePageWrapper } from '@/shared/ui';
 import { FC } from 'react';
 import { useParams } from 'react-router-dom';
 
@@ -40,12 +41,14 @@ const GamePage: FC = () => {
     QUESTION_TYPES_COMPONENTS[currentQuestionType || 'Input'];
 
   return (
-    <div className={classNames('', { [cls.blocked]: isBlocked }, [])}>
-      <div className="paddings-content">
-        <QuestionComponent toNextQuestion={toNextQuestion} />
-        <Statistics />
+    <AnimatePageWrapper>
+      <div className={classNames('', { [cls.blocked]: isBlocked }, [])}>
+        <div className="paddings-content">
+          <QuestionComponent toNextQuestion={toNextQuestion} />
+          <Statistics />
+        </div>
       </div>
-    </div>
+    </AnimatePageWrapper>
   );
 };
 

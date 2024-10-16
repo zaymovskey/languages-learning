@@ -4,6 +4,7 @@ import { WordList } from '@/entities/Word';
 import { AnimatePageWrapper, Button } from '@/shared/ui';
 import { Link, useParams } from 'react-router-dom';
 
+
 const TopicDetailsPage = () => {
   const { slug } = useParams();
   const currentTopic = TOPICS.find((topic) => topic.slug === slug)!;
@@ -20,7 +21,7 @@ const TopicDetailsPage = () => {
         </Link>
         <WordList words={currentTopic.words} className={cls.wordList} />
       </div>
-    </AnimatePageWrapper>
+      </AnimatePageWrapper>
   );
 };
 

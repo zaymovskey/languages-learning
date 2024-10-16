@@ -1,4 +1,4 @@
-import { classNames } from '../..//lib/utils/classNames/classNames.ts';
+import { classNames } from '../../lib/utils/classNames/classNames.ts';
 import { Loader } from '../Loader/Loader.tsx';
 import cls from './PageLoader.module.scss';
 import { type FC } from 'react';

@@ -1,6 +1,7 @@
-import { classNames } from '../..//lib/utils/classNames/classNames.ts';
-import cls from './PageLoader.module.scss';
+import { classNames } from '../../lib/utils/classNames/classNames.ts';
 import { Loader } from '../Loader/Loader.tsx';
+import cls from './PageLoader.module.scss';
+import { motion } from 'framer-motion';
 import { type FC } from 'react';
 
 interface IPageLoaderProps {

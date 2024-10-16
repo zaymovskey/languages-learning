@@ -1,12 +1,17 @@
 @import 'normalize';
 @import 'variables/global';
 
+html,body,.paddings-content,#root,.content-page,.motion-div {
+  height: 100%;
+}
+
 body {
   font-family: var(--font-family-main), cursive;
   font-weight: var(--font-weight-regular);
   font-size: var(--font-size-m);
   color: var(--color-white);
   background-color: var(--color-background);
+  overflow-x: hidden;
 }
 
 .paddings-content {
