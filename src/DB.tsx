@@ -1,5 +1,4 @@
 import {
-  ArrangeByNumbers19Icon,
   ArrowDown05Icon,
   AudioBook04Icon,
   BubbleChatAddIcon,
@@ -15,6 +14,13 @@ import {
   StudentsIcon,
   UserQuestion02Icon,
   WorkoutRunIcon,
+  LaurelWreathFirst01Icon,
+  MedalSecondPlaceIcon,
+  MedalThirdPlaceIcon,
+  FourFinger02Icon,
+  FiverrIcon,
+  BodyPartSixPackIcon,
+  Calendar01Icon,
 } from 'hugeicons-react';
 import { ComponentType, SVGProps } from 'react';
 
@@ -122,12 +128,70 @@ export const TOPICS: ITopic[] = [
     title: 'Дни недели',
     Icon: Calendar03Icon,
     slug: 'dni-nedeli',
-    words: [],
-  },
-  {
-    title: 'Цифры и числа',
-    Icon: ArrangeByNumbers19Icon,
-    slug: 'dni-nedeli',
-    words: [],
+    words: [
+      {
+        Icon: LaurelWreathFirst01Icon,
+        hebrew: {
+          withAnnouncement: 'יוֹם רִאשוֹן',
+          withoutAnnouncement: 'יוֹם רִאשוֹן',
+        },
+        russian: 'Воскресенье',
+        transcription: 'yom rishon',
+      },
+      {
+        Icon: MedalSecondPlaceIcon,
+        hebrew: {
+          withAnnouncement: 'יוֹם שֵנִי',
+          withoutAnnouncement: 'יוֹם שֵנִי',
+        },
+        russian: 'Понедельник',
+        transcription: 'yom shney',
+      },
+      {
+        Icon: MedalThirdPlaceIcon,
+        hebrew: {
+          withAnnouncement: 'יוֹם שלִישִי',
+          withoutAnnouncement: 'יוֹם שלִישִי',
+        },
+        russian: 'Вторник',
+        transcription: 'yom shlishi',
+      },
+      {
+        Icon: FourFinger02Icon,
+        hebrew: {
+          withAnnouncement: 'יוֹם רְבִיעִי',
+          withoutAnnouncement: 'יוֹם רְבִיעִי',
+        },
+        russian: 'Среда',
+        transcription: 'yom rvii',
+      },
+      {
+        Icon: FiverrIcon,
+        hebrew: {
+          withAnnouncement: 'יוֹם חֲמִישִי',
+          withoutAnnouncement: 'יוֹם חֲמִישִי',
+        },
+        russian: 'Четверг',
+        transcription: 'yom khamishi',
+      },
+      {
+        Icon: BodyPartSixPackIcon,
+        hebrew: {
+          withAnnouncement: 'יוֹם שִישִי',
+          withoutAnnouncement: 'יוֹם שִישִי',
+        },
+        russian: 'Пятница',
+        transcription: 'yom sisi',
+      },
+      {
+        Icon: Calendar01Icon,
+        hebrew: {
+          withAnnouncement: 'הַרגִיש',
+          withoutAnnouncement: 'יוֹם שַבָּת',
+        },
+        russian: 'Суббота',
+        transcription: 'yom shabat',
+      },
+    ],
   },
 ];
