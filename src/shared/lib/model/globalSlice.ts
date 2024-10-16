@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 export interface IGlobalScheme {
   url: string;
-  slideDirection: 'left' | 'right';
+  slideDirection: 'left' | 'right' | null;
 }
 
 const initialState: IGlobalScheme = {
@@ -17,7 +17,10 @@ export const globalSlice = createSlice({
     setUrl(state, action: PayloadAction<string>) {
       state.url = action.payload;
     },
-    setTest(state, action: PayloadAction<'left' | 'right'>) {
+    setPageAnimationDirection(
+      state,
+      action: PayloadAction<'left' | 'right' | null>
+    ) {
       state.slideDirection = action.payload;
     },
   },

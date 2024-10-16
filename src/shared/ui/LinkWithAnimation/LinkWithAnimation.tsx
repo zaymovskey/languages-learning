@@ -16,7 +16,7 @@ export const LinkWithAnimation: FC<ILinkWithAnimationProps> = (
     <Link
       {...defaultProps}
       onClick={() => {
-        dispatch(globalActions.setTest(slideDirection));
+        dispatch(globalActions.setPageAnimationDirection(slideDirection));
       }}
     ></Link>
   );
