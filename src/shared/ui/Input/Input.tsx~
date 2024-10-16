@@ -1,5 +1,5 @@
-import cls from './Input.module.scss';
 import { classNames } from '../../lib/utils/classNames/classNames.ts';
+import cls from './Input.module.scss';
 import { type FC, InputHTMLAttributes } from 'react';
 
 export enum EnumInputTheme {
@@ -22,6 +22,7 @@ export const Input: FC<IInputProps> = (
     ...defaultInputProps
   }
 ) => {
+  console.log(theme);
   return (
     <input
       type="text"
