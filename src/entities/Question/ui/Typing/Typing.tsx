@@ -1,4 +1,5 @@
 import cls from './Typing.module.scss';
+import { IWord } from '@/DB.tsx';
 import { useAppDispatch, useAppSelector } from '@/app';
 import { currentTopicActions } from '@/entities/Game';
 import { IQuestionComponentProps } from '@/entities/Question';
@@ -21,9 +22,11 @@ export const Typing: FC<ITypingProps> = ({ className, toNextQuestion }) => {
 
   const topicWords = useAppSelector((state) => state.currentTopic.words);
 
-  const [rightAnswer, setRightAnswer] = useState(
-    getRandomUniqueElements(topicWords, 1)[0]
-  );
+  const [rightAnswer, setRightAnswer] = useState<IWord>();
+
+  useEffect(() => {
+    setRightAnswer(getRandomUniqueElements(topicWords, 1)[0]);
+  }, [topicWords]);
 
   const [answer, setAnswer] = useState<string>('');
 
@@ -57,7 +60,7 @@ export const Typing: FC<ITypingProps> = ({ className, toNextQuestion }) => {
 
     setIsAnswerGiven(true);
 
-    const isAnswerWrong = answer !== rightAnswer.hebrew.withoutAnnouncement;
+    const isAnswerWrong = answer !== rightAnswer!.hebrew.withoutAnnouncement;
     setIsAnswerWrong(isAnswerWrong);
 
     const action = isAnswerWrong
@@ -67,7 +70,7 @@ export const Typing: FC<ITypingProps> = ({ className, toNextQuestion }) => {
     dispatch(action());
 
     setTimeout(() => {
-      playWord(rightAnswer.hebrew.withoutAnnouncement);
+      playWord(rightAnswer!.hebrew.withoutAnnouncement);
 
       setTimeout(() => {
         toNextQuestion(refreshQuestion);
@@ -77,14 +80,14 @@ export const Typing: FC<ITypingProps> = ({ className, toNextQuestion }) => {
   };
 
   const handlePlayQuestionWord = () => {
-    playWord(rightAnswer.hebrew.withoutAnnouncement);
+    playWord(rightAnswer!.hebrew.withoutAnnouncement);
   };
 
   const getQuestionWord = () => {
     if (questionWordType === 'russian') {
-      return rightAnswer.russian;
+      return rightAnswer!.russian;
     } else if (questionWordType === 'transcription') {
-      return rightAnswer.transcription;
+      return rightAnswer!.transcription;
     } else if (questionWordType === 'sound') {
       return (
         <Button onClick={handlePlayQuestionWord}>
@@ -102,6 +105,8 @@ export const Typing: FC<ITypingProps> = ({ className, toNextQuestion }) => {
         : themeEnum.RIGHT
       : themeEnum.PRIMARY;
   };
+
+  if (!rightAnswer) return <div></div>;
 
   return (
     <div className={classNames(cls.Input, {}, [className])}>

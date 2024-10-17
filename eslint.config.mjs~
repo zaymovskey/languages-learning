@@ -12,7 +12,6 @@ export default tseslint.config(
     },
     rules: {
       'no-unused-vars': 'off',
-      ...hooksPlugin.configs.recommended.rules,
     },
   }
 );

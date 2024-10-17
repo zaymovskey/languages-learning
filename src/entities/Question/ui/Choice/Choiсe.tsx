@@ -24,13 +24,15 @@ export const Choice: FC<IChoiceProps> = ({ toNextQuestion }) => {
 
   const topicWords = useAppSelector((state) => state.currentTopic.words);
 
-  const [currentQuestionWords, setCurrentQuestionWords] = useState(
-    getRandomUniqueElements(topicWords, wordsCount)
-  );
+  const [currentQuestionWords, setCurrentQuestionWords] = useState<IWord[]>();
 
-  const [rightAnswer, setRightAnswer] = useState(
-    getRandomUniqueElements(currentQuestionWords, 1)[0]
-  );
+  const [rightAnswer, setRightAnswer] = useState<IWord>();
+
+  useEffect(() => {
+    const words = getRandomUniqueElements(topicWords, wordsCount);
+    setCurrentQuestionWords(words);
+    setRightAnswer(getRandomUniqueElements(words, 1)[0]);
+  }, [topicWords, wordsCount]);
 
   const [isShowIcons, setIsShowIcons] = useState(Math.random() < 0.5);
   const [isVariantsLanguageIsHebrew, setIsVariantsLanguageIsHebrew] =
@@ -80,7 +82,7 @@ export const Choice: FC<IChoiceProps> = ({ toNextQuestion }) => {
     setSelectedAnswer(word);
 
     const action =
-      word.russian === rightAnswer.russian
+      word.russian === rightAnswer!.russian
         ? currentTopicActions.increaseRightAnswers
         : currentTopicActions.increaseWrongAnswers;
 
@@ -88,7 +90,7 @@ export const Choice: FC<IChoiceProps> = ({ toNextQuestion }) => {
 
     setTimeout(() => {
       setIsRightAnswerHighlight(true);
-      playWord(rightAnswer.hebrew.withoutAnnouncement, () => {
+      playWord(rightAnswer!.hebrew.withoutAnnouncement, () => {
         setTimeout(() => {
           setIsRightAnswerHighlight(false);
           toNextQuestion(refreshQuestion);
@@ -101,16 +103,18 @@ export const Choice: FC<IChoiceProps> = ({ toNextQuestion }) => {
   const isWrongSelectedAnswer = (word: IWord) => {
     return (
       selectedAnswer?.russian === word.russian &&
-      selectedAnswer?.russian !== rightAnswer.russian
+      selectedAnswer?.russian !== rightAnswer!.russian
     );
   };
 
   const isRightSelectedAnswer = (word: IWord) => {
     return (
       selectedAnswer?.russian === word.russian &&
-      selectedAnswer?.russian === rightAnswer.russian
+      selectedAnswer?.russian === rightAnswer!.russian
     );
   };
+
+  if (!currentQuestionWords || !rightAnswer) return <div></div>;
 
   return (
     <div>
