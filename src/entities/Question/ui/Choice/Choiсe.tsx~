@@ -85,7 +85,7 @@ export const Choice: FC<IChoiceProps> = ({ toNextQuestion }) => {
     setSelectedAnswer(word);
 
     answersHistory(
-      word.hebrew.withoutAnnouncement,
+      rightAnswer!.hebrew.withoutAnnouncement,
       rightAnswer!.hebrew.withoutAnnouncement
     );
 

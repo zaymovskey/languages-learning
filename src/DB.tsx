@@ -135,7 +135,7 @@ export const TOPICS: ITopic[] = [
           withAnnouncement: 'יוֹם רִאשוֹן',
           withoutAnnouncement: 'יום ראשון',
         },
-        russian: 'Воскресенье',
+        russian: 'воскресенье',
         transcription: 'yom rishon',
       },
       {
@@ -144,7 +144,7 @@ export const TOPICS: ITopic[] = [
           withAnnouncement: 'יוֹם שֵנִי',
           withoutAnnouncement: 'יום שני',
         },
-        russian: 'Понедельник',
+        russian: 'понедельник',
         transcription: 'yom shney',
       },
       {
@@ -153,7 +153,7 @@ export const TOPICS: ITopic[] = [
           withAnnouncement: 'יוֹם שלִישִי',
           withoutAnnouncement: 'יום שלישי',
         },
-        russian: 'Вторник',
+        russian: 'вторник',
         transcription: 'yom shlishi',
       },
       {
@@ -162,7 +162,7 @@ export const TOPICS: ITopic[] = [
           withAnnouncement: 'יוֹם רְבִיעִי',
           withoutAnnouncement: 'יום רביעי',
         },
-        russian: 'Среда',
+        russian: 'среда',
         transcription: 'yom rvii',
       },
       {
@@ -171,7 +171,7 @@ export const TOPICS: ITopic[] = [
           withAnnouncement: 'יוֹם חֲמִישִי',
           withoutAnnouncement: 'יום חמישי',
         },
-        russian: 'Четверг',
+        russian: 'четверг',
         transcription: 'yom khamishi',
       },
       {
@@ -180,7 +180,7 @@ export const TOPICS: ITopic[] = [
           withAnnouncement: 'יוֹם שִישִי',
           withoutAnnouncement: 'יום שישי',
         },
-        russian: 'Пятница',
+        russian: 'пятница',
         transcription: 'yom sisi',
       },
       {
@@ -189,7 +189,7 @@ export const TOPICS: ITopic[] = [
           withAnnouncement: 'יוֹם שַבָּת',
           withoutAnnouncement: 'יום שבת',
         },
-        russian: 'Суббота',
+        russian: 'суббота',
         transcription: 'yom shabat',
       },
     ],

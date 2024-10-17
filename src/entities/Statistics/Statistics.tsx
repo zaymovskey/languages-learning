@@ -8,17 +8,29 @@ interface IStatisticsProps {
 }
 
 export const Statistics: FC<IStatisticsProps> = ({ className }) => {
-  const statistics = useAppSelector((state) => state.currentTopic.answers);
+  const answersHistory = useAppSelector(
+    (state) => state.currentTopic.answersHistory
+  );
+
+  const totalRightCount = answersHistory.reduce(
+    (accumulator, currentValue) => accumulator + currentValue.rightCount,
+    0
+  );
+
+  const totalWrong = answersHistory.reduce(
+    (accumulator, currentValue) => accumulator + currentValue.wrongCount,
+    0
+  );
 
   return (
     <div className={classNames(cls.statistics, {}, [className])}>
       <div className={classNames(cls.statisticsItem, {}, [])}>
         <div className={classNames(cls.circle, {}, [cls.right])}></div>
-        {statistics.right}
+        {totalRightCount}
       </div>
       <div className={classNames(cls.statisticsItem, {}, [])}>
         <div className={classNames(cls.circle, {}, [cls.wrong])}></div>
-        {statistics.wrong}
+        {totalWrong}
       </div>
     </div>
   );

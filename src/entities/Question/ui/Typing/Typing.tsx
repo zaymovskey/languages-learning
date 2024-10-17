@@ -3,6 +3,7 @@ import { IWord } from '@/DB.tsx';
 import { useAppDispatch, useAppSelector } from '@/app';
 import { currentTopicActions } from '@/entities/Game';
 import { IQuestionComponentProps } from '@/entities/Question';
+import { useAnswersHistory } from '@/entities/Question/lib/hooks/useAnswersHistory.ts';
 import { classNames, getRandomUniqueElements } from '@/shared/lib';
 import { playWord } from '@/shared/lib/utils/playWord/playWord.ts';
 import { Button, EnumButtonTheme } from '@/shared/ui/Button/Button.tsx';
@@ -27,6 +28,8 @@ export const Typing: FC<ITypingProps> = ({ className, toNextQuestion }) => {
   useEffect(() => {
     setRightAnswer(getRandomUniqueElements(topicWords, 1)[0]);
   }, [topicWords]);
+
+  const answersHistory = useAnswersHistory();
 
   const [answer, setAnswer] = useState<string>('');
 
@@ -63,11 +66,7 @@ export const Typing: FC<ITypingProps> = ({ className, toNextQuestion }) => {
     const isAnswerWrong = answer !== rightAnswer!.hebrew.withoutAnnouncement;
     setIsAnswerWrong(isAnswerWrong);
 
-    const action = isAnswerWrong
-      ? currentTopicActions.increaseWrongAnswers
-      : currentTopicActions.increaseRightAnswers;
-
-    dispatch(action());
+    answersHistory(answer, rightAnswer!.hebrew.withoutAnnouncement);
 
     setTimeout(() => {
       playWord(rightAnswer!.hebrew.withoutAnnouncement);

@@ -44,9 +44,8 @@ const GamePage: FC = () => {
     if (!currentTopic) return;
 
     dispatch(currentTopicActions.setWords(currentTopic.words));
+    console.log('huy');
   }, [currentTopic, dispatch]);
-
-  console.log('huy');
 
   const QuestionComponent =
     QUESTION_TYPES_COMPONENTS[currentQuestionType || 'Input'];
