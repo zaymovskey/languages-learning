@@ -1,13 +1,13 @@
 import cls from './Typing.module.scss';
 import { useAppDispatch, useAppSelector } from '@/app';
+import { currentTopicActions } from '@/entities/Game';
 import { IQuestionComponentProps } from '@/entities/Question';
+import { classNames, getRandomUniqueElements } from '@/shared/lib';
 import { playWord } from '@/shared/lib/utils/playWord/playWord.ts';
 import { Button, EnumButtonTheme } from '@/shared/ui/Button/Button.tsx';
 import { EnumInputTheme, Input } from '@/shared/ui/Input/Input.tsx';
 import { HeadphonesIcon } from 'hugeicons-react';
 import { type FC, useEffect, useState } from 'react';
-import { classNames, getRandomUniqueElements } from '@/shared/lib';
-import { currentTopicActions } from '@/entities/Game'; 
 
 interface ITypingProps extends IQuestionComponentProps {
   className?: string;
@@ -122,6 +122,7 @@ export const Typing: FC<ITypingProps> = ({ className, toNextQuestion }) => {
           className={cls.input}
           dir="rtl"
           value={answer}
+          autoFocus={true}
           onChange={(event) => setAnswer(event.target.value)}
           theme={getButtonNInputTheme(EnumInputTheme)}
         />

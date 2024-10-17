@@ -31,12 +31,12 @@ const GamePage: FC = () => {
   );
   const isBlocked = useAppSelector((state) => state.currentTopic.isBlocked);
 
+  dispatch(currentTopicActions.setWords(currentTopic.words));
   if (currentQuestionType === null) {
     const randomIndex = Math.floor(Math.random() * QUESTION_TYPES.length);
     dispatch(
       currentTopicActions.setCurrentQuestionType(QUESTION_TYPES[randomIndex])
     );
-    dispatch(currentTopicActions.setWords(currentTopic.words));
   }
 
   const QuestionComponent =
