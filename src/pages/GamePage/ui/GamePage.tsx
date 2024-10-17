@@ -32,6 +32,15 @@ const GamePage: FC = () => {
   const isBlocked = useAppSelector((state) => state.currentTopic.isBlocked);
 
   dispatch(currentTopicActions.setWords(currentTopic.words));
+  dispatch(
+    currentTopicActions.setAnswersHistory(
+      currentTopic.words.map((word) => ({
+        rightCount: 0,
+        word: word.hebrew.withoutAnnouncement,
+      }))
+    )
+  );
+
   if (currentQuestionType === null) {
     const randomIndex = Math.floor(Math.random() * QUESTION_TYPES.length);
     dispatch(

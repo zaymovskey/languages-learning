@@ -15,6 +15,7 @@ const initialState: ICurrentTopicScheme = {
   currentQuestionType: null,
   isBlocked: false,
   isFade: false,
+  answersHistory: [],
 };
 
 export const currentTopicSlice = createSlice({
@@ -41,6 +42,12 @@ export const currentTopicSlice = createSlice({
     },
     setIsFade(state, action: PayloadAction<boolean>) {
       state.isFade = action.payload;
+    },
+    setAnswersHistory(
+      state,
+      action: PayloadAction<{ word: string; rightCount: number }[]>
+    ) {
+      state.answersHistory = action.payload;
     },
   },
 });
