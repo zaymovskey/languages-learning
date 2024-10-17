@@ -40,9 +40,9 @@ export interface IWord {
 
 export const TOPICS: ITopic[] = [
   {
-    title: 'Основные глаголы (Н.В)',
+    title: 'Основные глаголы (Н.В.)',
     Icon: WorkoutRunIcon,
-    slug: 'osnovnie-glagoli',
+    slug: 'osnovnie-glagoli-nv',
     words: [
       {
         Icon: City02Icon,
@@ -121,6 +121,94 @@ export const TOPICS: ITopic[] = [
         hebrew: { withAnnouncement: 'הַרגִיש', withoutAnnouncement: 'מרגיש' },
         russian: 'чувствовать',
         transcription: 'margish',
+      },
+    ],
+  },
+  {
+    title: 'Основные глаголы (ИНФ.)',
+    Icon: WorkoutRunIcon,
+    slug: 'osnovnie-glagoli-inf',
+    words: [
+      {
+        Icon: City02Icon,
+        hebrew: { withAnnouncement: 'לָגוּר', withoutAnnouncement: 'לגור' },
+        russian: 'жить',
+        transcription: 'lagur',
+      },
+      {
+        Icon: StudentsIcon,
+        hebrew: { withAnnouncement: 'לִימֵד', withoutAnnouncement: 'לומד' },
+        russian: 'учить',
+        transcription: 'lomed',
+      },
+      {
+        Icon: LaborIcon,
+        hebrew: { withAnnouncement: 'לַעֲבוֹד', withoutAnnouncement: 'לעבוד' },
+        russian: 'работать',
+        transcription: 'laavod',
+      },
+      {
+        Icon: BubbleChatIcon,
+        hebrew: { withAnnouncement: 'לְדַבֵּר', withoutAnnouncement: 'לדבר' },
+        russian: 'говорить',
+        transcription: 'ldaber',
+      },
+      {
+        Icon: ShareKnowledgeIcon,
+        hebrew: { withAnnouncement: 'לְהָבִין', withoutAnnouncement: 'להבין' },
+        russian: 'понимать',
+        transcription: 'lhavin',
+      },
+      {
+        Icon: Knowledge01Icon,
+        hebrew: { withAnnouncement: 'לָדַעַת', withoutAnnouncement: 'לדעת' },
+        russian: 'знать',
+        transcription: 'ldaat',
+      },
+      {
+        Icon: PencilEdit01Icon,
+        hebrew: { withAnnouncement: 'לִכתוֹב', withoutAnnouncement: 'לכתוב' },
+        russian: 'писать',
+        transcription: 'likhtov',
+      },
+      {
+        Icon: AudioBook04Icon,
+        hebrew: { withAnnouncement: 'לִקרוֹא', withoutAnnouncement: 'לקרוא' },
+        russian: 'читать',
+        transcription: 'likro',
+      },
+      {
+        Icon: UserQuestion02Icon,
+        hebrew: { withAnnouncement: 'לִשְׁאוֹל', withoutAnnouncement: 'לשאול' },
+        russian: 'спрашивать',
+        transcription: 'lishol',
+      },
+      {
+        Icon: BubbleChatSecureIcon,
+        hebrew: { withAnnouncement: 'לַעֲנוֹת', withoutAnnouncement: 'לענות' },
+        russian: 'отвечать',
+        transcription: 'laanot',
+      },
+      {
+        Icon: ArrowDown05Icon,
+        hebrew: { withAnnouncement: 'לָבוֹא', withoutAnnouncement: 'לבוא' },
+        russian: 'приходить',
+        transcription: 'lavuo',
+      },
+      {
+        Icon: BubbleChatAddIcon,
+        hebrew: { withAnnouncement: 'לוֹמַר', withoutAnnouncement: 'לומר' },
+        russian: 'сказать',
+        transcription: 'lomar',
+      },
+      {
+        Icon: HealthIcon,
+        hebrew: {
+          withAnnouncement: 'לְהַרגִיש',
+          withoutAnnouncement: 'להרגיש',
+        },
+        russian: 'чувствовать',
+        transcription: 'lhargish',
       },
     ],
   },
