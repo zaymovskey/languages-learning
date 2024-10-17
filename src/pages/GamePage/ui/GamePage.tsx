@@ -44,6 +44,7 @@ const GamePage: FC = () => {
     if (!currentTopic) return;
 
     dispatch(currentTopicActions.setWords(currentTopic.words));
+    dispatch(currentTopicActions.resetAnswersHistory());
   }, [currentTopic, dispatch]);
 
   const QuestionComponent =

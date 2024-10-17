@@ -70,6 +70,9 @@ export const currentTopicSlice = createSlice({
         },
       ];
     },
+    resetAnswersHistory(state) {
+      state.answersHistory = [];
+    },
   },
 });
 
