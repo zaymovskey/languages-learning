@@ -36,3 +36,9 @@
 .right {
   background-color: var(--color-right);
 }
+
+.timer {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}

@@ -2,6 +2,7 @@ import cls from './Statistics.module.scss';
 import { useAppSelector } from '@/app';
 import { classNames } from '@/shared/lib';
 import { Stopwatch } from '@/shared/ui';
+import { Clock } from 'lucide-react';
 import { type FC } from 'react';
 
 interface IStatisticsProps {
@@ -25,7 +26,11 @@ export const Statistics: FC<IStatisticsProps> = ({ className }) => {
 
   return (
     <div className={classNames(cls.statistics, {}, [className])}>
-      <Stopwatch />
+      <div className={cls.timer}>
+        <Clock />
+        <Stopwatch />
+      </div>
+
       <div className={cls.statisticsValues}>
         <div className={classNames(cls.statisticsItem, {}, [])}>
           <div className={classNames(cls.circle, {}, [cls.right])}></div>

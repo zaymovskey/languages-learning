@@ -1,7 +1,7 @@
 .statistics {
   display: flex;
   padding: 0 20px;
-  justify-content: end;
+  justify-content: space-between;
   align-items: center;
   position: absolute;
   bottom: 0;
@@ -35,4 +35,10 @@
 
 .right {
   background-color: var(--color-right);
+}
+
+.timer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
