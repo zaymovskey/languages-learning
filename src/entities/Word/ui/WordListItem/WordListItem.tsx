@@ -11,7 +11,7 @@ export const WordListItem: FC<IWordsListItemProps> = (
 ) => {
   return (
     <div className={cls.wordListItem}>
-      <Icon color={'inherit'} width={40} height={40} />
+      <Icon color={'inherit'} width={40} height={40} stroke={'white'} />
       <div className={cls.wordInfo}>
         <span className={cls.hebrew}>{hebrew.withAnnouncement}</span>
         <span>{russian}</span>
