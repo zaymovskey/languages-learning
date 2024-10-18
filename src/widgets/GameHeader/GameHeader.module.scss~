@@ -1,0 +1,10 @@
+.gameHeader {
+  box-shadow: rgb(0 0 0 / 24%) 0 3px 8px;
+  height: var(--navbar-height);
+  background-color: var(--color-background);
+  position: fixed;
+  width: 100%;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+}

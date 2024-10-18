@@ -1,14 +1,15 @@
 import cls from './GamePage.module.scss';
 import { TOPICS } from '@/DB.tsx';
 import { useAppDispatch, useAppSelector } from '@/app';
-import { currentTopicActions, Statistics } from '@/entities/Game';
+import { currentTopicActions } from '@/entities/Game';
 import {
   QUESTION_TYPES,
   QUESTION_TYPES_COMPONENTS,
   useNextQuestion,
 } from '@/entities/Question';
-import { classNames } from '@/shared/lib';
+import { classNames, globalActions } from '@/shared/lib';
 import { AnimatePageWrapper, stopwatchActions } from '@/shared/ui';
+import { Statistics } from '@/widgets';
 import { FC, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
@@ -32,7 +33,10 @@ const GamePage: FC = () => {
 
   const topicWords = useAppSelector((state) => state.currentTopic.words);
 
+  const headerType = useAppSelector((state) => state.global.headerType);
+
   useEffect(() => {
+    // Устанавливаем тип вопроса
     if (!currentTopic) return;
 
     if (currentQuestionType === null) {
@@ -44,6 +48,16 @@ const GamePage: FC = () => {
   }, [currentQuestionType, currentTopic, dispatch]);
 
   useEffect(() => {
+    if (headerType === 'gameHeader') return;
+    dispatch(globalActions.setGameHeaderType('gameHeader'));
+
+    return () => {
+      dispatch(globalActions.setGameHeaderType('default'));
+    };
+  }, []);
+
+  useEffect(() => {
+    // Проверяем сменялась ли тема
     if (!currentTopic) return;
     if (currentTopic.slug === currentStoreTopicSlug) return;
 
