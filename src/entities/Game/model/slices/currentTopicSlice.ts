@@ -18,6 +18,9 @@ export const currentTopicSlice = createSlice({
   name: 'currentTopic',
   initialState,
   reducers: {
+    setSlug(state, action: PayloadAction<string>) {
+      state.slug = action.payload;
+    },
     setCurrentQuestionType(
       state,
       action: PayloadAction<TypeQuestionTypes | null>

@@ -8,7 +8,7 @@ import {
   useNextQuestion,
 } from '@/entities/Question';
 import { classNames } from '@/shared/lib';
-import { AnimatePageWrapper } from '@/shared/ui';
+import { AnimatePageWrapper, stopwatchActions } from '@/shared/ui';
 import { FC, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
@@ -17,6 +17,9 @@ const GamePage: FC = () => {
 
   const { slug } = useParams();
   const currentTopic = TOPICS.find((topic) => topic.slug === slug);
+  const currentStoreTopicSlug = useAppSelector(
+    (state) => state.currentTopic.slug
+  );
 
   const isFadeQuestion = useAppSelector((state) => state.currentTopic.isFade);
 
@@ -42,10 +45,13 @@ const GamePage: FC = () => {
 
   useEffect(() => {
     if (!currentTopic) return;
+    if (currentTopic.slug === currentStoreTopicSlug) return;
 
+    dispatch(currentTopicActions.setSlug(currentTopic.slug));
     dispatch(currentTopicActions.setWords(currentTopic.words));
-    dispatch(currentTopicActions.resetAnswersHistory())
-  }, [currentTopic, dispatch]);
+    dispatch(currentTopicActions.resetAnswersHistory());
+    dispatch(stopwatchActions.reset())
+  }, [currentStoreTopicSlug, currentTopic, dispatch]);
 
   const QuestionComponent =
     QUESTION_TYPES_COMPONENTS[currentQuestionType || 'Input'];

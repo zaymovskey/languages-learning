@@ -28,8 +28,14 @@ const stopwatchSlice = createSlice({
       if (state.seconds === '59') {
         state.seconds = '00';
         state.minutes = increaseTime(state.minutes);
+      } else {
+        state.seconds = increaseTime(state.seconds);
       }
     },
+    reset(state) {
+      state.seconds = '00';
+      state.minutes = '00';
+    }
   },
 });
 

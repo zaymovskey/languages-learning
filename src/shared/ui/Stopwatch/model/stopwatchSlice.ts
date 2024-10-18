@@ -32,6 +32,10 @@ const stopwatchSlice = createSlice({
         state.seconds = increaseTime(state.seconds);
       }
     },
+    reset(state) {
+      state.seconds = '00';
+      state.minutes = '00';
+    },
   },
 });
 

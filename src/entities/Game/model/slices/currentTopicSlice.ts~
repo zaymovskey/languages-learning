@@ -8,7 +8,7 @@ const initialState: ICurrentTopicScheme = {
   Icon: () => null,
   slug: '',
   words: [],
-  currentQuestionType: null, 
+  currentQuestionType: null,
   isBlocked: false,
   isFade: false,
   answersHistory: [],
