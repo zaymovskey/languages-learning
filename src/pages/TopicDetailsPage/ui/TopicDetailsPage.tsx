@@ -11,7 +11,7 @@ const TopicDetailsPage = () => {
   return (
     <AnimatePageWrapper>
       <div className={cls.imageBlock}>
-        <currentTopic.Icon color={'inherit'} width={110} height={110} />
+        <currentTopic.Icon color={'white'} width={110} height={110} />
       </div>
       <div className="paddings-content">
         <h2 className={cls.title}>{currentTopic.title}</h2>

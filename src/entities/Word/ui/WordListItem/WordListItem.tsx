@@ -1,5 +1,7 @@
 import cls from './WordListItem.module.scss';
 import { IWord } from '@/DB.tsx';
+import { playWord } from '@/shared/lib';
+import { HeadphonesIcon } from 'hugeicons-react';
 import { type FC } from 'react';
 
 interface IWordsListItemProps extends IWord {
@@ -9,13 +11,20 @@ interface IWordsListItemProps extends IWord {
 export const WordListItem: FC<IWordsListItemProps> = (
   { Icon, hebrew, russian }
 ) => {
+  const onSoundBtnClick = () => {
+    playWord(hebrew.withoutAnnouncement);
+  };
+
   return (
     <div className={cls.wordListItem}>
-      <Icon color={'inherit'} width={40} height={40} stroke={'white'} />
+      <Icon width={40} height={40} color={'white'} />
       <div className={cls.wordInfo}>
         <span className={cls.hebrew}>{hebrew.withAnnouncement}</span>
         <span>{russian}</span>
       </div>
+      <button className={cls.soundBtn} onClick={onSoundBtnClick}>
+        <HeadphonesIcon color={'#b2fd3c'} width={40} height={40} />
+      </button>
     </div>
   );
 };
