@@ -137,7 +137,12 @@ export const Choice: FC<IChoiceProps> = ({ toNextQuestion }) => {
             )}
           >
             {isShowIcons && (
-              <word.Icon color={'inherit'} width={40} height={40} />
+              <word.Icon
+                color={'inherit'}
+                width={40}
+                height={40}
+                stroke={'white'}
+              />
             )}
             <span className={cls.variantText}>
               {isVariantsLanguageIsHebrew

@@ -19,7 +19,7 @@ export const TopicListItem: FC<ITopicListItemProps> = (
     >
       <button className={cls.topicListItem}>
         <div className={cls.imageBlock}>
-          <Icon color={'inherit'} width={30} height={30} />
+          <Icon color={'inherit'} width={30} height={30} stroke={'white'} />
         </div>
         <h4 className={cls.titleBlock}>{title}</h4>
       </button>
