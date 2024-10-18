@@ -1,5 +1,6 @@
 import cls from './GameHeader.module.scss';
 import { useAppDispatch } from '@/app';
+import { currentTopicActions } from '@/entities/Game';
 import { classNames } from '@/shared/lib';
 import { stopwatchActions } from '@/shared/ui';
 import { PauseIcon } from 'lucide-react';
@@ -13,15 +14,13 @@ export const GameHeader: FC<IGameHeaderProps> = ({ className }) => {
   const dispatch = useAppDispatch();
 
   const onClickPauseBtn = () => {
-    dispatch(stopwatchActions.pause());
+    dispatch(stopwatchActions.toggle());
+    dispatch(currentTopicActions.togglePauseMenuOpen());
   };
 
   return (
-    <div
-      className={classNames(cls.gameHeader, {}, [className])}
-      onClick={onClickPauseBtn}
-    >
-      <button className={cls.pauseBtn}>
+    <div className={classNames(cls.gameHeader, {}, [className])}>
+      <button className={cls.pauseBtn} onClick={onClickPauseBtn}>
         <PauseIcon />
       </button>
     </div>

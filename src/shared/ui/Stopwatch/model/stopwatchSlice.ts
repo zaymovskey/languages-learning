@@ -40,6 +40,9 @@ const stopwatchSlice = createSlice({
       state.seconds = '00';
       state.minutes = '00';
     },
+    toggle(state) {
+      state.pause = !state.pause;
+    },
     pause(state) {
       state.pause = true;
     },

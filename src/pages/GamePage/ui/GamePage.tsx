@@ -9,7 +9,7 @@ import {
 } from '@/entities/Question';
 import { classNames, globalActions } from '@/shared/lib';
 import { AnimatePageWrapper, stopwatchActions } from '@/shared/ui';
-import { Statistics } from '@/widgets';
+import { GamePauseMenu, Statistics } from '@/widgets';
 import { FC, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
@@ -72,7 +72,9 @@ const GamePage: FC = () => {
 
   return (
     <AnimatePageWrapper>
-      <div className={classNames('', { [cls.blocked]: isBlocked }, [])}>
+      <div
+        className={classNames(cls.gamePage, { [cls.blocked]: isBlocked }, [])}
+      >
         <div className="paddings-content">
           <div
             className={classNames(
@@ -87,6 +89,7 @@ const GamePage: FC = () => {
           </div>
           <Statistics />
         </div>
+        <GamePauseMenu />
       </div>
     </AnimatePageWrapper>
   );

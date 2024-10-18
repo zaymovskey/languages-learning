@@ -12,12 +12,16 @@ const initialState: ICurrentTopicScheme = {
   isBlocked: false,
   isFade: false,
   answersHistory: [],
+  isPauseMenuOpen: false,
 };
 
 export const currentTopicSlice = createSlice({
   name: 'currentTopic',
   initialState,
   reducers: {
+    togglePauseMenuOpen(state) {
+      state.isPauseMenuOpen = !state.isPauseMenuOpen;
+    },
     setSlug(state, action: PayloadAction<string>) {
       state.slug = action.payload;
     },

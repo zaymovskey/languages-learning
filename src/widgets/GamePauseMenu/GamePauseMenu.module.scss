@@ -1,0 +1,29 @@
+.gamePauseMenu {
+  position: absolute;
+  background-color: var(--color-background);
+  height: 70vh;
+  box-shadow: rgb(0 0 0 / 24%) 0 -20px 40px;
+  width: 100vw;
+  transition: 0.3s;
+  bottom: -100%;
+
+  &.active {
+    bottom: 0;
+  }
+}
+
+.backdrop {
+  top: 0;
+  transition: 0.3s;
+  position: absolute;
+  height: 100%;
+  width: 100vw;
+  background-color: black;
+  opacity: 0;
+  visibility: hidden;
+
+  &.active {
+    opacity: 0.5;
+    visibility: visible;
+  }
+}

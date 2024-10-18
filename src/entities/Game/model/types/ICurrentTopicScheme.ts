@@ -6,4 +6,5 @@ export interface ICurrentTopicScheme extends ITopic {
   isBlocked: boolean;
   isFade: boolean;
   answersHistory: { word: string; rightCount: number; wrongCount: number }[];
+  isPauseMenuOpen: boolean;
 }
