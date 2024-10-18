@@ -49,26 +49,24 @@ export const currentTopicSlice = createSlice({
             return {
               ...historyItem,
               rightCount:
-                historyItem.rightCount + (action.payload.isRight ? 1 : 0),
+                historyItem.rightCount + Number(action.payload.isRight),
               wrongCount:
-                historyItem.wrongCount + (action.payload.isRight ? 0 : 1),
+                historyItem.wrongCount + Number(!action.payload.isRight),
             };
           } else {
             return item;
           }
         });
-
-        return;
+      } else {
+        state.answersHistory = [
+          ...state.answersHistory,
+          {
+            word: action.payload.word,
+            rightCount: action.payload.isRight ? 1 : 0,
+            wrongCount: action.payload.isRight ? 0 : 1,
+          },
+        ];
       }
-
-      state.answersHistory = [
-        ...state.answersHistory,
-        {
-          word: action.payload.word,
-          rightCount: action.payload.isRight ? 1 : 0,
-          wrongCount: action.payload.isRight ? 0 : 1,
-        },
-      ];
     },
     resetAnswersHistory(state) {
       state.answersHistory = [];

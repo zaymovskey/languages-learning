@@ -49,9 +49,9 @@ export const currentTopicSlice = createSlice({
             return {
               ...historyItem,
               rightCount:
-                historyItem.rightCount + (action.payload.isRight ? 1 : 0),
+                historyItem.rightCount + Number(action.payload.isRight),
               wrongCount:
-                historyItem.wrongCount + (action.payload.isRight ? 0 : 1),
+                historyItem.wrongCount + Number(!action.payload.isRight),
             };
           } else {
             return item;
@@ -72,7 +72,7 @@ export const currentTopicSlice = createSlice({
     },
     resetAnswersHistory(state) {
       state.answersHistory = [];
-    }
+    },
   },
 });
 
