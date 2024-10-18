@@ -41,11 +41,14 @@ const stopwatchSlice = createSlice({
       state.minutes = '00';
     },
     toggle(state) {
-      state.pause = !state.pause
+      state.pause = !state.pause;
     },
     pause(state) {
       state.pause = true;
     },
+    play(state) {
+      state.pause = false;
+    }
   },
 });
 

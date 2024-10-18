@@ -18,6 +18,13 @@
   }
 }
 
+.children {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .primary {
   background-color: var(--color-accent-third);
   transition-duration: var(--transition-duration);

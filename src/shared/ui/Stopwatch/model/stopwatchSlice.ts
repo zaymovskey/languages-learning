@@ -46,6 +46,9 @@ const stopwatchSlice = createSlice({
     pause(state) {
       state.pause = true;
     },
+    play(state) {
+      state.pause = false;
+    },
   },
 });
 

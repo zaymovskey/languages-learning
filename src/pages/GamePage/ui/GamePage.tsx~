@@ -59,8 +59,6 @@ const GamePage: FC = () => {
   useEffect(() => {
     // Проверяем сменялась ли тема
     if (!currentTopic) return;
-    dispatch(stopwatchActions.play());
-
     if (currentTopic.slug === currentStoreTopicSlug) return;
 
     dispatch(currentTopicActions.setSlug(currentTopic.slug));

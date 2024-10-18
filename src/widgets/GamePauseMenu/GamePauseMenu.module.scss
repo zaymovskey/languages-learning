@@ -6,6 +6,7 @@
   width: 100vw;
   transition: 0.3s;
   bottom: -100%;
+  padding: 30px;
 
   &.active {
     bottom: 0;
@@ -26,4 +27,26 @@
     opacity: 0.5;
     visibility: visible;
   }
+}
+
+.title {
+  text-align: center;
+  font: var(--font-xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: 20px;
+}
+
+.buttons {
+  justify-content: center;
+  display: flex;
+}
+
+.buttonContainer {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  flex: 1;
 }
