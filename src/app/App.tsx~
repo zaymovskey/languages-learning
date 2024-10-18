@@ -12,7 +12,7 @@ function App() {
 
   useEffect(() => {
     dispatch(globalActions.setUrl(removeLastSegment(location.pathname)));
-  }, [dispatch, location]);
+  }, [location]);
 
   return (
     <>

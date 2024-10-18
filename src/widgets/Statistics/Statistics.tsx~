@@ -2,6 +2,7 @@ import cls from './Statistics.module.scss';
 import { useAppSelector } from '@/app';
 import { classNames } from '@/shared/lib';
 import { type FC } from 'react';
+import { Stopwatch } from '@/shared/ui';
 
 interface IStatisticsProps {
   className?: string;
@@ -24,13 +25,16 @@ export const Statistics: FC<IStatisticsProps> = ({ className }) => {
 
   return (
     <div className={classNames(cls.statistics, {}, [className])}>
-      <div className={classNames(cls.statisticsItem, {}, [])}>
-        <div className={classNames(cls.circle, {}, [cls.right])}></div>
-        {totalRightCount}
-      </div>
-      <div className={classNames(cls.statisticsItem, {}, [])}>
-        <div className={classNames(cls.circle, {}, [cls.wrong])}></div>
-        {totalWrong}
+      <Stopwatch/>
+      <div className={cls.statisticsValues}>
+        <div className={classNames(cls.statisticsItem, {}, [])}>
+          <div className={classNames(cls.circle, {}, [cls.right])}></div>
+          {totalRightCount}
+        </div>
+        <div className={classNames(cls.statisticsItem, {}, [])}>
+          <div className={classNames(cls.circle, {}, [cls.wrong])}></div>
+          {totalWrong}
+        </div>
       </div>
     </div>
   );

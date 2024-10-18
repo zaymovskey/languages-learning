@@ -9,7 +9,11 @@
   width: 100%;
   left: 0;
   height: 40px;
-  gap: 10px;
+
+  &Values {
+    display: flex;
+    gap: 10px;
+  }
 
   &Item {
     display: flex;

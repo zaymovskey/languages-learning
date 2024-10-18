@@ -8,7 +8,7 @@ const initialState: ICurrentTopicScheme = {
   Icon: () => null,
   slug: '',
   words: [],
-  currentQuestionType: null,
+  currentQuestionType: null, 
   isBlocked: false,
   isFade: false,
   answersHistory: [],
@@ -57,18 +57,16 @@ export const currentTopicSlice = createSlice({
             return item;
           }
         });
-
-        return;
+      } else {
+        state.answersHistory = [
+          ...state.answersHistory,
+          {
+            word: action.payload.word,
+            rightCount: action.payload.isRight ? 1 : 0,
+            wrongCount: action.payload.isRight ? 0 : 1,
+          },
+        ];
       }
-
-      state.answersHistory = [
-        ...state.answersHistory,
-        {
-          word: action.payload.word,
-          rightCount: action.payload.isRight ? 1 : 0,
-          wrongCount: action.payload.isRight ? 0 : 1,
-        },
-      ];
     },
     resetAnswersHistory(state) {
       state.answersHistory = [];
