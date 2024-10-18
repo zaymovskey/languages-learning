@@ -63,8 +63,7 @@ const GamePage: FC = () => {
   useEffect(() => {
     if (!currentTopic) return;
     dispatch(stopwatchActions.play());
-    if (gamePauseMenuIsOpen) {
-      dispatch(currentTopicActions.togglePauseMenuOpen());
+    if (gamePauseMenuIsOpen) {    dispatch(currentTopicActions.togglePauseMenuOpen());
     }
 
     // Проверяем сменялась ли тема
