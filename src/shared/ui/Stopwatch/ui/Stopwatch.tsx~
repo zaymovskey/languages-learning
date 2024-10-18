@@ -4,10 +4,7 @@ import { useEffect } from 'react';
 
 export const Stopwatch = () => {
   const dispatch = useAppDispatch();
-  const stopwatchData = useAppSelector((state) => ({
-    minutes: state.stopwatch.minutes,
-    seconds: state.stopwatch.seconds,
-  }));
+  const stopwatchData = useAppSelector((state) => ({minutes: state.stopwatch.minutes, seconds: state.stopwatch.seconds}));
 
   useEffect(() => {
     const interval = setInterval(() => {

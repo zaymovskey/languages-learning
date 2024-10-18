@@ -3,11 +3,13 @@ import { createSlice } from '@reduxjs/toolkit';
 export interface IStopwatchScheme {
   seconds: string;
   minutes: string;
+  pause: boolean;
 }
 
 const initialState: IStopwatchScheme = {
   seconds: '00',
   minutes: '00',
+  pause: false,
 };
 
 const increaseTime = (time: string) => {
@@ -25,6 +27,8 @@ const stopwatchSlice = createSlice({
   initialState,
   reducers: {
     tick(state) {
+      if (state.pause) return;
+
       if (state.seconds === '59') {
         state.seconds = '00';
         state.minutes = increaseTime(state.minutes);
@@ -35,6 +39,9 @@ const stopwatchSlice = createSlice({
     reset(state) {
       state.seconds = '00';
       state.minutes = '00';
+    },
+    pause(state) {
+      state.pause = true;
     },
   },
 });
