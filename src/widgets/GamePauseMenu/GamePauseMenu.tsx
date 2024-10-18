@@ -1,6 +1,7 @@
 import cls from './GamePauseMenu.module.scss';
 import { useAppDispatch, useAppSelector } from '@/app';
 import { currentTopicActions } from '@/entities/Game';
+import { WordList } from '@/entities/Word';
 import { classNames } from '@/shared/lib';
 import { Button, LinkWithAnimation, stopwatchActions } from '@/shared/ui';
 import { LogOut, Play } from 'lucide-react';
@@ -18,6 +19,8 @@ export const GamePauseMenu: FC<IGamePauseMenuProps> = ({ className }) => {
   );
 
   const prevUrl = useAppSelector((state) => state.global.url);
+
+  const currentTopicWords = useAppSelector((state) => state.currentTopic.words);
 
   return (
     <>
@@ -71,6 +74,9 @@ export const GamePauseMenu: FC<IGamePauseMenuProps> = ({ className }) => {
             </Button>
             <p>Продолжить</p>
           </div>
+        </div>
+        <div style={{ marginTop: '40px' }}>
+          <WordList words={currentTopicWords} />
         </div>
       </div>
     </>

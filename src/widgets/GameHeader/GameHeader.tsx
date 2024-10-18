@@ -1,9 +1,9 @@
 import cls from './GameHeader.module.scss';
-import { useAppDispatch } from '@/app';
+import { useAppDispatch, useAppSelector } from '@/app';
 import { currentTopicActions } from '@/entities/Game';
 import { classNames } from '@/shared/lib';
 import { stopwatchActions } from '@/shared/ui';
-import { PauseIcon } from 'lucide-react';
+import { PauseIcon, Play } from 'lucide-react';
 import { FC } from 'react';
 
 interface IGameHeaderProps {
@@ -13,6 +13,10 @@ interface IGameHeaderProps {
 export const GameHeader: FC<IGameHeaderProps> = ({ className }) => {
   const dispatch = useAppDispatch();
 
+  const gamePauseMenuIsOpen = useAppSelector(
+    (state) => state.currentTopic.isPauseMenuOpen
+  );
+
   const onClickPauseBtn = () => {
     dispatch(stopwatchActions.toggle());
     dispatch(currentTopicActions.togglePauseMenuOpen());
@@ -21,7 +25,7 @@ export const GameHeader: FC<IGameHeaderProps> = ({ className }) => {
   return (
     <div className={classNames(cls.gameHeader, {}, [className])}>
       <button className={cls.pauseBtn} onClick={onClickPauseBtn}>
-        <PauseIcon />
+        {gamePauseMenuIsOpen ? <Play /> : <PauseIcon />}
       </button>
     </div>
   );

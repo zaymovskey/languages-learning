@@ -8,3 +8,16 @@
   display: flex;
   align-items: center;
 }
+
+.pauseBtn {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+
+  &:active {
+    transition: 0.3s;
+    transform: scale(0.7);
+  }
+}
