@@ -14,7 +14,7 @@ const TopicDetailsPage = () => {
       <div className={cls.imageBlock}>
         <currentTopic.Icon color={'white'} width={110} height={110} />
       </div>
-      <div className={classNames('paddings-content', {}, [cls.mainContent])}>
+      <div className={classNames('paddings-content', {}, [])}>
         <h2 className={cls.title}>{currentTopic.title}</h2>
         <LinkWithAnimation
           to={'game'}

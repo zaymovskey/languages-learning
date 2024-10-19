@@ -4,7 +4,7 @@ import { currentTopicActions } from '@/entities/Game';
 import { WordList } from '@/entities/Word';
 import { classNames } from '@/shared/lib';
 import { Button, LinkWithAnimation, stopwatchActions } from '@/shared/ui';
-import { LogOut, Play } from 'lucide-react';
+import { CircleStop, LogOut, Play } from 'lucide-react';
 import { type FC } from 'react';
 
 interface IGamePauseMenuProps {
@@ -60,7 +60,27 @@ export const GamePauseMenu: FC<IGamePauseMenuProps> = ({ className }) => {
             >
               <LogOut color={'white'} />
             </Button>
-            <p>Выйти</p>
+            <p>К теме</p>
+          </LinkWithAnimation>
+          <LinkWithAnimation
+            to={prevUrl}
+            className={cls.buttonContainer}
+            slideDirection={'right'}
+          >
+            <Button
+              style={{
+                borderRadius: '50%',
+                width: '60px',
+                height: '60px',
+                backgroundColor: '#631a8a',
+              }}
+              onClick={() => {
+                dispatch(currentTopicActions.togglePauseMenuOpen());
+              }}
+            >
+              <CircleStop color={'white'} />
+            </Button>
+            <p>Завершить</p>
           </LinkWithAnimation>
           <div className={cls.buttonContainer}>
             <Button
