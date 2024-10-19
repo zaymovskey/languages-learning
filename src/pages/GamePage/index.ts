@@ -1,3 +1,3 @@
-import { GamePage } from '@/pages/GamePage/ui/GamePage.lazy.tsx';
+import { GamePage } from './ui/GamePage.lazy.tsx';
 
 export { GamePage };

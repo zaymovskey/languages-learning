@@ -1,8 +1,8 @@
 import { GamePage } from '@/pages/GamePage';
-import { GameStatisticsPage } from '@/pages/GameStatisticsPage';
 import { TopicDetailsPage } from '@/pages/TopicDetailsPage';
 import { TopicsListPage } from '@/pages/TopicsListPage';
 import { type RouteProps } from 'react-router-dom';
+import { GameStatisticsPage } from '@/pages/GameStatisticsPage';
 
 export enum EnumAppRoutes {
   TOPICS_LIST = 'topics_list',

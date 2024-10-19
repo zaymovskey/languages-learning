@@ -62,11 +62,7 @@ export const GamePauseMenu: FC<IGamePauseMenuProps> = ({ className }) => {
             </Button>
             <p>К теме</p>
           </LinkWithAnimation>
-          <LinkWithAnimation
-            to={prevUrl}
-            className={cls.buttonContainer}
-            slideDirection={'right'}
-          >
+          <LinkWithAnimation to={'/statistic'} className={cls.buttonContainer}>
             <Button
               style={{
                 borderRadius: '50%',
