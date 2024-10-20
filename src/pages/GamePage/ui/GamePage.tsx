@@ -18,25 +18,22 @@ const GamePage: FC = () => {
 
   const { slug } = useParams();
   const currentTopic = TOPICS.find((topic) => topic.slug === slug);
+
   const currentStoreTopicSlug = useAppSelector(
     (state) => state.currentTopic.slug
   );
-
   const isFadeQuestion = useAppSelector((state) => state.currentTopic.isFade);
-
   const toNextQuestion = useNextQuestion();
-
   const currentQuestionType = useAppSelector(
     (state) => state.currentTopic.currentQuestionType
   );
   const isBlocked = useAppSelector((state) => state.currentTopic.isBlocked);
-
   const topicWords = useAppSelector((state) => state.currentTopic.words);
-
-  const headerType = useAppSelector((state) => state.global.headerType);
-
   const gamePauseMenuIsOpen = useAppSelector(
     (state) => state.currentTopic.isPauseMenuOpen
+  );
+  const answersHistory = useAppSelector(
+    (state) => state.currentTopic.answersHistory
   );
 
   useEffect(() => {
@@ -52,7 +49,6 @@ const GamePage: FC = () => {
   }, [currentQuestionType, currentTopic, dispatch]);
 
   useEffect(() => {
-    if (headerType === 'gameHeader') return;
     dispatch(globalActions.setGameHeaderType('gameHeader'));
 
     return () => {
@@ -61,11 +57,21 @@ const GamePage: FC = () => {
   }, []);
 
   useEffect(() => {
-    if (!currentTopic) return;
-    dispatch(stopwatchActions.play());
+    // Закрываем меню, если открыто
     if (gamePauseMenuIsOpen) {
       dispatch(currentTopicActions.togglePauseMenuOpen());
     }
+  }, []);
+
+  useEffect(() => {
+    if (answersHistory.length !== 0) return;
+
+    dispatch(currentTopicActions.setAnswersHistory(topicWords));
+  }, [answersHistory.length, dispatch, topicWords]);
+
+  useEffect(() => {
+    if (!currentTopic) return;
+    dispatch(stopwatchActions.play());
 
     // Проверяем сменялась ли тема
     if (currentTopic.slug === currentStoreTopicSlug) return;

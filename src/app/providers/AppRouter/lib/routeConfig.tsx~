@@ -1,8 +1,8 @@
 import { GamePage } from '@/pages/GamePage';
+import { GameStatisticsPage } from '@/pages/GameStatisticsPage';
 import { TopicDetailsPage } from '@/pages/TopicDetailsPage';
 import { TopicsListPage } from '@/pages/TopicsListPage';
 import { type RouteProps } from 'react-router-dom';
-import { GameStatisticsPage } from '@/pages/GameStatisticsPage';
 
 export enum EnumAppRoutes {
   TOPICS_LIST = 'topics_list',
@@ -15,7 +15,7 @@ export const RoutePath: Record<EnumAppRoutes, string> = {
   [EnumAppRoutes.TOPICS_LIST]: '/topics',
   [EnumAppRoutes.TOPIC_DETAILS]: '/topics/:slug',
   [EnumAppRoutes.GAME]: '/topics/:slug/game',
-  [EnumAppRoutes.GAME_STATISTICS]: '/statistic',
+  [EnumAppRoutes.GAME_STATISTICS]: '/topics/:slug/statistic',
 };
 
 export const RouteConfig: Record<EnumAppRoutes, RouteProps> = {

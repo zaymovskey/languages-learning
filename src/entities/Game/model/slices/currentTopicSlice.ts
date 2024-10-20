@@ -40,7 +40,14 @@ export const currentTopicSlice = createSlice({
     setIsFade(state, action: PayloadAction<boolean>) {
       state.isFade = action.payload;
     },
-    addAnswersHistory(
+    setAnswersHistory(state, action: PayloadAction<IWord[]>) {
+      state.answersHistory = action.payload.map((word) => ({
+        rightCount: 0,
+        wrongCount: 0,
+        word: word.hebrew.withoutAnnouncement,
+      }));
+    },
+    addToAnswersHistory(
       state,
       action: PayloadAction<{ word: string; isRight: boolean }>
     ) {

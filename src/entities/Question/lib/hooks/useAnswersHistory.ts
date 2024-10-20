@@ -6,7 +6,7 @@ export const useAnswersHistory = () => {
 
   return (answer: string, rightAnswer: string) => {
     dispatch(
-      currentTopicActions.addAnswersHistory({
+      currentTopicActions.addToAnswersHistory({
         word: rightAnswer,
         isRight: answer === rightAnswer,
       })

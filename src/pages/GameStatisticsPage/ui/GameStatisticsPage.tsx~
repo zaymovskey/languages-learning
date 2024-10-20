@@ -14,7 +14,7 @@ const GameStatisticsPage: FC<IGameStatisticsPageProps> = ({ className }) => {
     (state) => state.currentTopic.answersHistory
   );
   const topicWords = useAppSelector((state) => state.currentTopic.words);
-  const prevUrl = useAppSelector((state) => state.global.prevUrl);
+  const prevUrl = useAppSelector((state) => state.global.url);
 
   if (topicWords.length === 0) {
     return <Navigate to={prevUrl} replace />;

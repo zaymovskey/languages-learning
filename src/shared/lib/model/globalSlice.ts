@@ -1,13 +1,13 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 export interface IGlobalScheme {
-  url: string;
+  prevUrl: string;
   slideDirection: 'left' | 'right' | null;
   headerType: 'default' | 'gameHeader';
 }
 
 const initialState: IGlobalScheme = {
-  url: '/',
+  prevUrl: '/',
   slideDirection: null,
   headerType: 'default',
 };
@@ -17,7 +17,7 @@ export const globalSlice = createSlice({
   initialState,
   reducers: {
     setUrl(state, action: PayloadAction<string>) {
-      state.url = action.payload;
+      state.prevUrl = action.payload;
     },
     setPageAnimationDirection(
       state,

@@ -15,7 +15,7 @@ export const RoutePath: Record<EnumAppRoutes, string> = {
   [EnumAppRoutes.TOPICS_LIST]: '/topics',
   [EnumAppRoutes.TOPIC_DETAILS]: '/topics/:slug',
   [EnumAppRoutes.GAME]: '/topics/:slug/game',
-  [EnumAppRoutes.GAME_STATISTICS]: '/statistic',
+  [EnumAppRoutes.GAME_STATISTICS]: '/topics/:slug/game/statistic',
 };
 
 export const RouteConfig: Record<EnumAppRoutes, RouteProps> = {

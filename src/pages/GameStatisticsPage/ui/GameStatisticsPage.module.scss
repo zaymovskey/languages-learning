@@ -1,5 +1,11 @@
 .statisticsWordItem {
   display: flex;
+  padding: 10px 20px;
+  border-bottom: 1px solid color-mix(in oklab, var(--color-background) 80%, white);
+
+  &.fade {
+    opacity: 0.4;
+  }
 }
 
 .statisticsValues {
@@ -8,7 +14,6 @@
   justify-content: space-around;
   flex: 1;
   padding-left: 10px;
-  border-bottom: 1px solid color-mix(in oklab, var(--color-background) 80%, white);
 }
 
 .statisticsItem {
@@ -29,4 +34,15 @@
 
 .right {
   background-color: var(--color-right);
+}
+
+.wordInfo  {
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+
+  & > span {
+    color: white;
+    font-weight: 700;
+  }
 }

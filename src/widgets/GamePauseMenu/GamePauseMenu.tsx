@@ -4,7 +4,7 @@ import { currentTopicActions } from '@/entities/Game';
 import { WordList } from '@/entities/Word';
 import { classNames } from '@/shared/lib';
 import { Button, LinkWithAnimation, stopwatchActions } from '@/shared/ui';
-import { CircleStop, LogOut, Play } from 'lucide-react';
+import { ChartNoAxesColumn, LogOut, Play } from 'lucide-react';
 import { type FC } from 'react';
 
 interface IGamePauseMenuProps {
@@ -18,7 +18,7 @@ export const GamePauseMenu: FC<IGamePauseMenuProps> = ({ className }) => {
     (state) => state.currentTopic.isPauseMenuOpen
   );
 
-  const prevUrl = useAppSelector((state) => state.global.url);
+  const prevUrl = useAppSelector((state) => state.global.prevUrl);
 
   const currentTopicWords = useAppSelector((state) => state.currentTopic.words);
 
@@ -62,7 +62,7 @@ export const GamePauseMenu: FC<IGamePauseMenuProps> = ({ className }) => {
             </Button>
             <p>К теме</p>
           </LinkWithAnimation>
-          <LinkWithAnimation to={'/statistic'} className={cls.buttonContainer}>
+          <LinkWithAnimation to={'statistic'} className={cls.buttonContainer}>
             <Button
               style={{
                 borderRadius: '50%',
@@ -74,9 +74,9 @@ export const GamePauseMenu: FC<IGamePauseMenuProps> = ({ className }) => {
                 dispatch(currentTopicActions.togglePauseMenuOpen());
               }}
             >
-              <CircleStop color={'white'} />
+              <ChartNoAxesColumn color={'white'} />
             </Button>
-            <p>Завершить</p>
+            <p>Статистика</p>
           </LinkWithAnimation>
           <div className={cls.buttonContainer}>
             <Button
