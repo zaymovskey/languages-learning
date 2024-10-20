@@ -1,3 +1,32 @@
-.GameStatisticsPage {
+.statisticsWordItem {
+  display: flex;
+}
 
+.statisticsValues {
+  display: flex;
+  gap: 10px;
+  justify-content: space-around;
+  flex: 1;
+  padding-left: 10px;
+  border-bottom: 1px solid color-mix(in oklab, var(--color-background) 80%, white);
+}
+
+.statisticsItem {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.wrong {
+  background-color: var(--color-wrong);
+}
+
+.right {
+  background-color: var(--color-right);
 }
