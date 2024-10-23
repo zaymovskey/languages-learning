@@ -121,7 +121,7 @@ export const Choice: FC<IChoiceProps> = ({ toNextQuestion }) => {
     );
   };
 
-  if (!currentQuestionWords || !rightAnswer) return <div></div>;
+  if (!currentQuestionWords || !rightAnswer) return <></>;
 
   return (
     <div>

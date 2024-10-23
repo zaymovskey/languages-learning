@@ -30,7 +30,7 @@ export const Typing: FC<ITypingProps> = ({ className, toNextQuestion }) => {
   const [rightAnswer, setRightAnswer] = useState<IWord>();
 
   useEffect(() => {
-    const [words, rightAnswer] = getWordsAndRightAnswer(
+    const [_, rightAnswer] = getWordsAndRightAnswer(
       topicWords,
       answersHistory,
       1

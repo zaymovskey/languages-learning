@@ -119,7 +119,7 @@ export const Typing: FC<ITypingProps> = ({ className, toNextQuestion }) => {
       : themeEnum.PRIMARY;
   };
 
-  if (!rightAnswer) return <div></div>;
+  if (!rightAnswer) return <></>;
 
   return (
     <div className={classNames(cls.Input, {}, [className])}>
