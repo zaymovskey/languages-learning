@@ -32,15 +32,13 @@ export const Choice: FC<IChoiceProps> = ({ toNextQuestion }) => {
   const [rightAnswer, setRightAnswer] = useState<IWord>();
 
   useEffect(() => {
-    if (answersHistory.length > 0) {
-      const [words, rightAnswer] = getWordsAndRightAnswer(
-        topicWords,
-        answersHistory,
-        getRandomNumberFromInterval(4, 6)
-      );
-      setCurrentQuestionWords(words);
-      setRightAnswer(rightAnswer);
-    }
+    const [words, rightAnswer] = getWordsAndRightAnswer(
+      topicWords,
+      answersHistory,
+      getRandomNumberFromInterval(4, 6)
+    );
+    setCurrentQuestionWords(words);
+    setRightAnswer(rightAnswer);
   }, []);
 
   const [isShowIcons, setIsShowIcons] = useState(Math.random() < 0.5);

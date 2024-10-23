@@ -4,6 +4,7 @@ import { useAppDispatch, useAppSelector } from '@/app';
 import { currentTopicActions } from '@/entities/Game';
 import { IQuestionComponentProps } from '@/entities/Question';
 import { useAnswersHistory } from '@/entities/Question/lib/hooks/useAnswersHistory.ts';
+import { getWordsAndRightAnswer } from '@/entities/Question/lib/utils/getWordsAndRightAnswer.ts';
 import { classNames, getRandomUniqueElements } from '@/shared/lib';
 import { playWord } from '@/shared/lib/utils/playWord/playWord.ts';
 import { Button, EnumButtonTheme } from '@/shared/ui/Button/Button.tsx';
@@ -22,14 +23,22 @@ export const Typing: FC<ITypingProps> = ({ className, toNextQuestion }) => {
   const dispatch = useAppDispatch();
 
   const topicWords = useAppSelector((state) => state.currentTopic.words);
+  const answersHistory = useAppSelector(
+    (state) => state.currentTopic.answersHistory
+  );
 
   const [rightAnswer, setRightAnswer] = useState<IWord>();
 
   useEffect(() => {
-    setRightAnswer(getRandomUniqueElements(topicWords, 1)[0]);
-  }, [topicWords]);
+    const [_, rightAnswer] = getWordsAndRightAnswer(
+      topicWords,
+      answersHistory,
+      1
+    );
+    setRightAnswer(rightAnswer);
+  }, []);
 
-  const answersHistory = useAnswersHistory();
+  const addAnswersHistory = useAnswersHistory();
 
   const [answer, setAnswer] = useState<string>('');
 
@@ -53,7 +62,12 @@ export const Typing: FC<ITypingProps> = ({ className, toNextQuestion }) => {
       getRandomUniqueElements<TypeQuestionTypes>([...questionTypes], 1)[0]
     );
 
-    setRightAnswer(getRandomUniqueElements(topicWords, 1)[0]);
+    const [_, rightAnswer] = getWordsAndRightAnswer(
+      topicWords,
+      answersHistory,
+      1
+    );
+    setRightAnswer(rightAnswer);
 
     setAnswer('');
   };
@@ -66,7 +80,7 @@ export const Typing: FC<ITypingProps> = ({ className, toNextQuestion }) => {
     const isAnswerWrong = answer !== rightAnswer!.hebrew.withoutAnnouncement;
     setIsAnswerWrong(isAnswerWrong);
 
-    answersHistory(answer, rightAnswer!.hebrew.withoutAnnouncement);
+    addAnswersHistory(answer, rightAnswer!.hebrew.withoutAnnouncement);
 
     setTimeout(() => {
       playWord(rightAnswer!.hebrew.withoutAnnouncement);

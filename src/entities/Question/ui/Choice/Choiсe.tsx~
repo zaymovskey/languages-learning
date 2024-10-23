@@ -32,7 +32,7 @@ export const Choice: FC<IChoiceProps> = ({ toNextQuestion }) => {
   const [rightAnswer, setRightAnswer] = useState<IWord>();
 
   useEffect(() => {
-    if (answersHistory.length > 0) {
+
       const [words, rightAnswer] = getWordsAndRightAnswer(
         topicWords,
         answersHistory,
@@ -40,7 +40,7 @@ export const Choice: FC<IChoiceProps> = ({ toNextQuestion }) => {
       );
       setCurrentQuestionWords(words);
       setRightAnswer(rightAnswer);
-    }
+    
   }, []);
 
   const [isShowIcons, setIsShowIcons] = useState(Math.random() < 0.5);
@@ -93,7 +93,7 @@ export const Choice: FC<IChoiceProps> = ({ toNextQuestion }) => {
     setSelectedAnswer(word);
 
     adAnswersHistory(
-      word.hebrew.withoutAnnouncement, 
+      word.hebrew.withoutAnnouncement,
       rightAnswer!.hebrew.withoutAnnouncement
     );
 
