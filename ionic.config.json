@@ -1,0 +1,7 @@
+{
+  "name": "languages-learning",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
