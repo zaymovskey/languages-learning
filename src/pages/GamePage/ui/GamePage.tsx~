@@ -98,7 +98,7 @@ const GamePage: FC = () => {
               []
             )}
           >
-            {topicWords.length && answersHistory.length && (
+            {topicWords.length && (
               <QuestionComponent toNextQuestion={toNextQuestion} />
             )}
           </div>

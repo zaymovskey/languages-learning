@@ -5,6 +5,13 @@ export interface ICurrentTopicScheme extends ITopic {
   currentQuestionType: TypeQuestionTypes | null;
   isBlocked: boolean;
   isFade: boolean;
-  answersHistory: { word: string; rightCount: number; wrongCount: number }[];
+  answersHistory: IAnswersHistoryItem[];
   isPauseMenuOpen: boolean;
+}
+
+export interface IAnswersHistoryItem {
+  word: string;
+  rightCount: number;
+  wrongCount: number;
+  frequency: number;
 }

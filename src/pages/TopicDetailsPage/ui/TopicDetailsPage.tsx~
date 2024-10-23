@@ -12,9 +12,9 @@ const TopicDetailsPage = () => {
   return (
     <AnimatePageWrapper>
       <div className={cls.imageBlock}>
-        <currentTopic.Icon color={'white'} width={110} height={110} />
+        <currentTopic.Icon color={'white'} width={110} height={110} /> 
       </div>
-      <div className={classNames('paddings-content', {}, [])}>
+      <div className={classNames('paddings-content', {}, [cls.mainContent])}>
         <h2 className={cls.title}>{currentTopic.title}</h2>
         <LinkWithAnimation
           to={'game'}

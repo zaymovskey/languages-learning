@@ -4,10 +4,10 @@ import { useAppDispatch, useAppSelector } from '@/app';
 import { currentTopicActions } from '@/entities/Game';
 import { IQuestionComponentProps } from '@/entities/Question';
 import { useAnswersHistory } from '@/entities/Question/lib/hooks/useAnswersHistory.ts';
+import { getWordsAndRightAnswer } from '@/entities/Question/lib/utils/getWordsAndRightAnswer.ts';
 import {
   classNames,
   getRandomNumberFromInterval,
-  getRandomUniqueElements,
   playWord,
 } from '@/shared/lib';
 import { FC, useEffect, useState } from 'react';
@@ -19,23 +19,29 @@ interface IChoiceProps extends IQuestionComponentProps {
 export const Choice: FC<IChoiceProps> = ({ toNextQuestion }) => {
   const dispatch = useAppDispatch();
 
-  const [wordsCount, setWordsCount] = useState(
-    getRandomNumberFromInterval(2, 6)
-  );
+  const adAnswersHistory = useAnswersHistory();
 
-  const answersHistory = useAnswersHistory();
-
+  // TODO: Нужно, чтобы слова принимались через пропсы, чтобы компонент был независимым
   const topicWords = useAppSelector((state) => state.currentTopic.words);
+  const answersHistory = useAppSelector(
+    (state) => state.currentTopic.answersHistory
+  );
 
   const [currentQuestionWords, setCurrentQuestionWords] = useState<IWord[]>();
 
   const [rightAnswer, setRightAnswer] = useState<IWord>();
 
   useEffect(() => {
-    const words = getRandomUniqueElements(topicWords, wordsCount);
-    setCurrentQuestionWords(words);
-    setRightAnswer(getRandomUniqueElements(words, 1)[0]);
-  }, [topicWords, wordsCount]);
+    if (answersHistory.length > 0) {
+      const [words, rightAnswer] = getWordsAndRightAnswer(
+        topicWords,
+        answersHistory,
+        getRandomNumberFromInterval(4, 6)
+      );
+      setCurrentQuestionWords(words);
+      setRightAnswer(rightAnswer);
+    }
+  }, []);
 
   const [isShowIcons, setIsShowIcons] = useState(Math.random() < 0.5);
   const [isVariantsLanguageIsHebrew, setIsVariantsLanguageIsHebrew] =
@@ -52,14 +58,16 @@ export const Choice: FC<IChoiceProps> = ({ toNextQuestion }) => {
   const [selectedAnswer, setSelectedAnswer] = useState<IWord | null>(null);
 
   const refreshQuestion = () => {
-    const newWordsCount = getRandomNumberFromInterval(2, 6);
-    setWordsCount(newWordsCount);
-    const newRandomUniqueElements = getRandomUniqueElements(
+    const newWordsCount = getRandomNumberFromInterval(4, 6);
+
+    const [words, rightAnswer] = getWordsAndRightAnswer(
       topicWords,
+      answersHistory,
       newWordsCount
     );
-    setCurrentQuestionWords(newRandomUniqueElements);
-    setRightAnswer(getRandomUniqueElements(newRandomUniqueElements, 1)[0]);
+    setCurrentQuestionWords(words);
+    setRightAnswer(rightAnswer);
+
     setSelectedAnswer(null);
 
     setIsShowIcons(Math.random() < 0.5);
@@ -84,7 +92,7 @@ export const Choice: FC<IChoiceProps> = ({ toNextQuestion }) => {
 
     setSelectedAnswer(word);
 
-    answersHistory(
+    adAnswersHistory(
       word.hebrew.withoutAnnouncement,
       rightAnswer!.hebrew.withoutAnnouncement
     );
