@@ -50,5 +50,5 @@ export const getWordsAndRightAnswer = (
       : max;
   }, rarestWords[0]);
 
-  return [shuffleArray(rarestWords), mostDifficultWord!];
+  return [rarestWords, mostDifficultWord!];
 };
