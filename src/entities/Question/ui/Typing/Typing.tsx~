@@ -10,7 +10,7 @@ import { playWord } from '@/shared/lib/utils/playWord/playWord.ts';
 import { Button, EnumButtonTheme } from '@/shared/ui/Button/Button.tsx';
 import { EnumInputTheme, Input } from '@/shared/ui/Input/Input.tsx';
 import { HeadphonesIcon } from 'hugeicons-react';
-import { type FC, useEffect, useState } from 'react';
+import { type FC, useEffect, useRef, useState } from 'react';
 
 interface ITypingProps extends IQuestionComponentProps {
   className?: string;
@@ -26,6 +26,11 @@ export const Typing: FC<ITypingProps> = ({ className, toNextQuestion }) => {
   const answersHistory = useAppSelector(
     (state) => state.currentTopic.answersHistory
   );
+  const answersHistoryRef = useRef(answersHistory);
+
+  useEffect(() => {
+    answersHistoryRef.current = answersHistory;
+  }, [answersHistory]); 
 
   const [rightAnswer, setRightAnswer] = useState<IWord>();
 
@@ -36,6 +41,10 @@ export const Typing: FC<ITypingProps> = ({ className, toNextQuestion }) => {
       1
     );
     setRightAnswer(rightAnswer);
+
+    setQuestionWordType(
+      getRandomUniqueElements<TypeQuestionTypes>([...questionTypes], 1)[0]
+    );
   }, []);
 
   const addAnswersHistory = useAnswersHistory();
@@ -49,12 +58,6 @@ export const Typing: FC<ITypingProps> = ({ className, toNextQuestion }) => {
     getRandomUniqueElements<TypeQuestionTypes>([...questionTypes], 1)[0]
   );
 
-  useEffect(() => {
-    setQuestionWordType(
-      getRandomUniqueElements<TypeQuestionTypes>([...questionTypes], 1)[0]
-    );
-  }, []);
-
   const refreshQuestion = () => {
     setIsAnswerWrong(false);
     setIsAnswerGiven(false);
@@ -64,7 +67,7 @@ export const Typing: FC<ITypingProps> = ({ className, toNextQuestion }) => {
 
     const [_, rightAnswer] = getWordsAndRightAnswer(
       topicWords,
-      answersHistory,
+      answersHistoryRef.current,
       1
     );
     setRightAnswer(rightAnswer);
@@ -83,12 +86,12 @@ export const Typing: FC<ITypingProps> = ({ className, toNextQuestion }) => {
     addAnswersHistory(answer, rightAnswer!.hebrew.withoutAnnouncement);
 
     setTimeout(() => {
-      playWord(rightAnswer!.hebrew.withoutAnnouncement);
-
-      setTimeout(() => {
-        toNextQuestion(refreshQuestion);
-        dispatch(currentTopicActions.setIsBlocked(false));
-      }, 1000);
+      playWord(rightAnswer!.hebrew.withoutAnnouncement, () => {
+        setTimeout(() => {
+          toNextQuestion(refreshQuestion);
+          dispatch(currentTopicActions.setIsBlocked(false));
+        }, 1000);
+      });
     }, 1000);
   };
 
@@ -119,7 +122,7 @@ export const Typing: FC<ITypingProps> = ({ className, toNextQuestion }) => {
       : themeEnum.PRIMARY;
   };
 
-  if (!rightAnswer) return <div></div>;
+  if (!rightAnswer) return <></>;
 
   return (
     <div className={classNames(cls.Input, {}, [className])}>

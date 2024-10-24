@@ -8,11 +8,11 @@ export const playWord = (word: string, onend?: () => void | null) => {
       rate: 1.0,
       pitch: 1.0,
       volume: 1.0,
-      category: 'ambient', 
+      category: 'ambient',
     });
   };
 
-  speak(word).then(() => {
+  speak(word).then(() => {;
     onend?.();
   });
 };

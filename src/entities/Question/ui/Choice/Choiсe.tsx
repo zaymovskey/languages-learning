@@ -10,7 +10,7 @@ import {
   getRandomNumberFromInterval,
   playWord,
 } from '@/shared/lib';
-import { FC, useEffect, useState } from 'react';
+import { FC, useEffect, useRef, useState } from 'react';
 
 interface IChoiceProps extends IQuestionComponentProps {
   className?: string;
@@ -26,6 +26,11 @@ export const Choice: FC<IChoiceProps> = ({ toNextQuestion }) => {
   const answersHistory = useAppSelector(
     (state) => state.currentTopic.answersHistory
   );
+  const answersHistoryRef = useRef(answersHistory);
+
+  useEffect(() => {
+    answersHistoryRef.current = answersHistory;
+  }, [answersHistory]);
 
   const [currentQuestionWords, setCurrentQuestionWords] = useState<IWord[]>();
 
@@ -60,7 +65,7 @@ export const Choice: FC<IChoiceProps> = ({ toNextQuestion }) => {
 
     const [words, rightAnswer] = getWordsAndRightAnswer(
       topicWords,
-      answersHistory,
+      answersHistoryRef.current,
       newWordsCount
     );
     setCurrentQuestionWords(words);

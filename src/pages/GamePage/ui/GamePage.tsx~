@@ -82,8 +82,7 @@ const GamePage: FC = () => {
     dispatch(stopwatchActions.reset());
   }, [currentStoreTopicSlug, currentTopic, dispatch]);
 
-  const QuestionComponent =
-    QUESTION_TYPES_COMPONENTS[currentQuestionType || 'Input'];
+  const QuestionComponent = QUESTION_TYPES_COMPONENTS['Input'];
 
   return (
     <AnimatePageWrapper>
@@ -98,7 +97,7 @@ const GamePage: FC = () => {
               []
             )}
           >
-            {topicWords.length && (
+            {topicWords.length && answersHistory.length && (
               <QuestionComponent toNextQuestion={toNextQuestion} />
             )}
           </div>
