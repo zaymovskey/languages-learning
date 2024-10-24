@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "prettier:all": "prettier src/**/*.ts --write"
+    "prettier:all": "prettier src/**/*.ts --write",
+    "cap:sync" : "npx cap sync android"
   },
   "dependencies": {
     "@capacitor-community/text-to-speech": "^5.0.0",
