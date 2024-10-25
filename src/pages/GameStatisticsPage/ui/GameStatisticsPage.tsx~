@@ -14,14 +14,14 @@ const GameStatisticsPage: FC<IGameStatisticsPageProps> = ({ className }) => {
     (state) => state.currentTopic.answersHistory
   );
   const topicWords = useAppSelector((state) => state.currentTopic.words);
-  const prevUrl = useAppSelector((state) => state.global.url);
+  const prevUrl = useAppSelector((state) => state.global.prevUrl);
 
   if (topicWords.length === 0) {
     return <Navigate to={prevUrl} replace />;
   }
 
   return (
-    <AnimatePageWrapper>
+    <AnimatePageWrapper key={'gameStatisticsPage'}>
       <div className={classNames(cls.gameStatisticsPage, {}, [className])}>
         <div className="paddings-content">
           {statistics.map((statisticItem, index) => {

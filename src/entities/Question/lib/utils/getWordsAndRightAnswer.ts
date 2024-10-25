@@ -20,17 +20,17 @@ export const getWordsAndRightAnswer = (
   answersHistory: IAnswersHistoryItem[],
   count: number
 ): [IWord[], IWord] => {
-  console.log(count);
-
   if (count === 1) {
     const rarestSortedWordsHistory = [...answersHistory]
       .sort((a, b) => a.frequency - b.frequency)
       .slice(0, 4);
 
+    const randomHistoryWord = getRandomElementFromArray(
+      rarestSortedWordsHistory
+    ).word;
+
     const randomElement = words.find(
-      (word) =>
-        word.hebrew.withoutAnnouncement ===
-        getRandomElementFromArray(rarestSortedWordsHistory).word
+      (word) => word.hebrew.withoutAnnouncement === randomHistoryWord
     )!;
 
     return [[], randomElement];

@@ -1,11 +1,14 @@
 import { useAppDispatch, useAppSelector } from '@/app';
 import { globalActions } from '@/shared/lib';
-import { AnimationProps, motion } from 'framer-motion';
+import { AnimatePresence, AnimationProps, motion } from 'framer-motion';
 import { FC, ReactNode } from 'react';
+import { useLocation } from 'react-router-dom';
 
-export const AnimatePageWrapper: FC<{ children: ReactNode }> = (
-  { children }
-) => {
+export const AnimatePageWrapper: FC<{ children: ReactNode }> = ({
+  children,
+}) => {
+  const location = useLocation();
+
   const slideDirection = useAppSelector((state) => state.global.slideDirection);
   const dispatch = useAppDispatch();
 
@@ -20,6 +23,7 @@ export const AnimatePageWrapper: FC<{ children: ReactNode }> = (
     : {
         animate: { x: 0 },
         initial: { x: slideDirection === 'left' ? '100%' : '-100%' },
+        exit: { x: slideDirection === 'left' ? '-100%' : '100%' },
         transition: {
           ease: 'linear',
           x: { duration: 0.3 },
@@ -27,14 +31,17 @@ export const AnimatePageWrapper: FC<{ children: ReactNode }> = (
       };
 
   return (
-    <motion.div
-      {...animationProps}
-      onAnimationComplete={() => {
-        dispatch(globalActions.setPageAnimationDirection(null));
-      }}
-      className="motion-div"
-    >
-      {children}
-    </motion.div>
+    <AnimatePresence>
+      <motion.div
+        key={location.pathname}
+        {...animationProps}
+        onAnimationComplete={() => {
+          dispatch(globalActions.setPageAnimationDirection(null));
+        }}
+        className="motion-div"
+      >
+        {children}
+      </motion.div>
+    </AnimatePresence>
   );
 };
