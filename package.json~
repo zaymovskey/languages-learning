@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "prettier:all": "prettier src/**/*.ts --write",
-    "cap:sync" : "npx cap open android"
+    "android:sync" : "npm build & npx cap sync android & npx cap open android"
   },
   "dependencies": {
     "@capacitor-community/text-to-speech": "^5.0.0",

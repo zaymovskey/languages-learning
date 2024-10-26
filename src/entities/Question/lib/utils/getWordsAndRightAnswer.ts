@@ -23,17 +23,27 @@ export const getWordsAndRightAnswer = (
   if (count === 1) {
     const rarestSortedWordsHistory = [...answersHistory]
       .sort((a, b) => a.frequency - b.frequency)
-      .slice(0, 4);
+      .slice(0, 2);
 
-    const randomHistoryWord = getRandomElementFromArray(
-      rarestSortedWordsHistory
-    ).word;
+    const rarestWordsStrings = rarestSortedWordsHistory.map(
+      (historyWord) => historyWord.word
+    );
 
-    const randomElement = words.find(
+    const difficultSortedWordsHistory = [...answersHistory]
+      .filter((historyWord) => !rarestWordsStrings.includes(historyWord.word))
+      .sort((a, b) => b.wrongCount - a.wrongCount)
+      .slice(0, 2);
+
+    const randomHistoryWord = getRandomElementFromArray([
+      ...rarestSortedWordsHistory,
+      ...difficultSortedWordsHistory,
+    ]).word;
+
+    const rightAnswer = words.find(
       (word) => word.hebrew.withoutAnnouncement === randomHistoryWord
     )!;
 
-    return [[], randomElement];
+    return [[], rightAnswer];
   } else {
     const rarestWordsCount = Math.ceil(count / 2);
     const randomWordsCount = count - rarestWordsCount;
@@ -53,14 +63,20 @@ export const getWordsAndRightAnswer = (
       (word) => word.hebrew.withoutAnnouncement
     );
 
-    const randomWords = shuffleArray(
-      words.filter(
-        (word) => !rarestWordsStrings.includes(word.hebrew.withoutAnnouncement)
-      )
-    ).slice(0, randomWordsCount);
+    const difficultySortedWordsHistory = [...answersHistory]
+      .filter((historyWord) => !rarestWordsStrings.includes(historyWord.word))
+      .sort((a, b) => b.wrongCount - a.wrongCount)
+      .slice(0, randomWordsCount);
+
+    const difficultyWords = difficultySortedWordsHistory.map(
+      (historyWord) =>
+        words.find(
+          (word) => word.hebrew.withoutAnnouncement === historyWord.word
+        )!
+    );
 
     const rightAnswer = getRandomElementFromArray(rarestWords);
 
-    return [shuffleArray([...randomWords, ...rarestWords]), rightAnswer];
+    return [shuffleArray([...difficultyWords, ...rarestWords]), rightAnswer];
   }
 };
