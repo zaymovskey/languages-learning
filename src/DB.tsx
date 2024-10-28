@@ -1019,12 +1019,9 @@ export const TOPICS: ITopic[] = [
       },
       {
         Icon: Clock03Icon,
-        hebrew: {
-          withAnnouncement: 'בּעת תָּקָה',
-          withoutAnnouncement: 'בעת תקה',
-        },
+        hebrew: { withAnnouncement: 'מְאֻחָר', withoutAnnouncement: 'מאוחר' },
         russian: 'поздно',
-        transcription: "be'at tikah",
+        transcription: 'meuhar',
       },
       {
         Icon: ClockArrowDown,
