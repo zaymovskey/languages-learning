@@ -21,23 +21,72 @@ import {
   FiverrIcon,
   BodyPartSixPackIcon,
   Calendar01Icon,
+  NoseIcon,
+  TurtleNeckIcon,
+  BodyPartLegIcon,
+  FourFinger03Icon,
+  ArrowTurnBackwardIcon,
+  BodyPartMuscleIcon,
+  NecklaceIcon,
+  Tired01Icon,
+  BodyArmorIcon,
+  DroolingIcon,
+  DentalToothIcon,
+  DistributeVerticalTopIcon,
+  PathfinderMinusFrontIcon,
+  SafariIcon,
+  LinkCircleIcon,
+  MoonLandingIcon,
+  BorderNone02Icon,
+  ApproximatelyEqualCircleIcon,
+  Clock03Icon,
+  Clock02Icon,
+  DocumentValidationIcon,
+  CookBookIcon,
+  SandalsIcon,
+  Time02Icon,
+  Timer02Icon,
 } from 'hugeicons-react';
 import {
+  AlarmClockIcon,
   Armchair,
   ArrowDownToLine,
+  ArrowLeftToLine,
+  ArrowRightToLine,
+  ArrowUpToLine,
   BookCopy,
   BookHeadphones,
   BrainCircuit,
+  BringToFront,
+  Calendar,
+  CalendarClock,
+  CalendarDays,
+  CandyCane,
   Car,
   CheckCheck,
   Church,
+  CircleArrowDown,
   CircleSlash2,
+  ClockArrowDown,
+  Dot,
   Ear,
   Eye,
+  EyeClosed,
   Footprints,
+  HeartHandshake,
+  Hourglass,
   LogIn,
   LogOut,
+  MailOpen,
+  Maximize2,
+  MoveDown,
+  MoveLeft,
+  MoveRight,
+  MoveUp,
   PersonStanding,
+  SquareArrowOutUpRight,
+  SunriseIcon,
+  Tally2,
 } from 'lucide-react';
 import { ComponentType, SVGProps } from 'react';
 
@@ -436,6 +485,128 @@ export const TOPICS: ITopic[] = [
     ],
   },
   {
+    title: 'Основные глаголы 3 (Н.В.)',
+    Icon: WorkoutRunIcon,
+    slug: 'osnovnie-glagoli-3-nv',
+    words: [
+      {
+        Icon: HeartHandshake,
+        hebrew: {
+          withAnnouncement: 'עוֹזֵר',
+          withoutAnnouncement: 'עוזר',
+        },
+        russian: 'помогаю',
+        transcription: 'ozer',
+      },
+      {
+        Icon: SandalsIcon,
+        hebrew: {
+          withAnnouncement: 'קָם',
+          withoutAnnouncement: 'קם',
+        },
+        russian: 'встаю',
+        transcription: 'qam',
+      },
+      {
+        Icon: CookBookIcon,
+        hebrew: {
+          withAnnouncement: 'מְבַשֵּל',
+          withoutAnnouncement: 'מבשל',
+        },
+        russian: 'готовлю (еду)',
+        transcription: 'mevashel',
+      },
+      {
+        Icon: DocumentValidationIcon,
+        hebrew: {
+          withAnnouncement: 'מְכִין',
+          withoutAnnouncement: 'מכין',
+        },
+        russian: 'готовлю (что-то)',
+        transcription: 'makhin',
+      },
+      {
+        Icon: MailOpen,
+        hebrew: {
+          withAnnouncement: 'פוֹתֵחַ',
+          withoutAnnouncement: 'פותח',
+        },
+        russian: 'открываю',
+        transcription: "pothe'ach",
+      },
+      {
+        Icon: EyeClosed,
+        hebrew: {
+          withAnnouncement: 'סוֹגֵר',
+          withoutAnnouncement: 'סוגר',
+        },
+        russian: 'закрываю',
+        transcription: "so'ger",
+      },
+    ],
+  },
+  {
+    title: 'Основные глаголы 3 (ИНФ.)',
+    Icon: WorkoutRunIcon,
+    slug: 'osnovnie-glagoli-3-inf',
+    words: [
+      {
+        Icon: HeartHandshake,
+        hebrew: {
+          withAnnouncement: 'לְעַזֵּר',
+          withoutAnnouncement: 'לעזר',
+        },
+        russian: 'помогать',
+        transcription: "le'azer",
+      },
+      {
+        Icon: SandalsIcon,
+        hebrew: {
+          withAnnouncement: 'לְקוּם',
+          withoutAnnouncement: 'לקום',
+        },
+        russian: 'вставать',
+        transcription: 'laqum',
+      },
+      {
+        Icon: CookBookIcon,
+        hebrew: {
+          withAnnouncement: 'לְבַשֵּל',
+          withoutAnnouncement: 'לבשל',
+        },
+        russian: 'готовить (еду)',
+        transcription: 'levashel',
+      },
+      {
+        Icon: DocumentValidationIcon,
+        hebrew: {
+          withAnnouncement: 'לְהָכִין',
+          withoutAnnouncement: 'להכין',
+        },
+        russian: 'готовить (что-то)',
+        transcription: 'lehachin',
+      },
+      {
+        Icon: MailOpen,
+        hebrew: {
+          withAnnouncement: 'לִפְתֹּחַ',
+          withoutAnnouncement: 'לפתוח',
+        },
+        russian: 'открывать',
+        transcription: "lifto'ach",
+      },
+      {
+        Icon: EyeClosed,
+        hebrew: {
+          withAnnouncement: 'לְסַגֵּר',
+          withoutAnnouncement: 'לסגר',
+        },
+        russian: 'закрывать',
+        transcription: 'lesager',
+      },
+    ],
+  },
+  {
     title: 'Дни недели',
     Icon: Calendar03Icon,
     slug: 'dni-nedeli',
@@ -502,6 +673,446 @@ export const TOPICS: ITopic[] = [
         },
         russian: 'суббота',
         transcription: 'yom shabat',
+      },
+    ],
+  },
+  {
+    title: 'Тело',
+    Icon: PersonStanding,
+    slug: 'telo',
+    words: [
+      {
+        Icon: NoseIcon,
+        hebrew: {
+          withAnnouncement: 'אַף',
+          withoutAnnouncement: 'אף',
+        },
+        russian: 'нос',
+        transcription: 'af',
+      },
+      {
+        Icon: DentalToothIcon,
+        hebrew: {
+          withAnnouncement: 'שֵׁן',
+          withoutAnnouncement: 'שן',
+        },
+        russian: 'зуб',
+        transcription: 'shen',
+      },
+      {
+        Icon: Eye,
+        hebrew: {
+          withAnnouncement: 'עַיִן',
+          withoutAnnouncement: 'עין',
+        },
+        russian: 'глаз',
+        transcription: 'ayin',
+      },
+      {
+        Icon: BodyPartLegIcon,
+        hebrew: {
+          withAnnouncement: 'רֶגֶל',
+          withoutAnnouncement: 'רגל',
+        },
+        russian: 'нога',
+        transcription: 'regel',
+      },
+      {
+        Icon: DroolingIcon,
+        hebrew: {
+          withAnnouncement: 'פֶּה',
+          withoutAnnouncement: 'פה',
+        },
+        russian: 'рот',
+        transcription: 'peh',
+      },
+      {
+        Icon: BodyArmorIcon,
+        hebrew: {
+          withAnnouncement: 'גּוּף',
+          withoutAnnouncement: 'גוף',
+        },
+        russian: 'тело',
+        transcription: 'guf',
+      },
+      {
+        Icon: Tired01Icon,
+        hebrew: {
+          withAnnouncement: 'רֹאשׁ',
+          withoutAnnouncement: 'ראש',
+        },
+        russian: 'голова',
+        transcription: 'rosh',
+      },
+      {
+        Icon: Ear,
+        hebrew: {
+          withAnnouncement: 'אֹזֶן',
+          withoutAnnouncement: 'אזן',
+        },
+        russian: 'ухо',
+        transcription: 'ozen',
+      },
+      {
+        Icon: NecklaceIcon,
+        hebrew: {
+          withAnnouncement: 'צַוָּאר',
+          withoutAnnouncement: 'צוואר',
+        },
+        russian: 'шея',
+        transcription: 'tsavar',
+      },
+      {
+        Icon: BodyPartMuscleIcon,
+        hebrew: {
+          withAnnouncement: 'כָּתֵף',
+          withoutAnnouncement: 'כתף',
+        },
+        russian: 'плечо',
+        transcription: 'khathef',
+      },
+      {
+        Icon: ArrowTurnBackwardIcon,
+        hebrew: {
+          withAnnouncement: 'גָּב',
+          withoutAnnouncement: 'גב',
+        },
+        russian: 'спина',
+        transcription: 'gav',
+      },
+      {
+        Icon: FourFinger03Icon,
+        hebrew: {
+          withAnnouncement: 'יָד',
+          withoutAnnouncement: 'יד',
+        },
+        russian: 'рука',
+        transcription: 'yad',
+      },
+      {
+        Icon: BodyPartLegIcon,
+        hebrew: {
+          withAnnouncement: 'בֶּרֶךְ',
+          withoutAnnouncement: 'ברך',
+        },
+        russian: 'колено',
+        transcription: 'berekh',
+      },
+      {
+        Icon: BodyPartSixPackIcon,
+        hebrew: {
+          withAnnouncement: 'בֶּטֶן',
+          withoutAnnouncement: 'בטן',
+        },
+        russian: 'живот',
+        transcription: 'beten',
+      },
+      {
+        Icon: TurtleNeckIcon,
+        hebrew: {
+          withAnnouncement: 'גָּרוֹן',
+          withoutAnnouncement: 'גרון',
+        },
+        russian: 'горло',
+        transcription: 'garon',
+      },
+    ],
+  },
+  {
+    title: 'Положение объекта',
+    Icon: DistributeVerticalTopIcon,
+    slug: 'polozhenie-objekta',
+    words: [
+      {
+        Icon: ArrowDownToLine,
+        hebrew: {
+          withAnnouncement: 'לְמַעְלָה',
+          withoutAnnouncement: 'למעלה',
+        },
+        russian: 'сверху',
+        transcription: "lema'lah",
+      },
+      {
+        Icon: ArrowUpToLine,
+        hebrew: {
+          withAnnouncement: 'לְמַטָּה',
+          withoutAnnouncement: 'למטה',
+        },
+        russian: 'снизу',
+        transcription: "lema'tah",
+      },
+      {
+        Icon: Tally2,
+        hebrew: {
+          withAnnouncement: 'לְיָד',
+          withoutAnnouncement: 'ליד',
+        },
+        russian: 'рядом',
+        transcription: 'leyad',
+      },
+      {
+        Icon: ArrowRightToLine,
+        hebrew: {
+          withAnnouncement: 'שְׂמֹאל',
+          withoutAnnouncement: 'שמאל',
+        },
+        russian: 'слева',
+        transcription: "s'mol",
+      },
+      {
+        Icon: ArrowLeftToLine,
+        hebrew: {
+          withAnnouncement: 'יָמִין',
+          withoutAnnouncement: 'ימין',
+        },
+        russian: 'справа',
+        transcription: 'yamin',
+      },
+      {
+        Icon: PathfinderMinusFrontIcon,
+        hebrew: {
+          withAnnouncement: 'לִפְנֵי',
+          withoutAnnouncement: 'לפני',
+        },
+        russian: 'перед',
+        transcription: 'lifnei',
+      },
+      {
+        Icon: BringToFront,
+        hebrew: {
+          withAnnouncement: 'אָחוֹר',
+          withoutAnnouncement: 'אחור',
+        },
+        russian: 'за',
+        transcription: 'achor',
+      },
+      {
+        Icon: CircleArrowDown,
+        hebrew: {
+          withAnnouncement: 'בְּתוֹךְ',
+          withoutAnnouncement: 'בתוך',
+        },
+        russian: 'внутри',
+        transcription: "b'toch",
+      },
+      {
+        Icon: SquareArrowOutUpRight,
+        hebrew: {
+          withAnnouncement: 'חוּץ',
+          withoutAnnouncement: 'חוץ',
+        },
+        russian: 'снаружи',
+        transcription: 'chutz',
+      },
+      {
+        Icon: Tally2,
+        hebrew: {
+          withAnnouncement: 'קָרוֹב',
+          withoutAnnouncement: 'קרוב',
+        },
+        russian: 'близко',
+        transcription: 'karov',
+      },
+      {
+        Icon: Maximize2,
+        hebrew: {
+          withAnnouncement: 'רָחוֹק',
+          withoutAnnouncement: 'רחוק',
+        },
+        russian: 'далеко',
+        transcription: 'rachok',
+      },
+    ],
+  },
+  {
+    title: 'Карта',
+    Icon: SafariIcon,
+    slug: 'karta',
+    words: [
+      {
+        Icon: MoveRight,
+        hebrew: {
+          withAnnouncement: 'מִזְרָח',
+          withoutAnnouncement: 'מזרח',
+        },
+        russian: 'восток',
+        transcription: 'mizrach',
+      },
+      {
+        Icon: MoveUp,
+        hebrew: {
+          withAnnouncement: 'צָפוֹן',
+          withoutAnnouncement: 'צפון',
+        },
+        russian: 'север',
+        transcription: 'tzafon',
+      },
+      {
+        Icon: MoveLeft,
+        hebrew: {
+          withAnnouncement: 'מַעֲרָב',
+          withoutAnnouncement: 'מערב',
+        },
+        russian: 'запад',
+        transcription: "ma'arav",
+      },
+      {
+        Icon: MoveDown,
+        hebrew: {
+          withAnnouncement: 'דָּרוֹם',
+          withoutAnnouncement: 'דרום',
+        },
+        russian: 'юг',
+        transcription: 'darom',
+      },
+      {
+        Icon: Dot,
+        hebrew: {
+          withAnnouncement: 'מֶרְכָּז',
+          withoutAnnouncement: 'מרכז',
+        },
+        russian: 'центр',
+        transcription: 'merkaz',
+      },
+      {
+        Icon: BorderNone02Icon,
+        hebrew: {
+          withAnnouncement: 'גְּבוּל',
+          withoutAnnouncement: 'גבול',
+        },
+        russian: 'граница',
+        transcription: 'gevul',
+      },
+      {
+        Icon: MoonLandingIcon,
+        hebrew: {
+          withAnnouncement: 'אָרֶץ',
+          withoutAnnouncement: 'ארץ',
+        },
+        russian: 'страна',
+        transcription: 'eretz',
+      },
+      {
+        Icon: LinkCircleIcon,
+        hebrew: {
+          withAnnouncement: 'שְׁכֵנִים',
+          withoutAnnouncement: 'שכנים',
+        },
+        russian: 'соседи',
+        transcription: "sh'chenim",
+      },
+    ],
+  },
+  {
+    title: 'Когда?',
+    Icon: Time02Icon,
+    slug: 'kogda',
+    words: [
+      {
+        Icon: Clock02Icon,
+        hebrew: {
+          withAnnouncement: 'מוֹקֵדָם',
+          withoutAnnouncement: 'מוקדם',
+        },
+        russian: 'рано',
+        transcription: 'mukdam',
+      },
+      {
+        Icon: Clock03Icon,
+        hebrew: {
+          withAnnouncement: 'בּעת תָּקָה',
+          withoutAnnouncement: 'בעת תקה',
+        },
+        russian: 'поздно',
+        transcription: "be'at tikah",
+      },
+      {
+        Icon: ClockArrowDown,
+        hebrew: {
+          withAnnouncement: 'בְּדִיּוּק',
+          withoutAnnouncement: 'בדיוק',
+        },
+        russian: 'точно',
+        transcription: 'bediyuq',
+      },
+      {
+        Icon: ApproximatelyEqualCircleIcon,
+        hebrew: {
+          withAnnouncement: 'בּערָך',
+          withoutAnnouncement: 'בערך',
+        },
+        russian: 'примерно',
+        transcription: "be'erakh",
+      },
+    ],
+  },
+  {
+    title: 'Единицы времени',
+    Icon: CalendarClock,
+    slug: 'edinitsi-vremeni',
+    words: [
+      {
+        Icon: AlarmClockIcon,
+        hebrew: {
+          withAnnouncement: 'שָׁעָה',
+          withoutAnnouncement: 'שעה',
+        },
+        russian: 'час',
+        transcription: "sha'ah",
+      },
+      {
+        Icon: SunriseIcon,
+        hebrew: {
+          withAnnouncement: 'יוֹם',
+          withoutAnnouncement: 'יום',
+        },
+        russian: 'день',
+        transcription: 'yom',
+      },
+      {
+        Icon: CandyCane,
+        hebrew: {
+          withAnnouncement: 'שָׁנָה',
+          withoutAnnouncement: 'שנה',
+        },
+        russian: 'год',
+        transcription: 'shanah',
+      },
+      {
+        Icon: CalendarDays,
+        hebrew: {
+          withAnnouncement: 'חֹדֶשׁ',
+          withoutAnnouncement: 'חודש',
+        },
+        russian: 'месяц',
+        transcription: 'chodesh',
+      },
+      {
+        Icon: Calendar,
+        hebrew: {
+          withAnnouncement: 'שָׁבוּעַ',
+          withoutAnnouncement: 'שבוע',
+        },
+        russian: 'неделя',
+        transcription: "shavu'a",
+      },
+      {
+        Icon: Hourglass,
+        hebrew: {
+          withAnnouncement: 'דַּקָּה',
+          withoutAnnouncement: 'דקה',
+        },
+        russian: 'минута',
+        transcription: 'daqah',
+      },
+      {
+        Icon: Timer02Icon,
+        hebrew: {
+          withAnnouncement: 'שְׁנִיָּה',
+          withoutAnnouncement: 'שניה',
+        },
+        russian: 'секунда',
+        transcription: 'shniyah',
       },
     ],
   },

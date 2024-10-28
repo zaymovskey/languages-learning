@@ -25,7 +25,7 @@ export const getWordsAndRightAnswer = (
       .sort((a, b) => a.frequency - b.frequency)
       .slice(0, 2);
 
-    const rarestWordsStrings = rarestSortedWordsHistory.map(
+    const rarestWordsStrings = rarestSortedWordsHistory.map( 
       (historyWord) => historyWord.word
     );
 
@@ -39,11 +39,11 @@ export const getWordsAndRightAnswer = (
       ...difficultSortedWordsHistory,
     ]).word;
 
-    const randomElement = words.find(
+    const rightAnswer = words.find(
       (word) => word.hebrew.withoutAnnouncement === randomHistoryWord
     )!;
 
-    return [[], randomElement];
+    return [[], rightAnswer];
   } else {
     const rarestWordsCount = Math.ceil(count / 2);
     const randomWordsCount = count - rarestWordsCount;
