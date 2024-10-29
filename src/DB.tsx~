@@ -678,7 +678,7 @@ export const TOPICS: ITopic[] = [
         },
         russian: 'смотреть',
         transcription: 'listakel',
-      },
+      }
     ],
   },
   {
