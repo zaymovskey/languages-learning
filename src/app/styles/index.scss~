@@ -1,6 +1,10 @@
 @import 'normalize';
 @import 'variables/global';
 
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
 html,body,.paddings-content,#root,.content-page,.motion-div {
   height: 100%;
   max-width: 100vw;
