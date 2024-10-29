@@ -8,11 +8,9 @@ interface IWordsListItemProps extends IWord {
   className?: string;
 }
 
-export const WordListItem: FC<IWordsListItemProps> = ({
-  Icon,
-  hebrew,
-  russian,
-}) => {
+export const WordListItem: FC<IWordsListItemProps> = (
+  { Icon, hebrew, russian }
+) => {
   const onSoundBtnClick = () => {
     playWord(hebrew.withoutAnnouncement);
   };

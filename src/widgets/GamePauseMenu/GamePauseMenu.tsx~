@@ -68,7 +68,7 @@ export const GamePauseMenu: FC<IGamePauseMenuProps> = ({ className }) => {
                 borderRadius: '50%',
                 width: '60px',
                 height: '60px',
-                backgroundColor: 'rgb(57 57 57)',
+                backgroundColor: '#631a8a',
               }}
               onClick={() => {
                 dispatch(currentTopicActions.togglePauseMenuOpen());
