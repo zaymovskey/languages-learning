@@ -86,10 +86,12 @@ import {
   MoveUp,
   PersonStanding,
   Phone,
+  RedoDot,
   Send,
   SquareArrowOutUpRight,
   SunriseIcon,
   Tally2,
+  UndoDot,
 } from 'lucide-react';
 import { ComponentType, SVGProps } from 'react';
 
@@ -678,7 +680,7 @@ export const TOPICS: ITopic[] = [
         },
         russian: 'смотреть',
         transcription: 'listakel',
-      }
+      },
     ],
   },
   {
@@ -1185,6 +1187,24 @@ export const TOPICS: ITopic[] = [
         },
         russian: 'примерно',
         transcription: "be'erakh",
+      },
+      {
+        Icon: RedoDot,
+        hebrew: {
+          withAnnouncement: 'מָחָר',
+          withoutAnnouncement: 'מחר',
+        },
+        russian: 'завтра',
+        transcription: 'makhár',
+      },
+      { 
+        Icon: UndoDot,
+        hebrew: {
+          withAnnouncement: 'אֶתְמוֹל',
+          withoutAnnouncement: 'אתמול',
+        },
+        russian: 'вчера',
+        transcription: 'etmol',
       },
     ],
   },
