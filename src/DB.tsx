@@ -551,17 +551,17 @@ export const TOPICS: ITopic[] = [
       {
         Icon: Send,
         hebrew: {
-          withAnnouncement: 'מְשַלֵּחַ',
-          withoutAnnouncement: 'משלח',
+          withAnnouncement: 'שַלֵּחַ',
+          withoutAnnouncement: 'שלח',
         },
         russian: 'отправляю',
-        transcription: 'meshalekh',
+        transcription: 'shalekh',
       },
       {
         Icon: Calendar03Icon,
         hebrew: {
-          withAnnouncement: 'מְקַבֵּעַ',
-          withoutAnnouncement: 'מקבע',
+          withAnnouncement: 'קוֹבֵעַ',
+          withoutAnnouncement: 'קובע',
         },
         russian: 'назначаю',
         transcription: 'mekavea',
