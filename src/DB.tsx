@@ -657,7 +657,7 @@ export const TOPICS: ITopic[] = [
       {
         Icon: Calendar03Icon,
         hebrew: {
-          withAnnouncement: 'לְקַבֵּעַ',
+          withAnnouncement: 'לְקַבֵּועַ',
           withoutAnnouncement: 'לקבוע',
         },
         russian: 'назначать',
