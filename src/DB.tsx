@@ -47,6 +47,16 @@ import {
   Time02Icon,
   Timer02Icon,
   EyeIcon,
+  Building01Icon,
+  TabletPenIcon,
+  Building03Icon,
+  ForgotPasswordIcon,
+  PushUpBarIcon,
+  PulleyIcon,
+  CleanIcon,
+  GiveBloodIcon,
+  Invoice03Icon,
+  UsbMemory01Icon,
 } from 'hugeicons-react';
 import {
   AlarmClockIcon,
@@ -66,16 +76,21 @@ import {
   Car,
   CheckCheck,
   Church,
+  Cigarette,
   CircleArrowDown,
   CircleSlash2,
+  ClockAlert,
   ClockArrowDown,
+  DoorOpen,
   Dot,
   Ear,
   Eye,
   EyeClosed,
   Footprints,
   HeartHandshake,
+  Hotel,
   Hourglass,
+  Loader,
   LogIn,
   LogOut,
   MailOpen,
@@ -91,6 +106,7 @@ import {
   SquareArrowOutUpRight,
   SunriseIcon,
   Tally2,
+  TreePalm,
   UndoDot,
 } from 'lucide-react';
 import { ComponentType, SVGProps } from 'react';
@@ -680,6 +696,236 @@ export const TOPICS: ITopic[] = [
         },
         russian: 'смотреть',
         transcription: 'listakel',
+      },
+    ],
+  },
+  {
+    title: 'Основные глаголы 4 (Н.В.)',
+    Icon: WorkoutRunIcon,
+    slug: 'osnovnie-glagoli-4-nv',
+    words: [
+      {
+        Icon: ClockAlert,
+        hebrew: {
+          withAnnouncement: 'מְאַחֵר',
+          withoutAnnouncement: 'מאחר',
+        },
+        russian: 'опаздываю',
+        transcription: 'meacher',
+      },
+      {
+        Icon: GiveBloodIcon,
+        hebrew: {
+          withAnnouncement: 'לוֹקֵחַ',
+          withoutAnnouncement: 'לוקח',
+        },
+        russian: 'беру',
+        transcription: 'lokeach',
+      },
+      {
+        Icon: Invoice03Icon,
+        hebrew: {
+          withAnnouncement: 'מְשַׁלֵּם',
+          withoutAnnouncement: 'משלם',
+        },
+        russian: 'плачу',
+        transcription: 'meshalem',
+      },
+      {
+        Icon: UsbMemory01Icon,
+        hebrew: {
+          withAnnouncement: 'זוֹכֵר',
+          withoutAnnouncement: 'זוכר',
+        },
+        russian: 'помню',
+        transcription: 'zocher',
+      },
+      {
+        Icon: TreePalm,
+        hebrew: {
+          withAnnouncement: 'נוֹחַ',
+          withoutAnnouncement: 'נוח',
+        },
+        russian: 'отдыхаю',
+        transcription: 'noach',
+      },
+      {
+        Icon: ForgotPasswordIcon,
+        hebrew: {
+          withAnnouncement: 'שׁוֹכֵחַ',
+          withoutAnnouncement: 'שוכח',
+        },
+        russian: 'забываю',
+        transcription: 'shocheach',
+      },
+      {
+        Icon: Cigarette,
+        hebrew: {
+          withAnnouncement: 'מַעֲשֵּן',
+          withoutAnnouncement: 'מעשן',
+        },
+        russian: 'курю',
+        transcription: 'maasen',
+      },
+      {
+        Icon: Loader,
+        hebrew: {
+          withAnnouncement: 'מַחְכֶּה',
+          withoutAnnouncement: 'מחכה',
+        },
+        russian: 'жду',
+        transcription: 'machke',
+      },
+      {
+        Icon: GiveBloodIcon,
+        hebrew: {
+          withAnnouncement: 'נוֹתן',
+          withoutAnnouncement: 'נותן',
+        },
+        russian: 'даю',
+        transcription: 'noten',
+      },
+      {
+        Icon: CleanIcon,
+        hebrew: {
+          withAnnouncement: 'מנקה',
+          withoutAnnouncement: 'מנקה',
+        },
+        russian: 'убираюсь',
+        transcription: 'minkeh',
+      },
+      {
+        Icon: PulleyIcon,
+        hebrew: {
+          withAnnouncement: 'מַשֵּן',
+          withoutAnnouncement: 'משן',
+        },
+        russian: 'тяну',
+        transcription: 'mashen',
+      },
+      {
+        Icon: PushUpBarIcon,
+        hebrew: {
+          withAnnouncement: 'דּוֹחֵף',
+          withoutAnnouncement: 'דוחף',
+        },
+        russian: 'толкаю',
+        transcription: 'dochef',
+      },
+    ],
+  },
+  {
+    title: 'Основные глаголы 4 (ИНФ.)',
+    Icon: WorkoutRunIcon,
+    slug: 'osnovnie-glagoli-4-inf',
+    words: [
+      {
+        Icon: ClockAlert,
+        hebrew: {
+          withAnnouncement: 'בָּא אִיחוּר',
+          withoutAnnouncement: 'באיחור',
+        },
+        russian: 'опаздывать',
+        transcription: 'ba ichur',
+      },
+      {
+        Icon: GiveBloodIcon,
+        hebrew: {
+          withAnnouncement: 'לָקַחַת',
+          withoutAnnouncement: 'לקחת',
+        },
+        russian: 'брать',
+        transcription: 'lakachat',
+      },
+      {
+        Icon: Invoice03Icon,
+        hebrew: {
+          withAnnouncement: 'לְשַׁלֵּם',
+          withoutAnnouncement: 'לשלם',
+        },
+        russian: 'платить',
+        transcription: 'leshalem',
+      },
+      {
+        Icon: UsbMemory01Icon,
+        hebrew: {
+          withAnnouncement: 'לִזְכֹּר',
+          withoutAnnouncement: 'לזכור',
+        },
+        russian: 'помнить',
+        transcription: 'lizkor',
+      },
+      {
+        Icon: TreePalm,
+        hebrew: {
+          withAnnouncement: 'לִנוּחַ',
+          withoutAnnouncement: 'לנוח',
+        },
+        russian: 'отдыхать',
+        transcription: 'linuach',
+      },
+      {
+        Icon: ForgotPasswordIcon,
+        hebrew: {
+          withAnnouncement: 'לִשְׁכּוֹחַ',
+          withoutAnnouncement: 'לשכוח',
+        },
+        russian: 'забывать',
+        transcription: 'lishkoch',
+      },
+      {
+        Icon: Cigarette,
+        hebrew: {
+          withAnnouncement: 'לַעֲשֵׁן',
+          withoutAnnouncement: 'לעשן',
+        },
+        russian: 'курить',
+        transcription: 'laasen',
+      },
+      {
+        Icon: Loader,
+        hebrew: {
+          withAnnouncement: 'לַחֲכוֹת',
+          withoutAnnouncement: 'לחכות',
+        },
+        russian: 'ждать',
+        transcription: 'lachakot',
+      },
+      {
+        Icon: GiveBloodIcon,
+        hebrew: {
+          withAnnouncement: 'לָתֵת',
+          withoutAnnouncement: 'לתת',
+        },
+        russian: 'давать',
+        transcription: 'latet',
+      },
+      {
+        Icon: CleanIcon,
+        hebrew: {
+          withAnnouncement: 'לִנְקוֹת',
+          withoutAnnouncement: 'לנקות',
+        },
+        russian: 'убираться',
+        transcription: 'linakot',
+      },
+      {
+        Icon: PulleyIcon,
+        hebrew: {
+          withAnnouncement: 'לְמַשֵּׁן',
+          withoutAnnouncement: 'למשן',
+        },
+        russian: 'тянуть',
+        transcription: 'lemashen',
+      },
+      {
+        Icon: PushUpBarIcon,
+        hebrew: {
+          withAnnouncement: 'לְדַחֵף',
+          withoutAnnouncement: 'לדחף',
+        },
+        russian: 'толкать',
+        transcription: 'ledachef',
       },
     ],
   },
@@ -1275,6 +1521,76 @@ export const TOPICS: ITopic[] = [
         },
         russian: 'секунда',
         transcription: 'shniyah',
+      },
+    ],
+  },
+  {
+    title: 'Здание',
+    Icon: Building01Icon,
+    slug: 'zdaniye',
+    words: [
+      {
+        Icon: LogOut,
+        hebrew: {
+          withAnnouncement: 'יְצִיאָה',
+          withoutAnnouncement: 'יציאה',
+        },
+        russian: 'выход',
+        transcription: 'yetziah',
+      },
+      {
+        Icon: LogIn,
+        hebrew: {
+          withAnnouncement: 'כְּנִיסָה',
+          withoutAnnouncement: 'כניסה',
+        },
+        russian: 'вход',
+        transcription: 'knisah',
+      },
+      {
+        Icon: DoorOpen,
+        hebrew: {
+          withAnnouncement: 'יְצִיאַת חָרוּם',
+          withoutAnnouncement: 'יציאת חרום',
+        },
+        russian: 'экстренный выход',
+        transcription: 'yetziat charum',
+      },
+      {
+        Icon: Building01Icon,
+        hebrew: {
+          withAnnouncement: 'קוֹמָה',
+          withoutAnnouncement: 'קומה',
+        },
+        russian: 'этаж',
+        transcription: 'komah',
+      },
+      {
+        Icon: TabletPenIcon,
+        hebrew: {
+          withAnnouncement: 'שִׁלְט',
+          withoutAnnouncement: 'שלט',
+        },
+        russian: 'вывеска',
+        transcription: 'shilt',
+      },
+      {
+        Icon: Building03Icon,
+        hebrew: {
+          withAnnouncement: 'בִּנְיָן',
+          withoutAnnouncement: 'בנין',
+        },
+        russian: 'здание',
+        transcription: 'binyan',
+      },
+      {
+        Icon: Hotel,
+        hebrew: {
+          withAnnouncement: 'דִּירָה',
+          withoutAnnouncement: 'דירה',
+        },
+        russian: 'квартира',
+        transcription: 'dirah',
       },
     ],
   },
