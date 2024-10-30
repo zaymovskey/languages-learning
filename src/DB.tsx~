@@ -161,7 +161,7 @@ export const TOPICS: ITopic[] = [
       {
         Icon: BubbleChatIcon,
         hebrew: { withAnnouncement: 'מְדַבֵּר', withoutAnnouncement: 'מדבר' },
-        russian: 'говорить',
+        russian: 'говорить', 
         transcription: 'mdaber',
       },
       {
