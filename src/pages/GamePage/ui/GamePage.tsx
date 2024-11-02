@@ -60,12 +60,6 @@ const GamePage: FC = () => {
     }
   }, []);
 
-  // useEffect(() => {
-  //   if (answersHistory.length !== 0) return;
-  //
-  //   dispatch(currentTopicActions.setAnswersHistory(topicWords));
-  // }, [answersHistory.length, dispatch, topicWords]);
-
   useEffect(() => {
     if (!currentTopic) return;
     dispatch(stopwatchActions.play());

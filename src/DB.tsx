@@ -1612,9 +1612,9 @@ export const TOPICS: (ITopic | ITopicGroup)[] = [
     ],
   },
   {
-    title: 'Единицы времени',
+    title: 'Дата и время',
     Icon: CalendarClock,
-    slug: 'edinitsi-vremeni',
+    slug: 'data-i-vremya',
     words: [
       {
         Icon: AlarmClockIcon,
@@ -1633,6 +1633,15 @@ export const TOPICS: (ITopic | ITopicGroup)[] = [
         },
         russian: 'день',
         transcription: 'yom',
+      },
+      {
+        Icon: Calendar,
+        hebrew: {
+          withAnnouncement: 'תָּאְרִיךְ',
+          withoutAnnouncement: 'תאריך',
+        },
+        russian: 'дата',
+        transcription: "ta'rikh",
       },
       {
         Icon: CandyCane,
@@ -1661,6 +1670,7 @@ export const TOPICS: (ITopic | ITopicGroup)[] = [
         russian: 'неделя',
         transcription: "shavu'a",
       },
+
       {
         Icon: Hourglass,
         hebrew: {
