@@ -86,6 +86,7 @@ import {
   CircleSlash2,
   ClockAlert,
   ClockArrowDown,
+  ContactRound,
   DoorOpen,
   Dot,
   Drumstick,
@@ -1727,6 +1728,130 @@ export const TOPICS: ITopic[] = [
         },
         russian: 'хлеб',
         transcription: 'lechem',
+      },
+    ],
+  },
+  {
+    title: 'Семья',
+    Icon: ContactRound,
+    slug: 'semya',
+    words: [
+      {
+        Icon: ContactRound,
+        hebrew: {
+          withAnnouncement: 'אִמָּא',
+          withoutAnnouncement: 'אמא',
+        },
+        russian: 'мама',
+        transcription: 'imma',
+      },
+      {
+        Icon: ContactRound,
+        hebrew: {
+          withAnnouncement: 'אַבָּא',
+          withoutAnnouncement: 'אבא',
+        },
+        russian: 'папа',
+        transcription: 'abba',
+      },
+      {
+        Icon: ContactRound,
+        hebrew: {
+          withAnnouncement: 'סָבְתָא',
+          withoutAnnouncement: 'סבתא',
+        },
+        russian: 'бабушка',
+        transcription: 'savta',
+      },
+      {
+        Icon: ContactRound,
+        hebrew: {
+          withAnnouncement: 'סַבָּא',
+          withoutAnnouncement: 'סבא',
+        },
+        russian: 'дедушка',
+        transcription: 'saba',
+      },
+      {
+        Icon: ContactRound,
+        hebrew: {
+          withAnnouncement: 'בֵּן',
+          withoutAnnouncement: 'בן',
+        },
+        russian: 'сын',
+        transcription: 'ben',
+      },
+      {
+        Icon: ContactRound,
+        hebrew: {
+          withAnnouncement: 'בַּת',
+          withoutAnnouncement: 'בת',
+        },
+        russian: 'дочь',
+        transcription: 'bat',
+      },
+      {
+        Icon: ContactRound,
+        hebrew: {
+          withAnnouncement: 'אָח',
+          withoutAnnouncement: 'אח',
+        },
+        russian: 'брат',
+        transcription: 'ach',
+      },
+      {
+        Icon: ContactRound,
+        hebrew: {
+          withAnnouncement: 'אָחוֹת',
+          withoutAnnouncement: 'אחות',
+        },
+        russian: 'сестра',
+        transcription: 'achot',
+      },
+      {
+        Icon: ContactRound,
+        hebrew: {
+          withAnnouncement: 'דוֹד',
+          withoutAnnouncement: 'דוד',
+        },
+        russian: 'дядя',
+        transcription: 'dod',
+      },
+      {
+        Icon: ContactRound,
+        hebrew: {
+          withAnnouncement: 'דוֹדָה',
+          withoutAnnouncement: 'דודה',
+        },
+        russian: 'тётя',
+        transcription: 'doda',
+      },
+      {
+        Icon: ContactRound,
+        hebrew: {
+          withAnnouncement: 'בַּעַל',
+          withoutAnnouncement: 'בעל',
+        },
+        russian: 'муж',
+        transcription: 'baal',
+      },
+      {
+        Icon: ContactRound,
+        hebrew: {
+          withAnnouncement: 'אִשָּׁה',
+          withoutAnnouncement: 'אשה',
+        },
+        russian: 'жена',
+        transcription: 'ishah',
+      },
+      {
+        Icon: ContactRound,
+        hebrew: {
+          withAnnouncement: 'מִשְׁפָּחָה',
+          withoutAnnouncement: 'משפחה',
+        },
+        russian: 'семья',
+        transcription: 'mishpachah',
       },
     ],
   },
