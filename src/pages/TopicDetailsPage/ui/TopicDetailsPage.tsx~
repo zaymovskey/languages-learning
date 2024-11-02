@@ -1,10 +1,13 @@
 import cls from './TopicDetailsPage.module.scss';
+import { TOPICS } from '@/DB.tsx';
 import { useAppSelector } from '@/app';
 import { WordList } from '@/entities/Word';
 import { classNames } from '@/shared/lib';
 import { AnimatePageWrapper, Button, LinkWithAnimation } from '@/shared/ui';
+import { useParams } from 'react-router-dom';
 
 const TopicDetailsPage = () => {
+  const { slug } = useParams();
   const currentTopic = useAppSelector((state) => state.currentTopic);
 
   return (

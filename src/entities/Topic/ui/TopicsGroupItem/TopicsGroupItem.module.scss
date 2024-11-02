@@ -1,0 +1,48 @@
+.topicsList {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding-left: 50px;
+  padding-top: 7px;
+}
+
+.topicLink {
+  width: fit-content;
+}
+
+.topicListItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: 0.3s;
+  cursor: pointer;
+
+  &:active {
+    transition: 0.3s;
+    transform: scale(0.9);
+  }
+}
+
+.imageBlock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: var(--color-accent-secondary);
+}
+
+.titleBlock {
+  color: inherit;
+  margin: 0;
+}
+
+.arrow {
+  display: flex;
+  transform: rotate(180deg);
+  transition: 0.2s;
+
+  &.active {
+    transform: rotate(0);
+  }
+}

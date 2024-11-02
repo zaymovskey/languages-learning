@@ -137,6 +137,7 @@ export interface ITopic {
 export interface ITopicGroup {
   title: string;
   topics: ITopic[];
+  Icon: ComponentType<SVGProps<SVGSVGElement>>;
 }
 
 export interface IWord {
@@ -146,950 +147,1037 @@ export interface IWord {
   hebrew: { withAnnouncement: string; withoutAnnouncement: string };
 }
 
-export const TOPICS: ITopic[] = [
+export const TOPICS: (ITopic | ITopicGroup)[] = [
   {
-    title: 'Основные глаголы (Н.В.)',
+    title: 'Глаголы',
     Icon: WorkoutRunIcon,
-    slug: 'osnovnie-glagoli-nv',
-    words: [
-      {
-        Icon: City02Icon,
-        hebrew: { withAnnouncement: 'גָר', withoutAnnouncement: 'גר' },
-        russian: 'жить',
-        transcription: 'gar',
-      },
-      {
-        Icon: StudentsIcon,
-        hebrew: { withAnnouncement: 'לִימֵד', withoutAnnouncement: 'לומד' },
-        russian: 'учить',
-        transcription: 'lomed',
-      },
-      {
-        Icon: LaborIcon,
-        hebrew: { withAnnouncement: 'עָבַד', withoutAnnouncement: 'עובד' },
-        russian: 'работать',
-        transcription: 'oved',
-      },
-      {
-        Icon: BubbleChatIcon,
-        hebrew: { withAnnouncement: 'מְדַבֵּר', withoutAnnouncement: 'מדבר' },
-        russian: 'говорить',
-        transcription: 'mdaber',
-      },
-      {
-        Icon: ShareKnowledgeIcon,
-        hebrew: { withAnnouncement: 'מֵבִין', withoutAnnouncement: 'מבין' },
-        russian: 'понимать',
-        transcription: 'mibeyn',
-      },
-      {
-        Icon: Knowledge01Icon,
-        hebrew: { withAnnouncement: 'יוָדַע', withoutAnnouncement: 'יודע' },
-        russian: 'знать',
-        transcription: 'yodea',
-      },
-      {
-        Icon: PencilEdit01Icon,
-        hebrew: { withAnnouncement: 'כָּתַב', withoutAnnouncement: 'כותב' },
-        russian: 'писать',
-        transcription: 'kotev',
-      },
-      {
-        Icon: AudioBook04Icon,
-        hebrew: { withAnnouncement: 'קָרָא', withoutAnnouncement: 'קורא' },
-        russian: 'читать',
-        transcription: 'kore',
-      },
-      {
-        Icon: UserQuestion02Icon,
-        hebrew: { withAnnouncement: 'שוֹאֵל', withoutAnnouncement: 'שואל' },
-        russian: 'спрашивать',
-        transcription: 'shoel',
-      },
-      {
-        Icon: BubbleChatSecureIcon,
-        hebrew: { withAnnouncement: 'עוֹנֶה', withoutAnnouncement: 'עונה' },
-        russian: 'отвечать',
-        transcription: 'one',
-      },
-      {
-        Icon: ArrowDown05Icon,
-        hebrew: { withAnnouncement: 'בָּא', withoutAnnouncement: 'בא' },
-        russian: 'приходить',
-        transcription: 'ba',
-      },
-      {
-        Icon: BubbleChatAddIcon,
-        hebrew: { withAnnouncement: 'אוֹמַר', withoutAnnouncement: 'אומר' },
-        russian: 'сказать',
-        transcription: 'omer',
-      },
-      {
-        Icon: HealthIcon,
-        hebrew: {
-          withAnnouncement: 'מַרְגִּישׁ',
-          withoutAnnouncement: 'מרגיש',
-        },
-        russian: 'чувствую',
-        transcription: 'margish',
-      },
-    ],
-  },
-  {
-    title: 'Основные глаголы (ИНФ.)',
-    Icon: WorkoutRunIcon,
-    slug: 'osnovnie-glagoli-inf',
-    words: [
-      {
-        Icon: City02Icon,
-        hebrew: { withAnnouncement: 'לָגוּר', withoutAnnouncement: 'לגור' },
-        russian: 'жить',
-        transcription: 'lagur',
-      },
-      {
-        Icon: StudentsIcon,
-        hebrew: { withAnnouncement: 'לִימֵד', withoutAnnouncement: 'לומד' },
-        russian: 'учить',
-        transcription: 'lomed',
-      },
-      {
-        Icon: LaborIcon,
-        hebrew: { withAnnouncement: 'לַעֲבוֹד', withoutAnnouncement: 'לעבוד' },
-        russian: 'работать',
-        transcription: 'laavod',
-      },
-      {
-        Icon: BubbleChatIcon,
-        hebrew: { withAnnouncement: 'לְדַבֵּר', withoutAnnouncement: 'לדבר' },
-        russian: 'говорить',
-        transcription: 'ldaber',
-      },
-      {
-        Icon: ShareKnowledgeIcon,
-        hebrew: { withAnnouncement: 'לְהָבִין', withoutAnnouncement: 'להבין' },
-        russian: 'понимать',
-        transcription: 'lhavin',
-      },
-      {
-        Icon: Knowledge01Icon,
-        hebrew: { withAnnouncement: 'לָדַעַת', withoutAnnouncement: 'לדעת' },
-        russian: 'знать',
-        transcription: 'ldaat',
-      },
-      {
-        Icon: PencilEdit01Icon,
-        hebrew: { withAnnouncement: 'לִכתוֹב', withoutAnnouncement: 'לכתוב' },
-        russian: 'писать',
-        transcription: 'likhtov',
-      },
-      {
-        Icon: AudioBook04Icon,
-        hebrew: { withAnnouncement: 'לִקרוֹא', withoutAnnouncement: 'לקרוא' },
-        russian: 'читать',
-        transcription: 'likro',
-      },
-      {
-        Icon: UserQuestion02Icon,
-        hebrew: { withAnnouncement: 'לִשְׁאוֹל', withoutAnnouncement: 'לשאול' },
-        russian: 'спрашивать',
-        transcription: 'lishol',
-      },
-      {
-        Icon: BubbleChatSecureIcon,
-        hebrew: { withAnnouncement: 'לַעֲנוֹת', withoutAnnouncement: 'לענות' },
-        russian: 'отвечать',
-        transcription: 'laanot',
-      },
-      {
-        Icon: ArrowDown05Icon,
-        hebrew: { withAnnouncement: 'לָבוֹא', withoutAnnouncement: 'לבוא' },
-        russian: 'приходить',
-        transcription: 'lavuo',
-      },
-      {
-        Icon: BubbleChatAddIcon,
-        hebrew: { withAnnouncement: 'לוֹמַר', withoutAnnouncement: 'לומר' },
-        russian: 'сказать',
-        transcription: 'lomar',
-      },
-      {
-        Icon: HealthIcon,
-        hebrew: {
-          withAnnouncement: 'לְהַרגִיש',
-          withoutAnnouncement: 'להרגיש',
-        },
-        russian: 'чувствовать',
-        transcription: 'lhargish',
-      },
-    ],
-  },
-  {
-    title: 'Основные глаголы 2 (Н.В.)',
-    Icon: WorkoutRunIcon,
-    slug: 'osnovnie-glagoli-2-nv',
-    words: [
-      {
-        Icon: Footprints,
-        hebrew: { withAnnouncement: 'הוֹלֵך', withoutAnnouncement: 'הולך' },
-        russian: 'ходить',
-        transcription: 'holekh',
-      },
-      {
-        Icon: Car,
-        hebrew: { withAnnouncement: 'נוֹסֵעַ', withoutAnnouncement: 'נוסע' },
-        russian: 'ехать',
-        transcription: 'nosea',
-      },
-      {
-        Icon: PersonStanding,
-        hebrew: { withAnnouncement: 'עוֹמֵד', withoutAnnouncement: 'עומד' },
-        russian: 'стоять',
-        transcription: 'omed',
-      },
-      {
-        Icon: Armchair,
-        hebrew: { withAnnouncement: 'יוֹשֵב', withoutAnnouncement: 'יושב' },
-        russian: 'сидеть',
-        transcription: 'yoshev',
-      },
-      {
-        Icon: Eye,
-        hebrew: { withAnnouncement: 'רוֹאֶה', withoutAnnouncement: 'רואה' },
-        russian: 'видеть',
-        transcription: 'roe',
-      },
-      {
-        Icon: Church,
-        hebrew: { withAnnouncement: 'מתפַּלֵל', withoutAnnouncement: 'מתפלל' },
-        russian: 'молиться',
-        transcription: 'mitpalel',
-      },
-      {
-        Icon: ArrowDownToLine,
-        hebrew: { withAnnouncement: 'נִמצָא', withoutAnnouncement: 'נמצא' },
-        russian: 'находиться',
-        transcription: 'nimtsa',
-      },
-      {
-        Icon: Ear,
-        hebrew: { withAnnouncement: 'שוֹמֵעַ', withoutAnnouncement: 'שומע' },
-        russian: 'слышать',
-        transcription: 'shomea',
-      },
-      {
-        Icon: CheckCheck,
-        hebrew: { withAnnouncement: 'עוֹשֶׂה', withoutAnnouncement: 'עושה' },
-        russian: 'делать',
-        transcription: 'ose',
-      },
-      {
-        Icon: BookCopy,
-        hebrew: { withAnnouncement: 'סִיפֵּר', withoutAnnouncement: 'סיפר' },
-        russian: 'рассказывать',
-        transcription: 'syper',
-      },
-      {
-        Icon: BookHeadphones,
-        hebrew: { withAnnouncement: 'מַסבִּיר', withoutAnnouncement: 'מסביר' },
-        russian: 'объяснять',
-        transcription: 'masbir',
-      },
-      {
-        Icon: BrainCircuit,
-        hebrew: { withAnnouncement: 'חוֹשֵב', withoutAnnouncement: 'חושב' },
-        russian: 'думать',
-        transcription: 'khoshev',
-      },
-      {
-        Icon: LogOut,
-        hebrew: { withAnnouncement: 'יוֹצֵא', withoutAnnouncement: 'יוצא' },
-        russian: 'выходить',
-        transcription: 'yotse',
-      },
-      {
-        Icon: LogIn,
-        hebrew: { withAnnouncement: 'נִכנַס', withoutAnnouncement: 'נכנס' },
-        russian: 'входить',
-        transcription: 'nikhnas',
-      },
-      {
-        Icon: CircleSlash2,
-        hebrew: { withAnnouncement: 'חֶסֶר', withoutAnnouncement: 'חסר' },
-        russian: 'отсутствовать',
-        transcription: 'khaser',
-      },
-    ],
-  },
-  {
-    title: 'Основные глаголы 2 (ИНФ.)',
-    Icon: WorkoutRunIcon,
-    slug: 'osnovnie-glagoli-2-inf',
-    words: [
-      {
-        Icon: Footprints,
-        hebrew: { withAnnouncement: 'לָלֶכֶת', withoutAnnouncement: 'ללכת' },
-        russian: 'ходить',
-        transcription: 'lalekhet',
-      },
-      {
-        Icon: Car,
-        hebrew: { withAnnouncement: 'לִנסוֹעַ', withoutAnnouncement: 'לנסוע' },
-        russian: 'ехать',
-        transcription: 'linsoa',
-      },
-      {
-        Icon: PersonStanding,
-        hebrew: { withAnnouncement: 'לַעֲמוֹד', withoutAnnouncement: 'לעמוד' },
-        russian: 'стоять',
-        transcription: 'laamod',
-      },
-      {
-        Icon: Armchair,
-        hebrew: { withAnnouncement: 'לָשֶבֶת', withoutAnnouncement: 'לשבת' },
-        russian: 'сидеть',
-        transcription: 'lashevet',
-      },
-      {
-        Icon: Eye,
-        hebrew: { withAnnouncement: 'לִראוֹת', withoutAnnouncement: 'לראות' },
-        russian: 'видеть',
-        transcription: 'lirot',
-      },
-      {
-        Icon: Church,
-        hebrew: {
-          withAnnouncement: 'לְהִתפַּלֵל',
-          withoutAnnouncement: 'להתפלל',
-        },
-        russian: 'молиться',
-        transcription: 'lhitpalel',
-      },
-      {
-        Icon: ArrowDownToLine,
-        hebrew: {
-          withAnnouncement: 'לְהִימָצֵא',
-          withoutAnnouncement: 'להימצא',
-        },
-        russian: 'находиться',
-        transcription: 'lhimatse',
-      },
-      {
-        Icon: Ear,
-        hebrew: { withAnnouncement: 'לִשמוֹעַ', withoutAnnouncement: 'לשמוע' },
-        russian: 'слышать',
-        transcription: 'lishmoa',
-      },
-      {
-        Icon: CheckCheck,
-        hebrew: { withAnnouncement: 'לַעֲשׂוֹת', withoutAnnouncement: 'לעשות' },
-        russian: 'делать',
-        transcription: 'laasot',
-      },
-      {
-        Icon: BookCopy,
-        hebrew: { withAnnouncement: 'לְסַפֵּר', withoutAnnouncement: 'לספר' },
-        russian: 'рассказывать',
-        transcription: 'lsaper',
-      },
-      {
-        Icon: BookHeadphones,
-        hebrew: {
-          withAnnouncement: 'לְהַסבִּיר',
-          withoutAnnouncement: 'להסביר',
-        },
-        russian: 'объяснять',
-        transcription: 'lhasbir',
-      },
-      {
-        Icon: BrainCircuit,
-        hebrew: { withAnnouncement: 'לַחשוֹב', withoutAnnouncement: 'לחשוב' },
-        russian: 'думать',
-        transcription: 'lakhashov',
-      },
-      {
-        Icon: LogOut,
-        hebrew: { withAnnouncement: 'לָצֵאת', withoutAnnouncement: 'לצאת' },
-        russian: 'выходить',
-        transcription: 'latset',
-      },
-      {
-        Icon: LogIn,
-        hebrew: {
-          withAnnouncement: 'לְהִיכָּנֵס',
-          withoutAnnouncement: 'להיכנס',
-        },
-        russian: 'входить',
-        transcription: 'lhikanes',
-      },
-      {
-        Icon: CircleSlash2,
-        hebrew: { withAnnouncement: 'לַחסוֹר', withoutAnnouncement: 'לחסור' },
-        russian: 'отсутствовать',
-        transcription: 'lakhasor',
-      },
-    ],
-  },
-  {
-    title: 'Основные глаголы 3 (Н.В.)',
-    Icon: WorkoutRunIcon,
-    slug: 'osnovnie-glagoli-3-nv',
-    words: [
-      {
-        Icon: HeartHandshake,
-        hebrew: {
-          withAnnouncement: 'עוֹזֵר',
-          withoutAnnouncement: 'עוזר',
-        },
-        russian: 'помогаю',
-        transcription: 'ozer',
-      },
-      {
-        Icon: SandalsIcon,
-        hebrew: {
-          withAnnouncement: 'קָם',
-          withoutAnnouncement: 'קם',
-        },
-        russian: 'встаю',
-        transcription: 'qam',
-      },
-      {
-        Icon: CookBookIcon,
-        hebrew: {
-          withAnnouncement: 'מְבַשֵּל',
-          withoutAnnouncement: 'מבשל',
-        },
-        russian: 'готовлю (еду)',
-        transcription: 'mevashel',
-      },
-      {
-        Icon: DocumentValidationIcon,
-        hebrew: {
-          withAnnouncement: 'מְכִין',
-          withoutAnnouncement: 'מכין',
-        },
-        russian: 'готовлю (что-то)',
-        transcription: 'makhin',
-      },
-      {
-        Icon: MailOpen,
-        hebrew: {
-          withAnnouncement: 'פוֹתֵחַ',
-          withoutAnnouncement: 'פותח',
-        },
-        russian: 'открываю',
-        transcription: "pothe'ach",
-      },
-      {
-        Icon: EyeClosed,
-        hebrew: {
-          withAnnouncement: 'סוֹגֵר',
-          withoutAnnouncement: 'סוגר',
-        },
-        russian: 'закрываю',
-        transcription: "so'ger",
-      },
-      {
-        Icon: Send,
-        hebrew: {
-          withAnnouncement: 'שַלֵּחַ',
-          withoutAnnouncement: 'שלח',
-        },
-        russian: 'отправляю',
-        transcription: 'shalekh',
-      },
-      {
-        Icon: Calendar03Icon,
-        hebrew: {
-          withAnnouncement: 'קוֹבֵעַ',
-          withoutAnnouncement: 'קובע',
-        },
-        russian: 'назначаю',
-        transcription: 'mekavea',
-      },
-      {
-        Icon: Phone,
-        hebrew: {
-          withAnnouncement: 'מִתְקַשֵּר',
-          withoutAnnouncement: 'מתקשר',
-        },
-        russian: 'звоню',
-        transcription: 'mitkasher',
-      },
-      {
-        Icon: EyeIcon,
-        hebrew: {
-          withAnnouncement: 'מִסְתַּכֵּל',
-          withoutAnnouncement: 'מסתכל',
-        },
-        russian: 'смотреть',
-        transcription: 'mistakel',
-      },
-    ],
-  },
-  {
-    title: 'Основные глаголы 3 (ИНФ.)',
-    Icon: WorkoutRunIcon,
-    slug: 'osnovnie-glagoli-3-inf',
-    words: [
-      {
-        Icon: HeartHandshake,
-        hebrew: {
-          withAnnouncement: 'לְעָזוֹר',
-          withoutAnnouncement: 'לעזור',
-        },
-        russian: 'помогать',
-        transcription: 'leazor',
-      },
-      {
-        Icon: SandalsIcon,
-        hebrew: {
-          withAnnouncement: 'לְקוּם',
-          withoutAnnouncement: 'לקום',
-        },
-        russian: 'вставать',
-        transcription: 'laqum',
-      },
-      {
-        Icon: CookBookIcon,
-        hebrew: {
-          withAnnouncement: 'לְבַשֵּל',
-          withoutAnnouncement: 'לבשל',
-        },
-        russian: 'готовить (еду)',
-        transcription: 'levashel',
-      },
-      {
-        Icon: DocumentValidationIcon,
-        hebrew: {
-          withAnnouncement: 'לְהָכִין',
-          withoutAnnouncement: 'להכין',
-        },
-        russian: 'готовить (что-то)',
-        transcription: 'lehachin',
-      },
-      {
-        Icon: MailOpen,
-        hebrew: {
-          withAnnouncement: 'לִפְתוֹחַ',
-          withoutAnnouncement: 'לפתוח',
-        },
-        russian: 'открывать',
-        transcription: 'liftoach',
-      },
-      {
-        Icon: EyeClosed,
-        hebrew: {
-          withAnnouncement: 'לִסְגוּר',
-          withoutAnnouncement: 'לסגור',
-        },
-        russian: 'закрывать',
-        transcription: 'lisgur',
-      },
-      {
-        Icon: Send,
-        hebrew: {
-          withAnnouncement: 'לִשְלוֹחַ',
-          withoutAnnouncement: 'לשלוח',
-        },
-        russian: 'отправлять',
-        transcription: 'lishloakh',
-      },
-      {
-        Icon: Calendar03Icon,
-        hebrew: {
-          withAnnouncement: 'לְקַבֵּועַ',
-          withoutAnnouncement: 'לקבוע',
-        },
-        russian: 'назначать',
-        transcription: 'lekavoa',
-      },
-      {
-        Icon: Phone,
-        hebrew: {
-          withAnnouncement: 'לְהִתְקַשֵּר',
-          withoutAnnouncement: 'להתקשר',
-        },
-        russian: 'звонить',
-        transcription: 'lehitkasher',
-      },
-      {
-        Icon: EyeIcon,
-        hebrew: {
-          withAnnouncement: 'לִסְתַּכֵּל',
-          withoutAnnouncement: 'ליסתכל',
-        },
-        russian: 'смотреть',
-        transcription: 'listakel',
-      },
-    ],
-  },
-  {
-    title: 'Основные глаголы 4 (Н.В.)',
-    Icon: WorkoutRunIcon,
-    slug: 'osnovnie-glagoli-4-nv',
-    words: [
-      {
-        Icon: ClockAlert,
-        hebrew: {
-          withAnnouncement: 'מְאַחֵר',
-          withoutAnnouncement: 'מאחר',
-        },
-        russian: 'опаздываю',
-        transcription: 'meacher',
-      },
-      {
-        Icon: GiveBloodIcon,
-        hebrew: {
-          withAnnouncement: 'לוֹקֵחַ',
-          withoutAnnouncement: 'לוקח',
-        },
-        russian: 'беру',
-        transcription: 'lokeach',
-      },
-      {
-        Icon: Invoice03Icon,
-        hebrew: {
-          withAnnouncement: 'מְשַׁלֵּם',
-          withoutAnnouncement: 'משלם',
-        },
-        russian: 'плачу',
-        transcription: 'meshalem',
-      },
-      {
-        Icon: UsbMemory01Icon,
-        hebrew: {
-          withAnnouncement: 'זוֹכֵר',
-          withoutAnnouncement: 'זוכר',
-        },
-        russian: 'помню',
-        transcription: 'zocher',
-      },
-      {
-        Icon: TreePalm,
-        hebrew: {
-          withAnnouncement: 'נָח',
-          withoutAnnouncement: 'נח',
-        },
-        russian: 'отдыхаю',
-        transcription: 'nach',
-      },
-      {
-        Icon: ForgotPasswordIcon,
-        hebrew: {
-          withAnnouncement: 'שׁוֹכֵחַ',
-          withoutAnnouncement: 'שוכח',
-        },
-        russian: 'забываю',
-        transcription: 'shocheach',
-      },
-      {
-        Icon: Cigarette,
-        hebrew: {
-          withAnnouncement: 'מַעֲשֵּן',
-          withoutAnnouncement: 'מעשן',
-        },
-        russian: 'курю',
-        transcription: 'maasen',
-      },
-      {
-        Icon: Loader,
-        hebrew: {
-          withAnnouncement: 'מַחְכֶּה',
-          withoutAnnouncement: 'מחכה',
-        },
-        russian: 'жду',
-        transcription: 'machke',
-      },
-      {
-        Icon: GiveBloodIcon,
-        hebrew: {
-          withAnnouncement: 'נוֹתן',
-          withoutAnnouncement: 'נותן',
-        },
-        russian: 'даю',
-        transcription: 'noten',
-      },
-      {
-        Icon: CleanIcon,
-        hebrew: {
-          withAnnouncement: 'מנקה',
-          withoutAnnouncement: 'מנקה',
-        },
-        russian: 'убираюсь',
-        transcription: 'minkeh',
-      },
-      {
-        Icon: PulleyIcon,
-        hebrew: {
-          withAnnouncement: 'מְשוֹךְ',
-          withoutAnnouncement: 'משוך',
-        },
-        russian: 'тяну',
-        transcription: 'mashoch',
-      },
-      {
-        Icon: PushUpBarIcon,
-        hebrew: {
-          withAnnouncement: 'דּוֹחֵף',
-          withoutAnnouncement: 'דוחף',
-        },
-        russian: 'толкаю',
-        transcription: 'dochef',
-      },
-    ],
-  },
-  {
-    title: 'Основные глаголы 4 (ИНФ.)',
-    Icon: WorkoutRunIcon,
-    slug: 'osnovnie-glagoli-4-inf',
-    words: [
-      {
-        Icon: ClockAlert,
-        hebrew: {
-          withAnnouncement: 'בְּאִיחוּר',
-          withoutAnnouncement: 'באיחור',
-        },
-        russian: 'опаздывать',
-        transcription: 'baichur',
-      },
-      {
-        Icon: GiveBloodIcon,
-        hebrew: {
-          withAnnouncement: 'לָקַחַת',
-          withoutAnnouncement: 'לקחת',
-        },
-        russian: 'брать',
-        transcription: 'lakachat',
-      },
-      {
-        Icon: Invoice03Icon,
-        hebrew: {
-          withAnnouncement: 'לְשַׁלֵּם',
-          withoutAnnouncement: 'לשלם',
-        },
-        russian: 'платить',
-        transcription: 'leshalem',
-      },
-      {
-        Icon: UsbMemory01Icon,
-        hebrew: {
-          withAnnouncement: 'לִזְכּוֹר',
-          withoutAnnouncement: 'לזכור',
-        },
-        russian: 'помнить',
-        transcription: 'lizkor',
-      },
-      {
-        Icon: TreePalm,
-        hebrew: {
-          withAnnouncement: 'לִנוּחַ',
-          withoutAnnouncement: 'לנוח',
-        },
-        russian: 'отдыхать',
-        transcription: 'linuach',
-      },
-      {
-        Icon: ForgotPasswordIcon,
-        hebrew: {
-          withAnnouncement: 'לִשְׁכּוֹחַ',
-          withoutAnnouncement: 'לשכוח',
-        },
-        russian: 'забывать',
-        transcription: 'lishkoch',
-      },
-      {
-        Icon: Cigarette,
-        hebrew: {
-          withAnnouncement: 'לַעֲשֵׁן',
-          withoutAnnouncement: 'לעשן',
-        },
-        russian: 'курить',
-        transcription: 'laasen',
-      },
-      {
-        Icon: Loader,
-        hebrew: {
-          withAnnouncement: 'לַחֲכוֹת',
-          withoutAnnouncement: 'לחכות',
-        },
-        russian: 'ждать',
-        transcription: 'lachakot',
-      },
-      {
-        Icon: GiveBloodIcon,
-        hebrew: {
-          withAnnouncement: 'לָתֵת',
-          withoutAnnouncement: 'לתת',
-        },
-        russian: 'давать',
-        transcription: 'latet',
-      },
-      {
-        Icon: CleanIcon,
-        hebrew: {
-          withAnnouncement: 'לִנְקוֹת',
-          withoutAnnouncement: 'לנקות',
-        },
-        russian: 'убираться',
-        transcription: 'linakot',
-      },
-      {
-        Icon: PulleyIcon,
-        hebrew: {
-          withAnnouncement: 'לְמָשוֹךְ',
-          withoutAnnouncement: 'למשוך',
-        },
-        russian: 'Тянуть',
-        transcription: 'lemashoch',
-      },
-      {
-        Icon: PushUpBarIcon,
-        hebrew: {
-          withAnnouncement: 'לְדָחוֹף',
-          withoutAnnouncement: 'לדחוף',
-        },
-        russian: 'Толкать',
-        transcription: 'ledachof',
+    topics: [
+      {
+        title: 'Основные глаголы (Н.В.)',
+        Icon: WorkoutRunIcon,
+        slug: 'osnovnie-glagoli-nv',
+        words: [
+          {
+            Icon: City02Icon,
+            hebrew: { withAnnouncement: 'גָר', withoutAnnouncement: 'גר' },
+            russian: 'жить',
+            transcription: 'gar',
+          },
+          {
+            Icon: StudentsIcon,
+            hebrew: { withAnnouncement: 'לִימֵד', withoutAnnouncement: 'לומד' },
+            russian: 'учить',
+            transcription: 'lomed',
+          },
+          {
+            Icon: LaborIcon,
+            hebrew: { withAnnouncement: 'עָבַד', withoutAnnouncement: 'עובד' },
+            russian: 'работать',
+            transcription: 'oved',
+          },
+          {
+            Icon: BubbleChatIcon,
+            hebrew: {
+              withAnnouncement: 'מְדַבֵּר',
+              withoutAnnouncement: 'מדבר',
+            },
+            russian: 'говорить',
+            transcription: 'mdaber',
+          },
+          {
+            Icon: ShareKnowledgeIcon,
+            hebrew: { withAnnouncement: 'מֵבִין', withoutAnnouncement: 'מבין' },
+            russian: 'понимать',
+            transcription: 'mibeyn',
+          },
+          {
+            Icon: Knowledge01Icon,
+            hebrew: { withAnnouncement: 'יוָדַע', withoutAnnouncement: 'יודע' },
+            russian: 'знать',
+            transcription: 'yodea',
+          },
+          {
+            Icon: PencilEdit01Icon,
+            hebrew: { withAnnouncement: 'כָּתַב', withoutAnnouncement: 'כותב' },
+            russian: 'писать',
+            transcription: 'kotev',
+          },
+          {
+            Icon: AudioBook04Icon,
+            hebrew: { withAnnouncement: 'קָרָא', withoutAnnouncement: 'קורא' },
+            russian: 'читать',
+            transcription: 'kore',
+          },
+          {
+            Icon: UserQuestion02Icon,
+            hebrew: { withAnnouncement: 'שוֹאֵל', withoutAnnouncement: 'שואל' },
+            russian: 'спрашивать',
+            transcription: 'shoel',
+          },
+          {
+            Icon: BubbleChatSecureIcon,
+            hebrew: { withAnnouncement: 'עוֹנֶה', withoutAnnouncement: 'עונה' },
+            russian: 'отвечать',
+            transcription: 'one',
+          },
+          {
+            Icon: ArrowDown05Icon,
+            hebrew: { withAnnouncement: 'בָּא', withoutAnnouncement: 'בא' },
+            russian: 'приходить',
+            transcription: 'ba',
+          },
+          {
+            Icon: BubbleChatAddIcon,
+            hebrew: { withAnnouncement: 'אוֹמַר', withoutAnnouncement: 'אומר' },
+            russian: 'сказать',
+            transcription: 'omer',
+          },
+          {
+            Icon: HealthIcon,
+            hebrew: {
+              withAnnouncement: 'מַרְגִּישׁ',
+              withoutAnnouncement: 'מרגיש',
+            },
+            russian: 'чувствую',
+            transcription: 'margish',
+          },
+        ],
+      },
+      {
+        title: 'Основные глаголы (ИНФ.)',
+        Icon: WorkoutRunIcon,
+        slug: 'osnovnie-glagoli-inf',
+        words: [
+          {
+            Icon: City02Icon,
+            hebrew: { withAnnouncement: 'לָגוּר', withoutAnnouncement: 'לגור' },
+            russian: 'жить',
+            transcription: 'lagur',
+          },
+          {
+            Icon: StudentsIcon,
+            hebrew: { withAnnouncement: 'לִימֵד', withoutAnnouncement: 'לומד' },
+            russian: 'учить',
+            transcription: 'lomed',
+          },
+          {
+            Icon: LaborIcon,
+            hebrew: {
+              withAnnouncement: 'לַעֲבוֹד',
+              withoutAnnouncement: 'לעבוד',
+            },
+            russian: 'работать',
+            transcription: 'laavod',
+          },
+          {
+            Icon: BubbleChatIcon,
+            hebrew: {
+              withAnnouncement: 'לְדַבֵּר',
+              withoutAnnouncement: 'לדבר',
+            },
+            russian: 'говорить',
+            transcription: 'ldaber',
+          },
+          {
+            Icon: ShareKnowledgeIcon,
+            hebrew: {
+              withAnnouncement: 'לְהָבִין',
+              withoutAnnouncement: 'להבין',
+            },
+            russian: 'понимать',
+            transcription: 'lhavin',
+          },
+          {
+            Icon: Knowledge01Icon,
+            hebrew: {
+              withAnnouncement: 'לָדַעַת',
+              withoutAnnouncement: 'לדעת',
+            },
+            russian: 'знать',
+            transcription: 'ldaat',
+          },
+          {
+            Icon: PencilEdit01Icon,
+            hebrew: {
+              withAnnouncement: 'לִכתוֹב',
+              withoutAnnouncement: 'לכתוב',
+            },
+            russian: 'писать',
+            transcription: 'likhtov',
+          },
+          {
+            Icon: AudioBook04Icon,
+            hebrew: {
+              withAnnouncement: 'לִקרוֹא',
+              withoutAnnouncement: 'לקרוא',
+            },
+            russian: 'читать',
+            transcription: 'likro',
+          },
+          {
+            Icon: UserQuestion02Icon,
+            hebrew: {
+              withAnnouncement: 'לִשְׁאוֹל',
+              withoutAnnouncement: 'לשאול',
+            },
+            russian: 'спрашивать',
+            transcription: 'lishol',
+          },
+          {
+            Icon: BubbleChatSecureIcon,
+            hebrew: {
+              withAnnouncement: 'לַעֲנוֹת',
+              withoutAnnouncement: 'לענות',
+            },
+            russian: 'отвечать',
+            transcription: 'laanot',
+          },
+          {
+            Icon: ArrowDown05Icon,
+            hebrew: { withAnnouncement: 'לָבוֹא', withoutAnnouncement: 'לבוא' },
+            russian: 'приходить',
+            transcription: 'lavuo',
+          },
+          {
+            Icon: BubbleChatAddIcon,
+            hebrew: { withAnnouncement: 'לוֹמַר', withoutAnnouncement: 'לומר' },
+            russian: 'сказать',
+            transcription: 'lomar',
+          },
+          {
+            Icon: HealthIcon,
+            hebrew: {
+              withAnnouncement: 'לְהַרגִיש',
+              withoutAnnouncement: 'להרגיש',
+            },
+            russian: 'чувствовать',
+            transcription: 'lhargish',
+          },
+        ],
+      },
+      {
+        title: 'Основные глаголы 2 (Н.В.)',
+        Icon: WorkoutRunIcon,
+        slug: 'osnovnie-glagoli-2-nv',
+        words: [
+          {
+            Icon: Footprints,
+            hebrew: { withAnnouncement: 'הוֹלֵך', withoutAnnouncement: 'הולך' },
+            russian: 'ходить',
+            transcription: 'holekh',
+          },
+          {
+            Icon: Car,
+            hebrew: {
+              withAnnouncement: 'נוֹסֵעַ',
+              withoutAnnouncement: 'נוסע',
+            },
+            russian: 'ехать',
+            transcription: 'nosea',
+          },
+          {
+            Icon: PersonStanding,
+            hebrew: { withAnnouncement: 'עוֹמֵד', withoutAnnouncement: 'עומד' },
+            russian: 'стоять',
+            transcription: 'omed',
+          },
+          {
+            Icon: Armchair,
+            hebrew: { withAnnouncement: 'יוֹשֵב', withoutAnnouncement: 'יושב' },
+            russian: 'сидеть',
+            transcription: 'yoshev',
+          },
+          {
+            Icon: Eye,
+            hebrew: { withAnnouncement: 'רוֹאֶה', withoutAnnouncement: 'רואה' },
+            russian: 'видеть',
+            transcription: 'roe',
+          },
+          {
+            Icon: Church,
+            hebrew: {
+              withAnnouncement: 'מתפַּלֵל',
+              withoutAnnouncement: 'מתפלל',
+            },
+            russian: 'молиться',
+            transcription: 'mitpalel',
+          },
+          {
+            Icon: ArrowDownToLine,
+            hebrew: { withAnnouncement: 'נִמצָא', withoutAnnouncement: 'נמצא' },
+            russian: 'находиться',
+            transcription: 'nimtsa',
+          },
+          {
+            Icon: Ear,
+            hebrew: {
+              withAnnouncement: 'שוֹמֵעַ',
+              withoutAnnouncement: 'שומע',
+            },
+            russian: 'слышать',
+            transcription: 'shomea',
+          },
+          {
+            Icon: CheckCheck,
+            hebrew: {
+              withAnnouncement: 'עוֹשֶׂה',
+              withoutAnnouncement: 'עושה',
+            },
+            russian: 'делать',
+            transcription: 'ose',
+          },
+          {
+            Icon: BookCopy,
+            hebrew: {
+              withAnnouncement: 'סִיפֵּר',
+              withoutAnnouncement: 'סיפר',
+            },
+            russian: 'рассказывать',
+            transcription: 'syper',
+          },
+          {
+            Icon: BookHeadphones,
+            hebrew: {
+              withAnnouncement: 'מַסבִּיר',
+              withoutAnnouncement: 'מסביר',
+            },
+            russian: 'объяснять',
+            transcription: 'masbir',
+          },
+          {
+            Icon: BrainCircuit,
+            hebrew: { withAnnouncement: 'חוֹשֵב', withoutAnnouncement: 'חושב' },
+            russian: 'думать',
+            transcription: 'khoshev',
+          },
+          {
+            Icon: LogOut,
+            hebrew: { withAnnouncement: 'יוֹצֵא', withoutAnnouncement: 'יוצא' },
+            russian: 'выходить',
+            transcription: 'yotse',
+          },
+          {
+            Icon: LogIn,
+            hebrew: { withAnnouncement: 'נִכנַס', withoutAnnouncement: 'נכנס' },
+            russian: 'входить',
+            transcription: 'nikhnas',
+          },
+          {
+            Icon: CircleSlash2,
+            hebrew: { withAnnouncement: 'חֶסֶר', withoutAnnouncement: 'חסר' },
+            russian: 'отсутствовать',
+            transcription: 'khaser',
+          },
+        ],
+      },
+      {
+        title: 'Основные глаголы 2 (ИНФ.)',
+        Icon: WorkoutRunIcon,
+        slug: 'osnovnie-glagoli-2-inf',
+        words: [
+          {
+            Icon: Footprints,
+            hebrew: {
+              withAnnouncement: 'לָלֶכֶת',
+              withoutAnnouncement: 'ללכת',
+            },
+            russian: 'ходить',
+            transcription: 'lalekhet',
+          },
+          {
+            Icon: Car,
+            hebrew: {
+              withAnnouncement: 'לִנסוֹעַ',
+              withoutAnnouncement: 'לנסוע',
+            },
+            russian: 'ехать',
+            transcription: 'linsoa',
+          },
+          {
+            Icon: PersonStanding,
+            hebrew: {
+              withAnnouncement: 'לַעֲמוֹד',
+              withoutAnnouncement: 'לעמוד',
+            },
+            russian: 'стоять',
+            transcription: 'laamod',
+          },
+          {
+            Icon: Armchair,
+            hebrew: {
+              withAnnouncement: 'לָשֶבֶת',
+              withoutAnnouncement: 'לשבת',
+            },
+            russian: 'сидеть',
+            transcription: 'lashevet',
+          },
+          {
+            Icon: Eye,
+            hebrew: {
+              withAnnouncement: 'לִראוֹת',
+              withoutAnnouncement: 'לראות',
+            },
+            russian: 'видеть',
+            transcription: 'lirot',
+          },
+          {
+            Icon: Church,
+            hebrew: {
+              withAnnouncement: 'לְהִתפַּלֵל',
+              withoutAnnouncement: 'להתפלל',
+            },
+            russian: 'молиться',
+            transcription: 'lhitpalel',
+          },
+          {
+            Icon: ArrowDownToLine,
+            hebrew: {
+              withAnnouncement: 'לְהִימָצֵא',
+              withoutAnnouncement: 'להימצא',
+            },
+            russian: 'находиться',
+            transcription: 'lhimatse',
+          },
+          {
+            Icon: Ear,
+            hebrew: {
+              withAnnouncement: 'לִשמוֹעַ',
+              withoutAnnouncement: 'לשמוע',
+            },
+            russian: 'слышать',
+            transcription: 'lishmoa',
+          },
+          {
+            Icon: CheckCheck,
+            hebrew: {
+              withAnnouncement: 'לַעֲשׂוֹת',
+              withoutAnnouncement: 'לעשות',
+            },
+            russian: 'делать',
+            transcription: 'laasot',
+          },
+          {
+            Icon: BookCopy,
+            hebrew: {
+              withAnnouncement: 'לְסַפֵּר',
+              withoutAnnouncement: 'לספר',
+            },
+            russian: 'рассказывать',
+            transcription: 'lsaper',
+          },
+          {
+            Icon: BookHeadphones,
+            hebrew: {
+              withAnnouncement: 'לְהַסבִּיר',
+              withoutAnnouncement: 'להסביר',
+            },
+            russian: 'объяснять',
+            transcription: 'lhasbir',
+          },
+          {
+            Icon: BrainCircuit,
+            hebrew: {
+              withAnnouncement: 'לַחשוֹב',
+              withoutAnnouncement: 'לחשוב',
+            },
+            russian: 'думать',
+            transcription: 'lakhashov',
+          },
+          {
+            Icon: LogOut,
+            hebrew: { withAnnouncement: 'לָצֵאת', withoutAnnouncement: 'לצאת' },
+            russian: 'выходить',
+            transcription: 'latset',
+          },
+          {
+            Icon: LogIn,
+            hebrew: {
+              withAnnouncement: 'לְהִיכָּנֵס',
+              withoutAnnouncement: 'להיכנס',
+            },
+            russian: 'входить',
+            transcription: 'lhikanes',
+          },
+          {
+            Icon: CircleSlash2,
+            hebrew: {
+              withAnnouncement: 'לַחסוֹר',
+              withoutAnnouncement: 'לחסור',
+            },
+            russian: 'отсутствовать',
+            transcription: 'lakhasor',
+          },
+        ],
+      },
+      {
+        title: 'Основные глаголы 3 (Н.В.)',
+        Icon: WorkoutRunIcon,
+        slug: 'osnovnie-glagoli-3-nv',
+        words: [
+          {
+            Icon: HeartHandshake,
+            hebrew: {
+              withAnnouncement: 'עוֹזֵר',
+              withoutAnnouncement: 'עוזר',
+            },
+            russian: 'помогаю',
+            transcription: 'ozer',
+          },
+          {
+            Icon: SandalsIcon,
+            hebrew: {
+              withAnnouncement: 'קָם',
+              withoutAnnouncement: 'קם',
+            },
+            russian: 'встаю',
+            transcription: 'qam',
+          },
+          {
+            Icon: CookBookIcon,
+            hebrew: {
+              withAnnouncement: 'מְבַשֵּל',
+              withoutAnnouncement: 'מבשל',
+            },
+            russian: 'готовлю (еду)',
+            transcription: 'mevashel',
+          },
+          {
+            Icon: DocumentValidationIcon,
+            hebrew: {
+              withAnnouncement: 'מְכִין',
+              withoutAnnouncement: 'מכין',
+            },
+            russian: 'готовлю (что-то)',
+            transcription: 'makhin',
+          },
+          {
+            Icon: MailOpen,
+            hebrew: {
+              withAnnouncement: 'פוֹתֵחַ',
+              withoutAnnouncement: 'פותח',
+            },
+            russian: 'открываю',
+            transcription: "pothe'ach",
+          },
+          {
+            Icon: EyeClosed,
+            hebrew: {
+              withAnnouncement: 'סוֹגֵר',
+              withoutAnnouncement: 'סוגר',
+            },
+            russian: 'закрываю',
+            transcription: "so'ger",
+          },
+          {
+            Icon: Send,
+            hebrew: {
+              withAnnouncement: 'שַלֵּחַ',
+              withoutAnnouncement: 'שלח',
+            },
+            russian: 'отправляю',
+            transcription: 'shalekh',
+          },
+          {
+            Icon: Calendar03Icon,
+            hebrew: {
+              withAnnouncement: 'קוֹבֵעַ',
+              withoutAnnouncement: 'קובע',
+            },
+            russian: 'назначаю',
+            transcription: 'mekavea',
+          },
+          {
+            Icon: Phone,
+            hebrew: {
+              withAnnouncement: 'מִתְקַשֵּר',
+              withoutAnnouncement: 'מתקשר',
+            },
+            russian: 'звоню',
+            transcription: 'mitkasher',
+          },
+          {
+            Icon: EyeIcon,
+            hebrew: {
+              withAnnouncement: 'מִסְתַּכֵּל',
+              withoutAnnouncement: 'מסתכל',
+            },
+            russian: 'смотреть',
+            transcription: 'mistakel',
+          },
+        ],
+      },
+      {
+        title: 'Основные глаголы 3 (ИНФ.)',
+        Icon: WorkoutRunIcon,
+        slug: 'osnovnie-glagoli-3-inf',
+        words: [
+          {
+            Icon: HeartHandshake,
+            hebrew: {
+              withAnnouncement: 'לְעָזוֹר',
+              withoutAnnouncement: 'לעזור',
+            },
+            russian: 'помогать',
+            transcription: 'leazor',
+          },
+          {
+            Icon: SandalsIcon,
+            hebrew: {
+              withAnnouncement: 'לְקוּם',
+              withoutAnnouncement: 'לקום',
+            },
+            russian: 'вставать',
+            transcription: 'laqum',
+          },
+          {
+            Icon: CookBookIcon,
+            hebrew: {
+              withAnnouncement: 'לְבַשֵּל',
+              withoutAnnouncement: 'לבשל',
+            },
+            russian: 'готовить (еду)',
+            transcription: 'levashel',
+          },
+          {
+            Icon: DocumentValidationIcon,
+            hebrew: {
+              withAnnouncement: 'לְהָכִין',
+              withoutAnnouncement: 'להכין',
+            },
+            russian: 'готовить (что-то)',
+            transcription: 'lehachin',
+          },
+          {
+            Icon: MailOpen,
+            hebrew: {
+              withAnnouncement: 'לִפְתוֹחַ',
+              withoutAnnouncement: 'לפתוח',
+            },
+            russian: 'открывать',
+            transcription: 'liftoach',
+          },
+          {
+            Icon: EyeClosed,
+            hebrew: {
+              withAnnouncement: 'לִסְגוּר',
+              withoutAnnouncement: 'לסגור',
+            },
+            russian: 'закрывать',
+            transcription: 'lisgur',
+          },
+          {
+            Icon: Send,
+            hebrew: {
+              withAnnouncement: 'לִשְלוֹחַ',
+              withoutAnnouncement: 'לשלוח',
+            },
+            russian: 'отправлять',
+            transcription: 'lishloakh',
+          },
+          {
+            Icon: Calendar03Icon,
+            hebrew: {
+              withAnnouncement: 'לְקַבֵּועַ',
+              withoutAnnouncement: 'לקבוע',
+            },
+            russian: 'назначать',
+            transcription: 'lekavoa',
+          },
+          {
+            Icon: Phone,
+            hebrew: {
+              withAnnouncement: 'לְהִתְקַשֵּר',
+              withoutAnnouncement: 'להתקשר',
+            },
+            russian: 'звонить',
+            transcription: 'lehitkasher',
+          },
+          {
+            Icon: EyeIcon,
+            hebrew: {
+              withAnnouncement: 'לִסְתַּכֵּל',
+              withoutAnnouncement: 'ליסתכל',
+            },
+            russian: 'смотреть',
+            transcription: 'listakel',
+          },
+        ],
+      },
+      {
+        title: 'Основные глаголы 4 (Н.В.)',
+        Icon: WorkoutRunIcon,
+        slug: 'osnovnie-glagoli-4-nv',
+        words: [
+          {
+            Icon: ClockAlert,
+            hebrew: {
+              withAnnouncement: 'מְאַחֵר',
+              withoutAnnouncement: 'מאחר',
+            },
+            russian: 'опаздываю',
+            transcription: 'meacher',
+          },
+          {
+            Icon: GiveBloodIcon,
+            hebrew: {
+              withAnnouncement: 'לוֹקֵחַ',
+              withoutAnnouncement: 'לוקח',
+            },
+            russian: 'беру',
+            transcription: 'lokeach',
+          },
+          {
+            Icon: Invoice03Icon,
+            hebrew: {
+              withAnnouncement: 'מְשַׁלֵּם',
+              withoutAnnouncement: 'משלם',
+            },
+            russian: 'плачу',
+            transcription: 'meshalem',
+          },
+          {
+            Icon: UsbMemory01Icon,
+            hebrew: {
+              withAnnouncement: 'זוֹכֵר',
+              withoutAnnouncement: 'זוכר',
+            },
+            russian: 'помню',
+            transcription: 'zocher',
+          },
+          {
+            Icon: TreePalm,
+            hebrew: {
+              withAnnouncement: 'נָח',
+              withoutAnnouncement: 'נח',
+            },
+            russian: 'отдыхаю',
+            transcription: 'nach',
+          },
+          {
+            Icon: ForgotPasswordIcon,
+            hebrew: {
+              withAnnouncement: 'שׁוֹכֵחַ',
+              withoutAnnouncement: 'שוכח',
+            },
+            russian: 'забываю',
+            transcription: 'shocheach',
+          },
+          {
+            Icon: Cigarette,
+            hebrew: {
+              withAnnouncement: 'מַעֲשֵּן',
+              withoutAnnouncement: 'מעשן',
+            },
+            russian: 'курю',
+            transcription: 'maasen',
+          },
+          {
+            Icon: Loader,
+            hebrew: {
+              withAnnouncement: 'מַחְכֶּה',
+              withoutAnnouncement: 'מחכה',
+            },
+            russian: 'жду',
+            transcription: 'machke',
+          },
+          {
+            Icon: GiveBloodIcon,
+            hebrew: {
+              withAnnouncement: 'נוֹתן',
+              withoutAnnouncement: 'נותן',
+            },
+            russian: 'даю',
+            transcription: 'noten',
+          },
+          {
+            Icon: CleanIcon,
+            hebrew: {
+              withAnnouncement: 'מנקה',
+              withoutAnnouncement: 'מנקה',
+            },
+            russian: 'убираюсь',
+            transcription: 'minkeh',
+          },
+          {
+            Icon: PulleyIcon,
+            hebrew: {
+              withAnnouncement: 'מְשוֹךְ',
+              withoutAnnouncement: 'משוך',
+            },
+            russian: 'тяну',
+            transcription: 'mashoch',
+          },
+          {
+            Icon: PushUpBarIcon,
+            hebrew: {
+              withAnnouncement: 'דּוֹחֵף',
+              withoutAnnouncement: 'דוחף',
+            },
+            russian: 'толкаю',
+            transcription: 'dochef',
+          },
+        ],
+      },
+      {
+        title: 'Основные глаголы 4 (ИНФ.)',
+        Icon: WorkoutRunIcon,
+        slug: 'osnovnie-glagoli-4-inf',
+        words: [
+          {
+            Icon: ClockAlert,
+            hebrew: {
+              withAnnouncement: 'בְּאִיחוּר',
+              withoutAnnouncement: 'באיחור',
+            },
+            russian: 'опаздывать',
+            transcription: 'baichur',
+          },
+          {
+            Icon: GiveBloodIcon,
+            hebrew: {
+              withAnnouncement: 'לָקַחַת',
+              withoutAnnouncement: 'לקחת',
+            },
+            russian: 'брать',
+            transcription: 'lakachat',
+          },
+          {
+            Icon: Invoice03Icon,
+            hebrew: {
+              withAnnouncement: 'לְשַׁלֵּם',
+              withoutAnnouncement: 'לשלם',
+            },
+            russian: 'платить',
+            transcription: 'leshalem',
+          },
+          {
+            Icon: UsbMemory01Icon,
+            hebrew: {
+              withAnnouncement: 'לִזְכּוֹר',
+              withoutAnnouncement: 'לזכור',
+            },
+            russian: 'помнить',
+            transcription: 'lizkor',
+          },
+          {
+            Icon: TreePalm,
+            hebrew: {
+              withAnnouncement: 'לִנוּחַ',
+              withoutAnnouncement: 'לנוח',
+            },
+            russian: 'отдыхать',
+            transcription: 'linuach',
+          },
+          {
+            Icon: ForgotPasswordIcon,
+            hebrew: {
+              withAnnouncement: 'לִשְׁכּוֹחַ',
+              withoutAnnouncement: 'לשכוח',
+            },
+            russian: 'забывать',
+            transcription: 'lishkoch',
+          },
+          {
+            Icon: Cigarette,
+            hebrew: {
+              withAnnouncement: 'לַעֲשֵׁן',
+              withoutAnnouncement: 'לעשן',
+            },
+            russian: 'курить',
+            transcription: 'laasen',
+          },
+          {
+            Icon: Loader,
+            hebrew: {
+              withAnnouncement: 'לַחֲכוֹת',
+              withoutAnnouncement: 'לחכות',
+            },
+            russian: 'ждать',
+            transcription: 'lachakot',
+          },
+          {
+            Icon: GiveBloodIcon,
+            hebrew: {
+              withAnnouncement: 'לָתֵת',
+              withoutAnnouncement: 'לתת',
+            },
+            russian: 'давать',
+            transcription: 'latet',
+          },
+          {
+            Icon: CleanIcon,
+            hebrew: {
+              withAnnouncement: 'לִנְקוֹת',
+              withoutAnnouncement: 'לנקות',
+            },
+            russian: 'убираться',
+            transcription: 'linakot',
+          },
+          {
+            Icon: PulleyIcon,
+            hebrew: {
+              withAnnouncement: 'לְמָשוֹךְ',
+              withoutAnnouncement: 'למשוך',
+            },
+            russian: 'Тянуть',
+            transcription: 'lemashoch',
+          },
+          {
+            Icon: PushUpBarIcon,
+            hebrew: {
+              withAnnouncement: 'לְדָחוֹף',
+              withoutAnnouncement: 'לדחוף',
+            },
+            russian: 'Толкать',
+            transcription: 'ledachof',
+          },
+        ],
       },
     ],
   },
   {
     title: 'Дни недели',
     Icon: Calendar03Icon,
-    slug: 'dni-nedeli',
-    words: [
+    topics: [
       {
-        Icon: LaurelWreathFirst01Icon,
-        hebrew: {
-          withAnnouncement: 'יוֹם רִאשוֹן',
-          withoutAnnouncement: 'יום ראשון',
-        },
-        russian: 'воскресенье',
-        transcription: 'yom rishon',
+        title: 'Дни недели',
+        Icon: Calendar03Icon,
+        slug: 'dni-nedeli',
+        words: [
+          {
+            Icon: LaurelWreathFirst01Icon,
+            hebrew: {
+              withAnnouncement: 'יוֹם רִאשוֹן',
+              withoutAnnouncement: 'יום ראשון',
+            },
+            russian: 'воскресенье',
+            transcription: 'yom rishon',
+          },
+          {
+            Icon: MedalSecondPlaceIcon,
+            hebrew: {
+              withAnnouncement: 'יוֹם שֵנִי',
+              withoutAnnouncement: 'יום שני',
+            },
+            russian: 'понедельник',
+            transcription: 'yom shney',
+          },
+          {
+            Icon: MedalThirdPlaceIcon,
+            hebrew: {
+              withAnnouncement: 'יוֹם שלִישִי',
+              withoutAnnouncement: 'יום שלישי',
+            },
+            russian: 'вторник',
+            transcription: 'yom shlishi',
+          },
+          {
+            Icon: FourFinger02Icon,
+            hebrew: {
+              withAnnouncement: 'יוֹם רְבִיעִי',
+              withoutAnnouncement: 'יום רביעי',
+            },
+            russian: 'среда',
+            transcription: 'yom rvii',
+          },
+          {
+            Icon: FiverrIcon,
+            hebrew: {
+              withAnnouncement: 'יוֹם חֲמִישִי',
+              withoutAnnouncement: 'יום חמישי',
+            },
+            russian: 'четверг',
+            transcription: 'yom khamishi',
+          },
+          {
+            Icon: BodyPartSixPackIcon,
+            hebrew: {
+              withAnnouncement: 'יוֹם שִישִי',
+              withoutAnnouncement: 'יום שישי',
+            },
+            russian: 'пятница',
+            transcription: 'yom sisi',
+          },
+          {
+            Icon: Calendar01Icon,
+            hebrew: {
+              withAnnouncement: 'יוֹם שַבָּת',
+              withoutAnnouncement: 'יום שבת',
+            },
+            russian: 'суббота',
+            transcription: 'yom shabat',
+          },
+        ],
       },
       {
-        Icon: MedalSecondPlaceIcon,
-        hebrew: {
-          withAnnouncement: 'יוֹם שֵנִי',
-          withoutAnnouncement: 'יום שני',
-        },
-        russian: 'понедельник',
-        transcription: 'yom shney',
-      },
-      {
-        Icon: MedalThirdPlaceIcon,
-        hebrew: {
-          withAnnouncement: 'יוֹם שלִישִי',
-          withoutAnnouncement: 'יום שלישי',
-        },
-        russian: 'вторник',
-        transcription: 'yom shlishi',
-      },
-      {
-        Icon: FourFinger02Icon,
-        hebrew: {
-          withAnnouncement: 'יוֹם רְבִיעִי',
-          withoutAnnouncement: 'יום רביעי',
-        },
-        russian: 'среда',
-        transcription: 'yom rvii',
-      },
-      {
-        Icon: FiverrIcon,
-        hebrew: {
-          withAnnouncement: 'יוֹם חֲמִישִי',
-          withoutAnnouncement: 'יום חמישי',
-        },
-        russian: 'четверг',
-        transcription: 'yom khamishi',
-      },
-      {
-        Icon: BodyPartSixPackIcon,
-        hebrew: {
-          withAnnouncement: 'יוֹם שִישִי',
-          withoutAnnouncement: 'יום שישי',
-        },
-        russian: 'пятница',
-        transcription: 'yom sisi',
-      },
-      {
-        Icon: Calendar01Icon,
-        hebrew: {
-          withAnnouncement: 'יוֹם שַבָּת',
-          withoutAnnouncement: 'יום שבת',
-        },
-        russian: 'суббота',
-        transcription: 'yom shabat',
-      },
-    ],
-  },
-  {
-    title: 'Дни недели (буквы)',
-    Icon: Calendar03Icon,
-    slug: 'dni-nedeli-bukvi',
-    words: [
-      {
-        Icon: LaurelWreathFirst01Icon,
-        hebrew: {
-          withAnnouncement: 'א',
-          withoutAnnouncement: 'א',
-        },
-        russian: 'воскресенье',
-        transcription: 'yom rishon',
-      },
-      {
-        Icon: MedalSecondPlaceIcon,
-        hebrew: {
-          withAnnouncement: 'ב',
-          withoutAnnouncement: 'ב',
-        },
-        russian: 'понедельник',
-        transcription: 'yom shney',
-      },
-      {
-        Icon: MedalThirdPlaceIcon,
-        hebrew: {
-          withAnnouncement: 'ג',
-          withoutAnnouncement: 'ג',
-        },
-        russian: 'вторник',
-        transcription: 'yom shlishi',
-      },
-      {
-        Icon: FourFinger02Icon,
-        hebrew: {
-          withAnnouncement: 'ד',
-          withoutAnnouncement: 'ד',
-        },
-        russian: 'среда',
-        transcription: 'yom rvii',
-      },
-      {
-        Icon: FiverrIcon,
-        hebrew: {
-          withAnnouncement: 'ה',
-          withoutAnnouncement: 'ה',
-        },
-        russian: 'четверг',
-        transcription: 'yom khamishi',
-      },
-      {
-        Icon: BodyPartSixPackIcon,
-        hebrew: {
-          withAnnouncement: 'ו',
-          withoutAnnouncement: 'ו',
-        },
-        russian: 'пятница',
-        transcription: 'yom sisi',
-      },
-      {
-        Icon: Calendar01Icon,
-        hebrew: {
-          withAnnouncement: 'ש',
-          withoutAnnouncement: 'ש',
-        },
-        russian: 'суббота',
-        transcription: 'yom shabat',
+        title: 'Дни недели (буквы)',
+        Icon: Calendar03Icon,
+        slug: 'dni-nedeli-bukvi',
+        words: [
+          {
+            Icon: LaurelWreathFirst01Icon,
+            hebrew: {
+              withAnnouncement: 'א',
+              withoutAnnouncement: 'א',
+            },
+            russian: 'воскресенье',
+            transcription: 'yom rishon',
+          },
+          {
+            Icon: MedalSecondPlaceIcon,
+            hebrew: {
+              withAnnouncement: 'ב',
+              withoutAnnouncement: 'ב',
+            },
+            russian: 'понедельник',
+            transcription: 'yom shney',
+          },
+          {
+            Icon: MedalThirdPlaceIcon,
+            hebrew: {
+              withAnnouncement: 'ג',
+              withoutAnnouncement: 'ג',
+            },
+            russian: 'вторник',
+            transcription: 'yom shlishi',
+          },
+          {
+            Icon: FourFinger02Icon,
+            hebrew: {
+              withAnnouncement: 'ד',
+              withoutAnnouncement: 'ד',
+            },
+            russian: 'среда',
+            transcription: 'yom rvii',
+          },
+          {
+            Icon: FiverrIcon,
+            hebrew: {
+              withAnnouncement: 'ה',
+              withoutAnnouncement: 'ה',
+            },
+            russian: 'четверг',
+            transcription: 'yom khamishi',
+          },
+          {
+            Icon: BodyPartSixPackIcon,
+            hebrew: {
+              withAnnouncement: 'ו',
+              withoutAnnouncement: 'ו',
+            },
+            russian: 'пятница',
+            transcription: 'yom sisi',
+          },
+          {
+            Icon: Calendar01Icon,
+            hebrew: {
+              withAnnouncement: 'ש',
+              withoutAnnouncement: 'ש',
+            },
+            russian: 'суббота',
+            transcription: 'yom shabat',
+          },
+        ],
       },
     ],
   },

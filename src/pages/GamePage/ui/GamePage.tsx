@@ -1,5 +1,4 @@
 import cls from './GamePage.module.scss';
-import { TOPICS } from '@/DB.tsx';
 import { useAppDispatch, useAppSelector } from '@/app';
 import { currentTopicActions } from '@/entities/Game';
 import {
@@ -11,13 +10,11 @@ import { classNames, globalActions } from '@/shared/lib';
 import { AnimatePageWrapper, stopwatchActions } from '@/shared/ui';
 import { GamePauseMenu, Statistics } from '@/widgets';
 import { FC, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
 
 const GamePage: FC = () => {
   const dispatch = useAppDispatch();
 
-  const { slug } = useParams();
-  const currentTopic = TOPICS.find((topic) => topic.slug === slug);
+  const currentTopic = useAppSelector((state) => state.currentTopic);
 
   const currentStoreTopicSlug = useAppSelector(
     (state) => state.currentTopic.slug

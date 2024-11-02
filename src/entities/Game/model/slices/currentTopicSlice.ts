@@ -2,7 +2,7 @@ import {
   IAnswersHistoryItem,
   type ICurrentTopicScheme,
 } from '../types/ICurrentTopicScheme';
-import { IWord } from '@/DB.tsx';
+import { ITopic, IWord } from '@/DB.tsx';
 import { TypeQuestionTypes } from '@/entities/Question';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
@@ -22,6 +22,12 @@ export const currentTopicSlice = createSlice({
   name: 'currentTopic',
   initialState,
   reducers: {
+    setCurrentTopic(state, action: PayloadAction<ITopic>) {
+      state.title = action.payload.title;
+      state.Icon = action.payload.Icon;
+      state.slug = action.payload.slug;
+      state.words = action.payload.words;
+    },
     togglePauseMenuOpen(state) {
       state.isPauseMenuOpen = !state.isPauseMenuOpen;
     },
