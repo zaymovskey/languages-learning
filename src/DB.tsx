@@ -61,6 +61,8 @@ import {
   VegetarianFoodIcon,
   SoilTemperatureFieldIcon,
   RiceBowl01Icon,
+  CharacterPhoneticIcon,
+  SpeedTrain01Icon,
 } from 'hugeicons-react';
 import {
   AlarmClockIcon,
@@ -69,6 +71,7 @@ import {
   ArrowLeftToLine,
   ArrowRightToLine,
   ArrowUpToLine,
+  Ban,
   Beef,
   BookCopy,
   BookHeadphones,
@@ -80,6 +83,8 @@ import {
   CandyCane,
   Car,
   CheckCheck,
+  ChevronLeft,
+  ChevronRight,
   Church,
   Cigarette,
   CircleArrowDown,
@@ -110,6 +115,7 @@ import {
   MoveUp,
   PersonStanding,
   Phone,
+  Pi,
   RedoDot,
   Salad,
   Send,
@@ -1415,6 +1421,15 @@ export const TOPICS: ITopic[] = [
     slug: 'kogda',
     words: [
       {
+        Icon: SpeedTrain01Icon,
+        hebrew: {
+          withAnnouncement: 'דָּחוּף',
+          withoutAnnouncement: 'דחוף',
+        },
+        russian: 'срочно',
+        transcription: 'dakhuf',
+      },
+      {
         Icon: Clock02Icon,
         hebrew: {
           withAnnouncement: 'מוֹקֵדָם',
@@ -1464,6 +1479,42 @@ export const TOPICS: ITopic[] = [
         },
         russian: 'вчера',
         transcription: 'etmol',
+      },
+      {
+        Icon: Pi,
+        hebrew: {
+          withAnnouncement: 'תמיד',
+          withoutAnnouncement: 'תמיד',
+        },
+        russian: 'всегда',
+        transcription: 'tamid',
+      },
+      {
+        Icon: Ban,
+        hebrew: {
+          withAnnouncement: 'לעולם',
+          withoutAnnouncement: 'לעולם',
+        },
+        russian: 'никогда',
+        transcription: 'loelam',
+      },
+      {
+        Icon: ChevronLeft,
+        hebrew: {
+          withAnnouncement: 'לפני',
+          withoutAnnouncement: 'לפני',
+        },
+        russian: 'до',
+        transcription: 'lepe',
+      },
+      {
+        Icon: ChevronRight,
+        hebrew: {
+          withAnnouncement: 'אחרי',
+          withoutAnnouncement: 'אחרי',
+        },
+        russian: 'после',
+        transcription: 'achrei',
       },
     ],
   },
@@ -1852,6 +1903,103 @@ export const TOPICS: ITopic[] = [
         },
         russian: 'семья',
         transcription: 'mishpachah',
+      },
+    ],
+  },
+  {
+    title: 'Местоимения (д.п)',
+    Icon: CharacterPhoneticIcon,
+    slug: 'mestoimeniya-dp',
+    words: [
+      {
+        Icon: CharacterPhoneticIcon,
+        hebrew: {
+          withAnnouncement: 'אוֹתִי',
+          withoutAnnouncement: 'אותי',
+        },
+        russian: 'меня',
+        transcription: 'oti',
+      },
+      {
+        Icon: CharacterPhoneticIcon,
+        hebrew: {
+          withAnnouncement: 'אוֹתְךָ',
+          withoutAnnouncement: 'אותך',
+        },
+        russian: 'тебя (м.р)',
+        transcription: 'otkha',
+      },
+      {
+        Icon: CharacterPhoneticIcon,
+        hebrew: {
+          withAnnouncement: 'אוֹתָךְ',
+          withoutAnnouncement: 'אותך',
+        },
+        russian: 'тебя (ж.р)',
+        transcription: 'otakh',
+      },
+      {
+        Icon: CharacterPhoneticIcon,
+        hebrew: {
+          withAnnouncement: 'אוֹתוֹ',
+          withoutAnnouncement: 'אותו',
+        },
+        russian: 'его',
+        transcription: 'oto',
+      },
+      {
+        Icon: CharacterPhoneticIcon,
+        hebrew: {
+          withAnnouncement: 'אוֹתָהּ',
+          withoutAnnouncement: 'אותה',
+        },
+        russian: 'её',
+        transcription: 'otah',
+      },
+      {
+        Icon: CharacterPhoneticIcon,
+        hebrew: {
+          withAnnouncement: 'אֹתָנוּ',
+          withoutAnnouncement: 'אותנו',
+        },
+        russian: 'нас',
+        transcription: 'otanu',
+      },
+      {
+        Icon: CharacterPhoneticIcon,
+        hebrew: {
+          withAnnouncement: 'אֶתְכֶם',
+          withoutAnnouncement: 'אתכם',
+        },
+        russian: 'вас (м.р)',
+        transcription: 'etkhem',
+      },
+      {
+        Icon: CharacterPhoneticIcon,
+        hebrew: {
+          withAnnouncement: 'אֶתְכֶן',
+          withoutAnnouncement: 'אתכן',
+        },
+        russian: 'вас (ж.р)',
+        transcription: 'etkhen',
+      },
+      {
+        Icon: CharacterPhoneticIcon,
+        hebrew: {
+          withAnnouncement: 'אֹתָם',
+          withoutAnnouncement: 'אותם',
+        },
+        russian: 'их (м.р)',
+        transcription: 'otam',
+      },
+      {
+        Icon: CharacterPhoneticIcon,
+        hebrew: {
+          withAnnouncement: 'אֹתָן',
+          withoutAnnouncement: 'אותן',
+        },
+        russian: 'их (ж.р)',
+        transcription: 'otan',
       },
     ],
   },
