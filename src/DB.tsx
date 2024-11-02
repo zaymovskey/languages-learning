@@ -214,8 +214,11 @@ export const TOPICS: ITopic[] = [
       },
       {
         Icon: HealthIcon,
-        hebrew: { withAnnouncement: 'הַרגִיש', withoutAnnouncement: 'מרגיש' },
-        russian: 'чувствовать',
+        hebrew: {
+          withAnnouncement: 'מַרְגִּישׁ',
+          withoutAnnouncement: 'מרגיש',
+        },
+        russian: 'чувствую',
         transcription: 'margish',
       },
     ],
@@ -619,11 +622,11 @@ export const TOPICS: ITopic[] = [
       {
         Icon: HeartHandshake,
         hebrew: {
-          withAnnouncement: 'לְעַזֵּר',
-          withoutAnnouncement: 'לעזר',
+          withAnnouncement: 'לְעָזוֹר',
+          withoutAnnouncement: 'לעזור',
         },
         russian: 'помогать',
-        transcription: "le'azer",
+        transcription: 'leazor',
       },
       {
         Icon: SandalsIcon,
@@ -655,20 +658,20 @@ export const TOPICS: ITopic[] = [
       {
         Icon: MailOpen,
         hebrew: {
-          withAnnouncement: 'לִפְתֹּחַ',
+          withAnnouncement: 'לִפְתוֹחַ',
           withoutAnnouncement: 'לפתוח',
         },
         russian: 'открывать',
-        transcription: "lifto'ach",
+        transcription: 'liftoach',
       },
       {
         Icon: EyeClosed,
         hebrew: {
-          withAnnouncement: 'לְסַגֵּר',
-          withoutAnnouncement: 'לסגר',
+          withAnnouncement: 'לִסְגוּר',
+          withoutAnnouncement: 'לסגור',
         },
         russian: 'закрывать',
-        transcription: 'lesager',
+        transcription: 'lisgur',
       },
       {
         Icon: Send,
@@ -752,11 +755,11 @@ export const TOPICS: ITopic[] = [
       {
         Icon: TreePalm,
         hebrew: {
-          withAnnouncement: 'נוֹחַ',
-          withoutAnnouncement: 'נוח',
+          withAnnouncement: 'נָח',
+          withoutAnnouncement: 'נח',
         },
         russian: 'отдыхаю',
-        transcription: 'noach',
+        transcription: 'nach',
       },
       {
         Icon: ForgotPasswordIcon,
@@ -806,11 +809,11 @@ export const TOPICS: ITopic[] = [
       {
         Icon: PulleyIcon,
         hebrew: {
-          withAnnouncement: 'מַשֵּן',
-          withoutAnnouncement: 'משן',
+          withAnnouncement: 'מְשוֹךְ',
+          withoutAnnouncement: 'משוך',
         },
         russian: 'тяну',
-        transcription: 'mashen',
+        transcription: 'mashoch',
       },
       {
         Icon: PushUpBarIcon,
@@ -831,11 +834,11 @@ export const TOPICS: ITopic[] = [
       {
         Icon: ClockAlert,
         hebrew: {
-          withAnnouncement: 'בָּא אִיחוּר',
+          withAnnouncement: 'בְּאִיחוּר',
           withoutAnnouncement: 'באיחור',
         },
         russian: 'опаздывать',
-        transcription: 'ba ichur',
+        transcription: 'baichur',
       },
       {
         Icon: GiveBloodIcon,
@@ -858,7 +861,7 @@ export const TOPICS: ITopic[] = [
       {
         Icon: UsbMemory01Icon,
         hebrew: {
-          withAnnouncement: 'לִזְכֹּר',
+          withAnnouncement: 'לִזְכּוֹר',
           withoutAnnouncement: 'לזכור',
         },
         russian: 'помнить',
@@ -921,20 +924,20 @@ export const TOPICS: ITopic[] = [
       {
         Icon: PulleyIcon,
         hebrew: {
-          withAnnouncement: 'לְמַשֵּׁן',
-          withoutAnnouncement: 'למשן',
+          withAnnouncement: 'לְמָשוֹךְ',
+          withoutAnnouncement: 'למשוך',
         },
-        russian: 'тянуть',
-        transcription: 'lemashen',
+        russian: 'Тянуть',
+        transcription: 'lemashoch',
       },
       {
         Icon: PushUpBarIcon,
         hebrew: {
-          withAnnouncement: 'לְדַחֵף',
-          withoutAnnouncement: 'לדחף',
+          withAnnouncement: 'לְדָחוֹף',
+          withoutAnnouncement: 'לדחוף',
         },
-        russian: 'толкать',
-        transcription: 'ledachef',
+        russian: 'Толкать',
+        transcription: 'ledachof',
       },
     ],
   },
