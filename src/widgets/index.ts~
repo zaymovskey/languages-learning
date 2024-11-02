@@ -1,6 +1,0 @@
-import { GameHeader } from './GameHeader/GameHeader.tsx';
-import { Header } from './Header/Header.tsx';
-import { Statistics } from './Statistics/Statistics.tsx';
-import { GamePauseMenu } from './GamePauseMenu/GamePauseMenu.tsx';
-
-export { Header, Statistics, GameHeader, GamePauseMenu };

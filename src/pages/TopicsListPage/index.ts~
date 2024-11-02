@@ -1,6 +1,0 @@
-import { TopicsListPage } from './ui/TopicsListPage.lazy.tsx';
-
-const huy = {};
-console.log(huy.fjdsjgdfklvbcnlk);
-
-export { TopicsListPage };
