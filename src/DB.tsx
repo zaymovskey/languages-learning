@@ -134,6 +134,11 @@ export interface ITopic {
   words: IWord[];
 }
 
+export interface ITopicGroup {
+  title: string;
+  topics: ITopic[];
+}
+
 export interface IWord {
   Icon: ComponentType<SVGProps<SVGSVGElement>>;
   russian: string;
@@ -2000,6 +2005,103 @@ export const TOPICS: ITopic[] = [
         },
         russian: 'их (ж.р)',
         transcription: 'otan',
+      },
+    ],
+  },
+  {
+    title: 'Союзы',
+    Icon: CharacterPhoneticIcon,
+    slug: 'soyuzi',
+    words: [
+      {
+        Icon: CharacterPhoneticIcon,
+        hebrew: {
+          withAnnouncement: 'אוֹ',
+          withoutAnnouncement: 'אוֹ',
+        },
+        russian: 'или',
+        transcription: 'o',
+      },
+      {
+        Icon: CharacterPhoneticIcon,
+        hebrew: {
+          withAnnouncement: 'אֲבָל',
+          withoutAnnouncement: 'אבל',
+        },
+        russian: 'но',
+        transcription: 'aval',
+      },
+      {
+        Icon: CharacterPhoneticIcon,
+        hebrew: {
+          withAnnouncement: 'כִּי',
+          withoutAnnouncement: 'כי',
+        },
+        russian: 'потому что',
+        transcription: 'ki',
+      },
+      {
+        Icon: CharacterPhoneticIcon,
+        hebrew: {
+          withAnnouncement: 'שֶׁ',
+          withoutAnnouncement: 'שֶׁ',
+        },
+        russian: 'который, что',
+        transcription: 'she',
+      },
+      {
+        Icon: CharacterPhoneticIcon,
+        hebrew: {
+          withAnnouncement: 'אוּלַי',
+          withoutAnnouncement: 'אולי',
+        },
+        russian: 'может быть',
+        transcription: 'ulay',
+      },
+      {
+        Icon: CharacterPhoneticIcon,
+        hebrew: {
+          withAnnouncement: 'אִם',
+          withoutAnnouncement: 'אם',
+        },
+        russian: 'если',
+        transcription: 'im',
+      },
+      {
+        Icon: CharacterPhoneticIcon,
+        hebrew: {
+          withAnnouncement: 'מַה',
+          withoutAnnouncement: 'מה',
+        },
+        russian: 'что, что за',
+        transcription: 'ma',
+      },
+      {
+        Icon: CharacterPhoneticIcon,
+        hebrew: {
+          withAnnouncement: 'כְּשֶׁ',
+          withoutAnnouncement: 'כשֶׁ',
+        },
+        russian: 'когда',
+        transcription: 'kesh',
+      },
+      {
+        Icon: CharacterPhoneticIcon,
+        hebrew: {
+          withAnnouncement: 'בְּעַד',
+          withoutAnnouncement: 'בעד',
+        },
+        russian: 'за, в обмен на',
+        transcription: 'bead',
+      },
+      {
+        Icon: CharacterPhoneticIcon,
+        hebrew: {
+          withAnnouncement: 'בִּשְׁבִיל',
+          withoutAnnouncement: 'בשְׁבִיל',
+        },
+        russian: 'ради, для',
+        transcription: 'bishvil',
       },
     ],
   },

@@ -134,6 +134,11 @@ export interface ITopic {
   words: IWord[];
 }
 
+export interface ITopicGroup {
+  title: string;
+  topics: ITopic[];
+}
+
 export interface IWord {
   Icon: ComponentType<SVGProps<SVGSVGElement>>;
   russian: string;
@@ -1418,7 +1423,7 @@ export const TOPICS: ITopic[] = [
   {
     title: 'Когда?',
     Icon: Time02Icon,
-    slug: 'kogda', 
+    slug: 'kogda',
     words: [
       {
         Icon: SpeedTrain01Icon,
@@ -2000,6 +2005,103 @@ export const TOPICS: ITopic[] = [
         },
         russian: 'их (ж.р)',
         transcription: 'otan',
+      },
+    ],
+  },
+  {
+    title: 'Союзы',
+    Icon: CharacterPhoneticIcon,
+    slug: 'soyuzi',
+    words: [
+      {
+        Icon: ContactRound,
+        hebrew: {
+          withAnnouncement: 'אוֹ',
+          withoutAnnouncement: 'אוֹ',
+        },
+        russian: 'или',
+        transcription: 'o',
+      },
+      {
+        Icon: ContactRound,
+        hebrew: {
+          withAnnouncement: 'אֲבָל',
+          withoutAnnouncement: 'אבל',
+        },
+        russian: 'но',
+        transcription: 'aval',
+      },
+      {
+        Icon: ContactRound,
+        hebrew: {
+          withAnnouncement: 'כִּי',
+          withoutAnnouncement: 'כי',
+        },
+        russian: 'потому что',
+        transcription: 'ki',
+      },
+      {
+        Icon: ContactRound,
+        hebrew: {
+          withAnnouncement: 'שֶׁ',
+          withoutAnnouncement: 'שֶׁ',
+        },
+        russian: 'который, что',
+        transcription: 'she',
+      },
+      {
+        Icon: ContactRound,
+        hebrew: {
+          withAnnouncement: 'אוּלַי',
+          withoutAnnouncement: 'אולי',
+        },
+        russian: 'может быть',
+        transcription: 'ulay',
+      },
+      {
+        Icon: ContactRound,
+        hebrew: {
+          withAnnouncement: 'אִם',
+          withoutAnnouncement: 'אם',
+        },
+        russian: 'если',
+        transcription: 'im',
+      },
+      {
+        Icon: ContactRound,
+        hebrew: {
+          withAnnouncement: 'מַה',
+          withoutAnnouncement: 'מה',
+        },
+        russian: 'что, что за',
+        transcription: 'ma',
+      },
+      {
+        Icon: ContactRound,
+        hebrew: {
+          withAnnouncement: 'כְּשֶׁ',
+          withoutAnnouncement: 'כשֶׁ',
+        },
+        russian: 'когда',
+        transcription: 'kesh',
+      },
+      {
+        Icon: ContactRound,
+        hebrew: {
+          withAnnouncement: 'בְּעַד',
+          withoutAnnouncement: 'בעד',
+        },
+        russian: 'за, в обмен на',
+        transcription: 'bead',
+      },
+      {
+        Icon: ContactRound,
+        hebrew: {
+          withAnnouncement: 'בִּשְׁבִיל',
+          withoutAnnouncement: 'בשְׁבִיל',
+        },
+        russian: 'ради, для',
+        transcription: 'bishvil',
       },
     ],
   },
