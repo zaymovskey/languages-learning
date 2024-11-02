@@ -16,6 +16,7 @@ export const TopicsList: FC<ITopicsListProps> = ({ topics }) => {
 
   const setCurrentTopicInfo = (topic: ITopic) => {
     dispatch(currentTopicActions.setCurrentTopic(topic));
+    dispatch(currentTopicActions.setAnswersHistory(topic.words));
   };
 
   return (
@@ -23,13 +24,13 @@ export const TopicsList: FC<ITopicsListProps> = ({ topics }) => {
       {topics.map((topic, index) => {
         if ('words' in topic) {
           return (
-            <div onClick={() => setCurrentTopicInfo(topic)}>
-              <TopicListItem key={index} {...topic} />
+            <div onClick={() => setCurrentTopicInfo(topic)} key={index}>
+              <TopicListItem {...topic} />
             </div>
           );
         } else {
           return (
-            <div>
+            <div key={index}>
               <TopicsGroupItem item={topic} />
             </div>
           );

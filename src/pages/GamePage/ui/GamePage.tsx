@@ -60,11 +60,11 @@ const GamePage: FC = () => {
     }
   }, []);
 
-  useEffect(() => {
-    if (answersHistory.length !== 0) return;
-
-    dispatch(currentTopicActions.setAnswersHistory(topicWords));
-  }, [answersHistory.length, dispatch, topicWords]);
+  // useEffect(() => {
+  //   if (answersHistory.length !== 0) return;
+  //
+  //   dispatch(currentTopicActions.setAnswersHistory(topicWords));
+  // }, [answersHistory.length, dispatch, topicWords]);
 
   useEffect(() => {
     if (!currentTopic) return;
@@ -73,14 +73,14 @@ const GamePage: FC = () => {
     // Проверяем сменялась ли тема
     if (currentTopic.slug === currentStoreTopicSlug) return;
 
-    dispatch(currentTopicActions.setSlug(currentTopic.slug));
-    dispatch(currentTopicActions.setWords(currentTopic.words));
     dispatch(currentTopicActions.resetAnswersHistory());
     dispatch(stopwatchActions.reset());
   }, [currentStoreTopicSlug, currentTopic, dispatch]);
 
   const QuestionComponent =
     QUESTION_TYPES_COMPONENTS[currentQuestionType || 'Input'];
+
+  console.log(topicWords);
 
   return (
     <AnimatePageWrapper>

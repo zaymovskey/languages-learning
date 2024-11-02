@@ -23,6 +23,8 @@ export const Choice: FC<IChoiceProps> = ({ toNextQuestion }) => {
 
   // TODO: Нужно, чтобы слова принимались через пропсы, чтобы компонент был независимым
   const topicWords = useAppSelector((state) => state.currentTopic.words);
+
+  console.log(topicWords, 'test');
   const answersHistory = useAppSelector(
     (state) => state.currentTopic.answersHistory
   );

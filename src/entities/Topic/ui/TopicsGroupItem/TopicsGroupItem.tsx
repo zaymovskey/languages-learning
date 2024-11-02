@@ -20,6 +20,7 @@ export const TopicsGroupItem: FC<ITopicsGroupItemProps> = ({ item }) => {
 
   const setCurrentTopicInfo = (topic: ITopic) => {
     dispatch(currentTopicActions.setCurrentTopic(topic));
+    dispatch(currentTopicActions.setAnswersHistory(topic.words));
   };
 
   return (
@@ -38,7 +39,7 @@ export const TopicsGroupItem: FC<ITopicsGroupItemProps> = ({ item }) => {
       <AnimateHeight duration={200} height={isOpen ? 'auto' : 0}>
         <ul className={cls.topicsList}>
           {item.topics.map((topic, index) => (
-            <div onClick={() => setCurrentTopicInfo(topic)}>
+            <div onClick={() => setCurrentTopicInfo(topic)} key={index}>
               <TopicListItem key={index} {...topic} />
             </div>
           ))}
