@@ -1234,8 +1234,8 @@ export const TOPICS: ITopic[] = [
           withAnnouncement: 'לְמַעְלָה',
           withoutAnnouncement: 'למעלה',
         },
-        russian: 'сверху',
-        transcription: "lema'lah",
+        russian: 'выше',
+        transcription: 'lemala',
       },
       {
         Icon: ArrowUpToLine,
@@ -1243,8 +1243,8 @@ export const TOPICS: ITopic[] = [
           withAnnouncement: 'לְמַטָּה',
           withoutAnnouncement: 'למטה',
         },
-        russian: 'снизу',
-        transcription: "lema'tah",
+        russian: 'ниже',
+        transcription: 'lemata',
       },
       {
         Icon: Tally2,
@@ -1253,43 +1253,43 @@ export const TOPICS: ITopic[] = [
           withoutAnnouncement: 'ליד',
         },
         russian: 'рядом',
-        transcription: 'leyad',
+        transcription: 'le"id',
       },
       {
         Icon: ArrowRightToLine,
         hebrew: {
-          withAnnouncement: 'שְׂמֹאל',
-          withoutAnnouncement: 'שמאל',
+          withAnnouncement: 'מִשְׂמָאל',
+          withoutAnnouncement: 'משמאל',
         },
         russian: 'слева',
-        transcription: "s'mol",
+        transcription: 'mishmal',
       },
       {
         Icon: ArrowLeftToLine,
         hebrew: {
-          withAnnouncement: 'יָמִין',
-          withoutAnnouncement: 'ימין',
+          withAnnouncement: 'מִימִּין',
+          withoutAnnouncement: 'מימין',
         },
         russian: 'справа',
-        transcription: 'yamin',
+        transcription: 'miyamin',
       },
       {
         Icon: PathfinderMinusFrontIcon,
         hebrew: {
-          withAnnouncement: 'לִפְנֵי',
-          withoutAnnouncement: 'לפני',
+          withAnnouncement: 'לִפְנִים',
+          withoutAnnouncement: 'לפנים',
         },
-        russian: 'перед',
-        transcription: 'lifnei',
+        russian: 'впереди',
+        transcription: 'lefanim',
       },
       {
         Icon: BringToFront,
         hebrew: {
-          withAnnouncement: 'אָחוֹר',
-          withoutAnnouncement: 'אחור',
+          withAnnouncement: 'מֵאֲחוֹרֵי',
+          withoutAnnouncement: 'מאחורי',
         },
-        russian: 'за',
-        transcription: 'achor',
+        russian: 'позади',
+        transcription: 'me"achorei',
       },
       {
         Icon: CircleArrowDown,
@@ -1303,11 +1303,11 @@ export const TOPICS: ITopic[] = [
       {
         Icon: SquareArrowOutUpRight,
         hebrew: {
-          withAnnouncement: 'חוּץ',
-          withoutAnnouncement: 'חוץ',
+          withAnnouncement: 'בחוּץ',
+          withoutAnnouncement: 'בחוץ',
         },
         russian: 'снаружи',
-        transcription: 'chutz',
+        transcription: 'bechutz',
       },
       {
         Icon: Tally2,
@@ -1614,20 +1614,20 @@ export const TOPICS: ITopic[] = [
       {
         Icon: Salad,
         hebrew: {
-          withAnnouncement: 'מְלָפְפוֹנִים',
-          withoutAnnouncement: 'מלפפונים',
+          withAnnouncement: 'מְלָפְפוֹן',
+          withoutAnnouncement: 'מלפפון',
         },
-        russian: 'огурцы',
-        transcription: 'melafefonim',
+        russian: 'огурец',
+        transcription: 'melafefon',
       },
       {
         Icon: Salad,
         hebrew: {
-          withAnnouncement: 'עֲגֻבּוֹת',
-          withoutAnnouncement: 'עגבות',
+          withAnnouncement: 'עֲגֻבָנִיָּה',
+          withoutAnnouncement: 'עגבנייה',
         },
-        russian: 'помидоры',
-        transcription: 'aguvot',
+        russian: 'помидор',
+        transcription: 'agvaniyah',
       },
       {
         Icon: Beef,
@@ -1641,11 +1641,20 @@ export const TOPICS: ITopic[] = [
       {
         Icon: Drumstick,
         hebrew: {
-          withAnnouncement: 'קְצִיצוֹת בָּשָׂר',
-          withoutAnnouncement: 'קציצות בשר',
+          withAnnouncement: 'קְצִיצָה',
+          withoutAnnouncement: 'קציצה',
         },
         russian: 'фарш',
-        transcription: 'ktsitsot basar',
+        transcription: 'ktzitzah',
+      },
+      {
+        Icon: SoilTemperatureFieldIcon,
+        hebrew: {
+          withAnnouncement: 'שֶׁמֶן צָמֵחַ',
+          withoutAnnouncement: 'שמן צמח',
+        },
+        russian: 'растительное масло',
+        transcription: 'shemen tzameach',
       },
       {
         Icon: RiceBowl01Icon,
